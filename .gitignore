@@ -20,4 +20,3 @@ tags
 go-carpet-coverage*
 # make node-sdk copied files
 sdk/node/lib/protos/*
-site/

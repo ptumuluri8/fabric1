@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/CONTRIBUTING/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/README/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/TravisCI_Readme/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/glossary/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/protocol-spec/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/API/ChaincodeAPI/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/API/CoreAPI/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/API/MemberServicesAPI/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/API/SandboxSetup/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/FAQ/chaincode_FAQ/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/FAQ/confidentiality_FAQ/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/FAQ/consensus_FAQ/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/FAQ/identity_management_FAQ/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/FAQ/usage_FAQ/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/biz/usecases/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/dev-setup/ca-setup/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/dev-setup/devenv/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/dev-setup/devnet-setup/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/dev-setup/install/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/dev-setup/logging-control/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/tech/application-ACL/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/tech/attributes/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://chaincode-docs.readthedocs.io/tech/best-practices/</loc>
+     <lastmod>2016-06-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

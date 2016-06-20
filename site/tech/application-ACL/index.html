@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="rameshthoomu">
+  
+  <title>Application ACL - ChainCode</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Application ACL";
+    var mkdocs_page_input_path = "tech/application-ACL.md";
+    var mkdocs_page_url = "/tech/application-ACL/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ChainCode</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">HOME</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">CONTRIBUTING</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../README/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../TravisCI_Readme/">TravisCI Readme</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">CoreAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">MemberServicesAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/SandboxSetup/">SandboxSetup</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChaincodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity managementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Biz</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecase</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Dev setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/ca-setup/">Ca setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Devenv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devnet-setup/">Devnet setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/install/">Install</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/logging-control/">Logging control</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Application ACL</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#hyperledger-fabric-application-access-control-lists">Hyperledger Fabric - Application Access Control Lists</a></li>
+                
+                    <li><a class="toctree-l4" href="#overview">Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#fabric-support">Fabric Support</a></li>
+                
+                    <li><a class="toctree-l4" href="#application-level-access-control">Application-level access control</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../best-practices/">Best practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ChainCode</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tech &raquo;</li>
+        
+      
+    
+    <li>Application ACL</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hyperledger-fabric-application-access-control-lists">Hyperledger Fabric - Application Access Control Lists</h1>
+<h2 id="overview">Overview</h2>
+<p>We consider the following entities: </p>
+<ol>
+<li><em>HelloWorld</em>: is a chaincode that contains a single function called <em>hello</em>;</li>
+<li><em>Alice</em>: is the <em>HelloWorld</em> deployer;</li>
+<li><em>Bob</em>: is the <em>HelloWorld</em>'s functions invoker.</li>
+</ol>
+<p>Alice wants to ensure that only Bob can invoke the function <em>hello</em>.</p>
+<h2 id="fabric-support">Fabric Support</h2>
+<p>To allow Alice to specify her own access control lists and Bob to gain access, the fabric layer gives access to following capabilities:</p>
+<ol>
+<li>Alice and Bob can sign and verify any message with specific transaction certificates or enrollment certificate they own;</li>
+<li>The fabric allows to <em>name</em> each transaction by means of a unique <em>binding</em> to be used to bind application data
+to the underlying transaction transporting it;</li>
+<li>Extended transaction format.</li>
+</ol>
+<p>The fabric layer exposes the following interfaces and functions to allow the application layer to define its own ACLS.</p>
+<h3 id="certificate-handler">Certificate Handler</h3>
+<p>The following interface allows to sign and verify any message using signing key-pair underlying the associated certificate.
+The certificate can be a TCert or an ECert.</p>
+<pre><code>// CertificateHandler exposes methods to deal with an ECert/TCert
+type CertificateHandler interface {
+
+    // GetCertificate returns the certificate's DER
+    GetCertificate() []byte
+
+    // Sign signs msg using the signing key corresponding to the certificate
+    Sign(msg []byte) ([]byte, error)
+
+    // Verify verifies msg using the verifying key corresponding to the certificate
+    Verify(signature []byte, msg []byte) error
+
+    // GetTransactionHandler returns a new transaction handler relative to this certificate
+    GetTransactionHandler() (TransactionHandler, error)
+}
+</code></pre>
+
+<h3 id="transaction-handler">Transaction Handler</h3>
+<p>The following interface allows to create transactions and give access to the underlying <em>binding</em> that can be leveraged to link
+application data to the underlying transaction.</p>
+<pre><code>// TransactionHandler represents a single transaction that can be named by the output of the GetBinding method.
+// This transaction is linked to a single Certificate (TCert or ECert).
+type TransactionHandler interface {
+
+    // GetCertificateHandler returns the certificate handler relative to the certificate mapped to this transaction
+    GetCertificateHandler() (CertificateHandler, error)
+
+    // GetBinding returns a binding to the underlying transaction
+    GetBinding() ([]byte, error)
+
+    // NewChaincodeDeployTransaction is used to deploy chaincode
+    NewChaincodeDeployTransaction(chaincodeDeploymentSpec *obc.ChaincodeDeploymentSpec, uuid string) (*obc.Transaction, error)
+
+    // NewChaincodeExecute is used to execute chaincode's functions
+    NewChaincodeExecute(chaincodeInvocation *obc.ChaincodeInvocationSpec, uuid string) (*obc.Transaction, error)
+
+    // NewChaincodeQuery is used to query chaincode's functions
+    NewChaincodeQuery(chaincodeInvocation *obc.ChaincodeInvocationSpec, uuid string) (*obc.Transaction, error)
+}
+</code></pre>
+
+<h3 id="client">Client</h3>
+<p>The following interface offers a mean to get instances of the previous interfaces.</p>
+<pre><code>type Client interface {
+
+    ...
+
+    // GetEnrollmentCertHandler returns a CertificateHandler whose certificate is the enrollment certificate
+    GetEnrollmentCertificateHandler() (CertificateHandler, error)
+
+    // GetTCertHandlerNext returns a CertificateHandler whose certificate is the next available TCert
+    GetTCertificateHandlerNext() (CertificateHandler, error)
+
+    // GetTCertHandlerFromDER returns a CertificateHandler whose certificate is the one passed
+    GetTCertificateHandlerFromDER(der []byte) (CertificateHandler, error)
+
+}
+</code></pre>
+
+<h3 id="transaction-format">Transaction Format</h3>
+<p>To support application-level ACLs, the fabric's transaction and chaincode specification format have an additional field to store application-specific metadata.
+The content of this field is decided by the application. The fabric layer treats it as an unstructured stream of bytes.    </p>
+<pre><code>
+message ChaincodeSpec {
+
+    ...
+
+    ConfidentialityLevel confidentialityLevel;
+    bytes metadata;
+
+    ...
+}
+
+
+message Transaction {
+    ...
+
+    bytes payload;
+    bytes metadata;
+
+    ...    
+}
+</code></pre>
+
+<p>Another way to achieve this is to have the payload containing the metadata itself.  </p>
+<h3 id="validators">Validators</h3>
+<p>To assist chaincode execution, the validators provide the chaincode additional information, like the metadata and the binding.  </p>
+<h2 id="application-level-access-control">Application-level access control</h2>
+<h3 id="deploy-transaction">Deploy Transaction</h3>
+<p>Alice has full control on the deployment transaction's metadata. 
+In particular, the metadata can be used to store a list of ACLs (one per function), or a list of roles. 
+To define each of these lists/roles, Alice can use any TCerts/ECerts of the users who have been assigned 
+that privilege or role. The latter is done offline. </p>
+<p>Now, Alice requires that to invoke the <em>hello</em> function, a certain message <em>M</em> has to be authenticated by an authorized invoker (Bob, in our case). 
+We distinguish the following two cases:</p>
+<ol>
+<li><em>M</em> is one of the chaincode's function arguments;</li>
+<li><em>M</em> is the invocation message itself, i.e., function-name, arguments.</li>
+</ol>
+<h3 id="execute-transaction">Execute Transaction</h3>
+<p>To invoke <em>hello</em>, Bob needs to sign <em>M</em> using the TCert/ECert Alice has used to name him in the deployment transaction's metadata.
+Let's call this certificate CertBob. At this point Bob does the following:   </p>
+<ol>
+<li>Bob gets a CertificateHandler for CertBob, <em>cHandlerBob</em>;</li>
+<li>Bob gets a new TransactionHandler to issue the execute transaction, <em>txHandler</em> relative to his next available TCert or his ECert; </li>
+<li>Bob gets <em>txHandler</em>'s <em>binding</em> by invoking <em>txHandler.getBinding()</em>;</li>
+<li>Bob signs <em>'M || txBinding'</em> by invoking <em>cHandlerBob.Sign('M || txBinding')</em>, let <em>signature</em> be the output of the signing function;</li>
+<li>Bob issues a new execute transaction by invoking, <em>txHandler.NewChaincodeExecute(...)</em>. Now, <em>signature</em> can be included
+  in the transaction as one of the argument to be passed to the function or as transaction metadata.</li>
+</ol>
+<h3 id="chaincode-execution">Chaincode Execution</h3>
+<p>The validators, who receive the execute transaction issued by Bob, will provide to <em>hello</em> the following information:</p>
+<ol>
+<li>The <em>binding</em> of the execute transaction;</li>
+<li>The <em>metadata</em> of the execute transaction;</li>
+<li>The <em>metadata</em> of the deploy transaction.</li>
+</ol>
+<p>Then, <em>hello</em> is responsible for checking that <em>signature</em> is indeed a valid signature issued by Bob.   </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../attributes/" class="btn btn-neutral float-right" title="Attributes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../dev-setup/logging-control/" class="btn btn-neutral" title="Logging control"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../dev-setup/logging-control/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../attributes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

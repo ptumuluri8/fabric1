@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="rameshthoomu">
+  
+  <title>Attributes - ChainCode</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Attributes";
+    var mkdocs_page_input_path = "tech/attributes.md";
+    var mkdocs_page_url = "/tech/attributes/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ChainCode</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">HOME</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">CONTRIBUTING</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../README/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../TravisCI_Readme/">TravisCI Readme</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">CoreAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">MemberServicesAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/SandboxSetup/">SandboxSetup</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChaincodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity managementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Biz</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecase</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Dev setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/ca-setup/">Ca setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Devenv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devnet-setup/">Devnet setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/install/">Install</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/logging-control/">Logging control</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Attributes</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#attributes-support">Attributes support</a></li>
+                
+                    <li><a class="toctree-l4" href="#attributes-keys">Attributes Keys</a></li>
+                
+                    <li><a class="toctree-l4" href="#attribute-certificate-authority">Attribute Certificate Authority</a></li>
+                
+                    <li><a class="toctree-l4" href="#flow">FLOW</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../best-practices/">Best practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ChainCode</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tech &raquo;</li>
+        
+      
+    
+    <li>Attributes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="attributes-support">Attributes support</h1>
+<p>To support attributes the user has to pass them during TCert creation, these attributes can be used  during transaction deployment, execution or query for Attribute Based Access Control (ABAC) to determine whether the user can or cannot execute a specific chaincode  or used attributes' values for other purposes. A mechanism to validate the ownership of attributes is required in order to prove if the attributes passed by the user are correct. The Attribute Certificate Authority (ACA) has the responsibility of validate attributes and to return an Attribute Certificate (ACert) with the valid attribute values.
+Attributes values are encrypted using the keys defined below (section Attributes keys).</p>
+<h2 id="attributes-keys">Attributes Keys</h2>
+<p>The attributes are encrypted using a key derived from a hierarchy called PreKey tree. This approach consists in deriving keys from a parent key, allowing the parent key owner, get access to derived keys. This way keys used to encrypt attributes are different among attributes and TCerts avoiding linkability while allowing an authorized auditor who owns a parent key to derive the keys in the lower levels.  </p>
+<h3 id="example-of-prekey-tree">Example of prekey tree</h3>
+<pre><code>Pre3K_BI
+        |_Pre2K_B = HMAC(Pre3K_BI, “banks”)
+        |   |_Pre1K_BankA = HMAC(Pre2K_B, “Bank A”)
+        |   |   |_Pre0K_BankA = HMAC(Pre1K_BankA, TCertID)
+        |   |       |_PositionKey_BankA_TIdx = HMAC(Pre0K_BankA, "position")
+        |   |       |_CompanyKey_BankA_TIdx = HMAC(Pre0K_BankA, "company")
+        |   |
+        |   |_Pre1K_BankB = HMAC(Pre2K_B, “BanKB”)
+        |       |_Pre0K_BankB = HMAC(Pre1K_BankB, TCertID)
+        |            |_PositionKey_BankB_TIdx = HMAC(Pre0K_BankB, "position")
+        |            |_CompanyKey_BankB_TIdx = HMAC(Pre0K_BankB, "company")
+        |
+        |_Pre2K_I = HMAC(Pre3K_BI, "institutions")
+            |_Pre1K_InstitutionA= HMAC(Pre2K_I, "Institution A”)
+               |_Pre0K_InstitutionA = HMAC(_Pre1K_InstitutionA, TCertID)
+                    |_PositionKey_InstA_TIdx = HMAC(Pre0K_InstitutionA, "position")
+                    |_CompanyKey_InstA_TIdx = HMAC(Pre0K_InstitutionA, "company")
+</code></pre>
+<ul>
+<li>Pre3K_BI: is available to TCA and auditors for banks and institutions.</li>
+<li>Pre2K_B: is available to auditors for banks</li>
+<li>Pre1K_BankA: is available to auditors for Bank A.</li>
+<li>Pre1K_BankB: is available to auditors for Bank B.</li>
+<li>Pre2K_I: is available to auditors for institutions.</li>
+<li>Pre1K_InstitutionA: is available to auditors for Institution A.</li>
+</ul>
+<p>Each TCert has a different PreK0 (for example Pre0K_BankA) and each TCert attribute has a different attribute key (for example PositionKey_BankA_TIdx).</p>
+<h2 id="attribute-certificate-authority">Attribute Certificate Authority</h2>
+<p>Attribute Certificate Authority (ACA) has the responsibility of certify the ownership of the attributes. ACA has a database to hold attributes for each user and affiliation.</p>
+<ol>
+<li>id: The id passed by the user during enrollment</li>
+<li>affiliation: The entity which the user is affiliated to</li>
+<li>attributeName: The name used to look for the attribute, e.g. 'position'</li>
+<li>attributeValue: The value of the attribute, e.g. 'software engineer'</li>
+<li>validFrom: The start of the attribute's validity period</li>
+<li>validTo: The end of the attribute's validity period</li>
+</ol>
+<h3 id="grpc-aca-api">gRPC ACA API</h3>
+<ol>
+<li>FetchAttributes</li>
+</ol>
+<pre><code>    rpc FetchAttributes(ACAFetchAttrReq) returns (ACAFetchAttrResp);
+
+    message ACAFetchAttrReq {
+        google.protobuf.Timestamp ts = 1;
+        Cert eCert = 2;                  // ECert of involved user.
+        Signature signature = 3;         // Signed using the ECA private key.
+    }
+
+    message ACAFetchAttrResp {
+        enum StatusCode {
+            SUCCESS = 000;
+            FAILURE = 100;
+        }
+        StatusCode status = 1;
+    }
+</code></pre>
+
+<ol>
+<li>RequestAttributes</li>
+</ol>
+<pre><code>    rpc RequestAttributes(ACAAttrReq) returns (ACAAttrResp);
+
+    message ACAAttrReq {
+        google.protobuf.Timestamp ts = 1;
+        Identity id = 2;
+        Cert eCert = 3;                                // ECert of involved user.
+        repeated TCertAttributeHash attributes = 4;    // Pairs attribute-key, attribute-value-hash
+        Signature signature = 5;                       // Signed using the TCA private key.
+    }
+
+    message ACAAttrResp {
+        enum StatusCode {
+            FULL_SUCCESSFUL     = 000;
+            PARTIAL_SUCCESSFUL  = 001;
+            NO_ATTRIBUTES_FOUND = 010;
+            FAILURE             = 100;
+        }
+        StatusCode status = 1;
+        Cert cert = 2;                  // ACert with the owned attributes.
+        Signature signature = 3;        // Signed using the ACA private key.
+    }
+</code></pre>
+
+<ol>
+<li>RefreshAttributes</li>
+</ol>
+<pre><code>    rpc RefreshAttributes(ACARefreshReq) returns (ACARefreshResp);
+
+    message ACARefreshAttrReq {
+        google.protobuf.Timestamp ts = 1;
+        Cert eCert = 2;                              // ECert of the involved user.
+        Signature signature = 3;                     // Signed using enrollPrivKey
+    }
+
+    message ACARefreshAttrResp {
+        enum StatusCode {
+            SUCCESS = 000;
+            FAILURE = 100;
+        }
+        StatusCode status = 1;
+    }
+</code></pre>
+
+<h2 id="flow">FLOW</h2>
+<p><img alt="ACA flow" src="../../images/attributes_flow.png" /></p>
+<h3 id="during-enrollment">During enrollment</h3>
+<ol>
+<li>The user requests an Enrollment Certificate (ECert) to ECA</li>
+<li>ECA creates the ECert and responds to the user with it.</li>
+<li>ECA issues a fetch request under TLS to the ACA passing the newly generated ECert as a parameter. This request is signed with the ECA's private key.</li>
+<li>The request triggers ACA asynchronous mechanism that fetches attributes' values from external sources and populates the attributes database (in the current implementation attributes are loaded from an internal configuration file).</li>
+</ol>
+<h3 id="during-tcert-generation">During TCert generation</h3>
+<ol>
+<li>When the user needs TCerts to create a new transaction it requests a batch of TCerts to the TCA, and provides the following:</li>
+<li>The batch size (i.e. how many TCerts the user is expecting)</li>
+<li>Its ECert</li>
+<li>A list of attributes (e.g. Company, Position)</li>
+<li>Under TLS TCA sends a RequestAttributes() to ACA to verify if the user is in possession of those attributes. This request is signed with TCA's private key and it contains:</li>
+<li>User's ECert</li>
+<li>A list of attribute names "company, position, ..."</li>
+<li>ACA performs a query to the internal attributes database and there are three possible scenarios***:
+     a. The user does not have any of the specified attributes – An error is returned.
+     b. The user has all the specified attributes – An X.509 certificate (ACert) with all the specified attributes and the ECert public key is returned.
+     c. The user has a subset of the requested attributes – An X.509 certificate (ACert) with just the subset of the specified attributes and the ECert public key is returned.</li>
+<li>TCA checks the validity period of the ACert's attributes and updates the list by eliminating those that are expired. Then for scenarios b and c from the previous item it checks how many (and which ones) of the attributes the user will actually receive inside each TCert. This information needs to be returned to the user in order to decide whether the TCerts are useful or if further actions needs to be performed (i.e. issue a RefreshAttributes command and request a new batch, throw an error or make use of the TCerts as they are).</li>
+<li>TCA could have other criteria to update the valid list of attributes.</li>
+<li>TCA creates the batch of TCerts. Each TCert contains the valid attributes encrypted with keys derived from the Prekey tree (each key is unique per attribute, per TCert and per user).</li>
+<li>TCA returns the batch of TCerts to the user along with a root key (Prek0) from which each attribute encryption key was derived. There is a Prek0 per TCert. All the TCerts in the batch have the same attributes and the validity period of the TCerts is the same for the entire batch.</li>
+</ol>
+<p>*** <em>In the current implementation an attributes refresh is executed automatically before this step, but once the refresh service is implemented the user will have the responsibility of keeping his/her attributes updated by invoking this method.</em></p>
+<h3 id="assumptions">Assumptions</h3>
+<ol>
+<li>An Attribute Certificate Authority (ACA) has been incorporated to the Membership Services internally to provide a trusted source for attribute values.</li>
+<li>In the current implementation attributes are loaded from a configuration file (membersrvc.yml).</li>
+<li>Refresh attributes service is not implemented yet, instead, attributes are refreshed in each RequestAttribute invocation.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../best-practices/" class="btn btn-neutral float-right" title="Best practices">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../application-ACL/" class="btn btn-neutral" title="Application ACL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../application-ACL/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../best-practices/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

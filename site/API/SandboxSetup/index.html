@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="rameshthoomu">
+  
+  <title>SandboxSetup - ChainCode</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SandboxSetup";
+    var mkdocs_page_input_path = "API/SandboxSetup.md";
+    var mkdocs_page_url = "/API/SandboxSetup/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ChainCode</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">HOME</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">CONTRIBUTING</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../README/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../TravisCI_Readme/">TravisCI Readme</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CoreAPI/">CoreAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MemberServicesAPI/">MemberServicesAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">SandboxSetup</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#writing-building-and-running-chaincode-in-a-development-environment">Writing, Building, and Running Chaincode in a Development Environment</a></li>
+                
+                    <li><a class="toctree-l4" href="#security-setup-optional">Security Setup (optional)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vagrant-terminal-1-validating-peer">Vagrant Terminal 1 (validating peer)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vagrant-terminal-2-chaincode">Vagrant Terminal 2 (chaincode)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vagrant-terminal-3-cli-or-rest-api">Vagrant Terminal 3 (CLI or REST API)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChaincodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity managementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Biz</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecase</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Dev setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/ca-setup/">Ca setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Devenv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devnet-setup/">Devnet setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/install/">Install</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/logging-control/">Logging control</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ChainCode</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>SandboxSetup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="writing-building-and-running-chaincode-in-a-development-environment">Writing, Building, and Running Chaincode in a Development Environment</h1>
+<p>Chaincode developers need a way to test and debug their chaincode without having to set up a complete peer network. This document describes how to write, build, and test chaincode in a local development environment.</p>
+<p>Multiple terminal windows inside the Vagrant development environment are required. One Vagrant terminal runs the validating peer; another Vagrant terminal runs the chaincode; the third Vagrant terminal runs the CLI or REST API commands to execute transactions. When running with security enabled, an additional fourth Vagrant terminal window is required to run the <b>Certificate Authority (CA)</b> server. Detailed instructions are provided in the sections below:</p>
+<ul>
+<li><a href="#security-setup-optional">Security Setup (optional)</a></li>
+<li><a href="#vagrant-terminal-1-validating-peer">Vagrant Terminal 1 (validating peer)</a></li>
+<li><a href="#vagrant-terminal-2-chaincode">Vagrant Terminal 2 (chaincode)</a></li>
+<li><a href="#vagrant-terminal-3-cli-or-rest-api">Vagrant Terminal 3 (CLI or REST API)</a><ul>
+<li><a href="#chaincode-deploy-via-cli-and-rest">Chaincode deploy via CLI and REST</a></li>
+<li><a href="#chaincode-invoke-via-cli-and-rest">Chaincode invoke via CLI and REST</a></li>
+<li><a href="#chaincode-query-via-cli-and-rest">Chaincode query via CLI and REST</a></li>
+</ul>
+</li>
+<li><a href="#removing-temporary-files-when-security-is-enabled">Removing temporary files when security is enabled</a></li>
+</ul>
+<p>See the <a href="../../dev-setup/logging-control/">logging control</a> reference for information on controlling
+logging output from the <code>peer</code> and chaincodes.</p>
+<h3 id="security-setup-optional">Security Setup (optional)</h3>
+<p>From your command line terminal, move to the <code>devenv</code> subdirectory of your workspace environment. Log into a Vagrant terminal by executing the following command:</p>
+<pre><code>vagrant ssh
+</code></pre>
+<p>To set up the local development environment with security enabled, you must first build and run the <b>Certificate Authority (CA)</b> server:</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric
+make membersrvc &amp;&amp; membersrvc
+</code></pre>
+<p>Running the above commands builds and runs the CA server with the default setup, which is defined in the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a> configuration file. The default configuration includes multiple users who are already registered with the CA; these users are listed in the <code>eca.users</code> section of the configuration file. To register additional users with the CA for testing, modify the <code>eca.users</code> section of the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a> file to include additional <code>enrollmentID</code> and <code>enrollmentPW</code> pairs. Note the integer that precedes the <code>enrollmentPW</code>. That integer indicates the role of the user, where 1 = client, 2 = non-validating peer, 4 = validating peer, and 8 = auditor.</p>
+<h3 id="vagrant-terminal-1-validating-peer">Vagrant Terminal 1 (validating peer)</h3>
+<p><strong>Note:</strong> To run with security enabled, first modify the <a href="https://github.com/hyperledger/fabric/blob/master/peer/core.yaml">core.yaml</a> configuration file to set the <code>security.enabled</code> value to <code>true</code> before building the peer executable. Alternatively, you can enable security by running the peer with environment variable <code>CORE_SECURITY_ENABLED=true</code>. To enable privacy and confidentiality of transactions (requires security to also be enabled), modify the <a href="https://github.com/hyperledger/fabric/blob/master/peer/core.yaml">core.yaml</a> configuration file to set the <code>security.privacy</code> value to <code>true</code> as well. Alternatively, you can enable privacy by running the peer with environment variable <code>CORE_SECURITY_PRIVACY=true</code>. If you are enabling security and privacy on the peer process with environment variables, it is important to include these environment variables in the command when executing all subsequent peer operations (e.g. deploy, invoke, or query).</p>
+<p>From your command line terminal, move to the <code>devenv</code> subdirectory of your workspace environment. Log into a Vagrant terminal by executing the following command:</p>
+<pre><code>vagrant ssh
+</code></pre>
+<p>Build and run the peer process to enable security and privacy after setting <code>security.enabled</code> and <code>security.privacy</code> settings to <code>true</code>.</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric
+make peer
+peer node start --peer-chaincodedev
+</code></pre>
+<p>Alternatively, enable security and privacy on the peer with environment variables:</p>
+<pre><code>CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer node start --peer-chaincodedev
+</code></pre>
+<h3 id="vagrant-terminal-2-chaincode">Vagrant Terminal 2 (chaincode)</h3>
+<p>From your command line terminal, move to the <code>devenv</code> subdirectory of your workspace environment. Log into a Vagrant terminal by executing the following command:</p>
+<pre><code>vagrant ssh
+</code></pre>
+<p>Build the <b>chaincode_example02</b> code, which is provided in the source code repository:</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02
+go build
+</code></pre>
+<p>When you are ready to start creating your own chaincode, create a new subdirectory inside of /fabric/examples/go/chaincode to store your chaincode files. You can copy the <b>chaincode_example02</b> file to the new directory and modify it.</p>
+<p>Run the following chaincode command to start and register the chaincode with the validating peer (started in Vagrant terminal 1):</p>
+<pre><code>CORE_CHAINCODE_ID_NAME=mycc CORE_PEER_ADDRESS=0.0.0.0:30303 ./chaincode_example02
+</code></pre>
+<p>The chaincode console will display the message "Received REGISTERED, ready for invocations", which indicates that the chaincode is ready to receive requests. Follow the steps below to send a chaincode deploy, invoke or query transaction. If the "Received REGISTERED" message is not displayed, then an error has occurred during the deployment; revisit the previous steps to resolve the issue.</p>
+<h3 id="vagrant-terminal-3-cli-or-rest-api">Vagrant Terminal 3 (CLI or REST API)</h3>
+<h4 id="note-on-rest-api-port"><strong>Note on REST API port</strong></h4>
+<p>The default REST interface port is 5000. It can be configured in <a href="https://github.com/hyperledger/fabric/blob/master/peer/core.yaml">core.yaml</a> using the <code>rest.address</code> property. If using Vagrant, the REST port mapping is defined in <a href="https://github.com/hyperledger/fabric/blob/master/devenv/Vagrantfile">Vagrantfile</a>.</p>
+<h4 id="note-on-security-functionality"><strong>Note on security functionality</strong></h4>
+<p>Current security implementation assumes that end user authentication takes place at the application layer and is not handled by the fabric. Authentication may be performed through any means considered appropriate for the target application. Upon successful user authentication, the application will perform user registration with the CA exactly once. If registration is attempted a second time for the same user, an error will result. During registration, the application sends a request to the certificate authority to verify the user registration and if successful, the CA responds with the user certificates and keys. The enrollment and transaction certificates received from the CA will be stored locally inside <code>/var/hyperledger/production/crypto/client/</code> directory. This directory resides on a specific peer node which allows the user to transact only through this specific peer while using the stored crypto material. If the end user needs to perform transactions through more then one peer node, the application is responsible for replicating the crypto material to other peer nodes. This is necessary as registering a given user with the CA a second time will fail.</p>
+<p>With security enabled, the CLI commands and REST payloads must be modified to include the <code>enrollmentID</code> of a registered user who is logged in; otherwise an error will result. A registered user can be logged in through the CLI or the REST API by following the instructions below. To log in through the CLI, issue the following commands, where <code>username</code> is one of the <code>enrollmentID</code> values listed in the <code>eca.users</code> section of the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a> file.</p>
+<p>From your command line terminal, move to the <code>devenv</code> subdirectory of your workspace environment. Log into a Vagrant terminal by executing the following command:</p>
+<pre><code>vagrant ssh
+</code></pre>
+<p>Register the user though the CLI, substituting for <code>&lt;username&gt;</code> appropriately:</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric/peer
+peer network login &lt;username&gt;
+</code></pre>
+<p>The command will prompt for a password, which must match the <code>enrollmentPW</code> listed for the target user in the <code>eca.users</code> section of the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a> file. If the password entered does not match the <code>enrollmentPW</code>, an error will result.</p>
+<p>To log in through the REST API, send a POST request to the <code>/registrar</code> endpoint, containing the <code>enrollmentID</code> and <code>enrollmentPW</code> listed in the <code>eca.users</code> section of the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a> file.</p>
+<p><b>REST Request:</b></p>
+<pre><code>POST localhost:5000/registrar
+
+{
+  &quot;enrollId&quot;: &quot;jim&quot;,
+  &quot;enrollSecret&quot;: &quot;6avZQLwcUe9b&quot;
+}
+</code></pre>
+
+<p><b>REST Response:</b></p>
+<pre><code>200 OK
+{
+    &quot;OK&quot;: &quot;Login successful for user 'jim'.&quot;
+}
+</code></pre>
+
+<h4 id="chaincode-deploy-via-cli-and-rest">Chaincode deploy via CLI and REST</h4>
+<p>First, send a chaincode deploy transaction, only once, to the validating peer. The CLI connects to the validating peer using the properties defined in the core.yaml file. <strong>Note:</strong> The deploy transaction typically requires a <code>path</code> parameter to locate, build, and deploy the chaincode. However, because these instructions are specific to local development mode and the chaincode is deployed manually, the <code>name</code> parameter is used instead.</p>
+<pre><code>peer chaincode deploy -n mycc -c '{&quot;Function&quot;:&quot;init&quot;, &quot;Args&quot;: [&quot;a&quot;,&quot;100&quot;, &quot;b&quot;, &quot;200&quot;]}'
+</code></pre>
+
+<p>Alternatively, you can run the chaincode deploy transaction through the REST API.</p>
+<p><b>REST Request:</b></p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;deploy&quot;,
+  &quot;params&quot;: {
+    &quot;type&quot;: 1,
+    &quot;chaincodeID&quot;:{
+        &quot;name&quot;: &quot;mycc&quot;
+    },
+    &quot;ctorMsg&quot;: {
+        &quot;function&quot;:&quot;init&quot;,
+        &quot;args&quot;:[&quot;a&quot;, &quot;100&quot;, &quot;b&quot;, &quot;200&quot;]
+    }
+  },
+  &quot;id&quot;: 1
+}
+</code></pre>
+
+<p><b>REST Response:</b></p>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;result&quot;: {
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;message&quot;: &quot;mycc&quot;
+    },
+    &quot;id&quot;: 1
+}
+</code></pre>
+
+<p><strong>Note:</strong> When security is enabled, modify the CLI command and the REST API payload to pass the <code>enrollmentID</code> of a logged in user. To log in a registered user through the CLI or the REST API, follow the instructions in the <a href="#note-on-security-functionality">note on security functionality</a>. On the CLI, the <code>enrollmentID</code> is passed with the <code>-u</code> parameter; in the REST API, the <code>enrollmentID</code> is passed with the <code>secureContext</code> element. If you are enabling security and privacy on the peer process with environment variables, it is important to include these environment variables in the command when executing all subsequent peer operations (e.g. deploy, invoke, or query).</p>
+<pre><code>  CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode deploy -u jim -n mycc -c '{"Function":"init", "Args": ["a","100", "b", "200"]}'
+</code></pre>
+<p><b>REST Request:</b></p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;deploy&quot;,
+  &quot;params&quot;: {
+    &quot;type&quot;: 1,
+    &quot;chaincodeID&quot;:{
+        &quot;name&quot;: &quot;mycc&quot;
+    },
+    &quot;ctorMsg&quot;: {
+        &quot;function&quot;:&quot;init&quot;,
+        &quot;args&quot;:[&quot;a&quot;, &quot;100&quot;, &quot;b&quot;, &quot;200&quot;]
+    },
+    &quot;secureContext&quot;: &quot;jim&quot;
+  },
+  &quot;id&quot;: 1
+}
+</code></pre>
+
+<p>The deploy transaction initializes the chaincode by executing a target initializing function. Though the example shows "init", the name could be arbitrarily chosen by the chaincode developer. You should see the following output in the chaincode window:</p>
+<pre><code>2015/11/15 15:19:31 Received INIT(uuid:005dea42-d57f-4983-803e-3232e551bf61), initializing chaincode
+Aval = 100, Bval = 200
+</code></pre>
+<h4 id="chaincode-invoke-via-cli-and-rest">Chaincode invoke via CLI and REST</h4>
+<p>Run the chaincode invoking transaction on the CLI as many times as desired. The <code>-n</code> argument should match the value provided in the chaincode window (started in Vagrant terminal 2):</p>
+<pre><code>peer chaincode invoke -l golang -n mycc -c '{"Function": "invoke", "Args": ["a", "b", "10"]}'
+</code></pre>
+<p>Alternatively, run the chaincode invoking transaction through the REST API.</p>
+<p><b>REST Request:</b></p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;invoke&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;mycc&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;invoke&quot;,
+         &quot;args&quot;:[&quot;a&quot;, &quot;b&quot;, &quot;10&quot;]
+      }
+  },
+  &quot;id&quot;: 3
+}
+</code></pre>
+
+<p><b>REST Response:</b></p>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;result&quot;: {
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;message&quot;: &quot;5a4540e5-902b-422d-a6ab-e70ab36a2e6d&quot;
+    },
+    &quot;id&quot;: 3
+}
+</code></pre>
+
+<p><strong>Note:</strong> When security is enabled, modify the CLI command and REST API payload to pass the <code>enrollmentID</code> of a logged in user. To log in a registered user through the CLI or the REST API, follow the instructions in the <a href="#note-on-security-functionality">note on security functionality</a>. On the CLI, the <code>enrollmentID</code> is passed with the <code>-u</code> parameter; in the REST API, the <code>enrollmentID</code> is passed with the <code>secureContext</code> element. If you are enabling security and privacy on the peer process with environment variables, it is important to include these environment variables in the command when executing all subsequent peer operations (e.g. deploy, invoke, or query).</p>
+<pre><code>  CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode invoke -u jim -l golang -n mycc -c '{"Function": "invoke", "Args": ["a", "b", "10"]}'
+</code></pre>
+<p><b> REST Request:</b></p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;invoke&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;mycc&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;invoke&quot;,
+         &quot;args&quot;:[&quot;a&quot;, &quot;b&quot;, &quot;10&quot;]
+      },
+      &quot;secureContext&quot;: &quot;jim&quot;
+  },
+  &quot;id&quot;: 3
+}
+</code></pre>
+
+<p>The invoking transaction runs the specified chaincode function name "invoke" with the arguments. This transaction transfers 10 units from A to B. You should see the following output in the chaincode window:</p>
+<pre><code>2015/11/15 15:39:11 Received RESPONSE. Payload 200, Uuid 075d72a4-4d1f-4a1d-a735-4f6f60d597a9
+Aval = 90, Bval = 210
+</code></pre>
+<h4 id="chaincode-query-via-cli-and-rest">Chaincode query via CLI and REST</h4>
+<p>Run a query on the chaincode to retrieve the desired values. The <code>-n</code> argument should match the value provided in the chaincode window (started in Vagrant terminal 2):</p>
+<pre><code>peer chaincode query -l golang -n mycc -c '{"Function": "query", "Args": ["b"]}'
+</code></pre>
+<p>The response should be similar to the following:</p>
+<pre><code>{"Name":"b","Amount":"210"}
+</code></pre>
+<p>If a name other than "a" or "b" is provided in a query sent to <code>chaincode_example02</code>, you should see an error response similar to the following:</p>
+<pre><code>{"Error":"Nil amount for c"}
+</code></pre>
+<p>Alternatively, run the chaincode query transaction through the REST API.</p>
+<p><b> REST Request:</b></p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;query&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;mycc&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;query&quot;,
+         &quot;args&quot;:[&quot;a&quot;]
+      }
+  },
+  &quot;id&quot;: 5
+}
+</code></pre>
+
+<p><b>REST Response:</b></p>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;result&quot;: {
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;message&quot;: &quot;90&quot;
+    },
+    &quot;id&quot;: 5
+}
+</code></pre>
+
+<p><strong>Note:</strong> When security is enabled, modify the CLI command and REST API payload to pass the <code>enrollmentID</code> of a logged in user. To log in a registered user through the CLI or the REST API, follow the instructions in the <a href="#note-on-security-functionality">note on security functionality</a>. On the CLI, the <code>enrollmentID</code> is passed with the <code>-u</code> parameter; in the REST API, the <code>enrollmentID</code> is passed with the <code>secureContext</code> element. If you are enabling security and privacy on the peer process with environment variables, it is important to include these environment variables in the command when executing all subsequent peer operations (e.g. deploy, invoke, or query).</p>
+<pre><code>  CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode query -u jim -l golang -n mycc -c '{"Function": "query", "Args": ["b"]}'
+</code></pre>
+<p><b>REST Request:</b></p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;query&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;mycc&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;query&quot;,
+         &quot;args&quot;:[&quot;a&quot;]
+      },
+      &quot;secureContext&quot;: &quot;jim&quot;
+  },
+  &quot;id&quot;: 5
+}
+</code></pre>
+
+<h4 id="removing-temporary-files-when-security-is-enabled">Removing temporary files when security is enabled</h4>
+<p>After the completion of a chaincode test with security enabled, remove the temporary files that were created by the CA server process. To remove the client enrollment certificate, enrollment key, transaction certificate chain, etc., run the following commands. Note, that you must run these commands if you want to register a user who has already been registered previously.</p>
+<p>From your command line terminal, move to the <code>devenv</code> subdirectory of your workspace environment. Log into a Vagrant terminal by executing the following command:</p>
+<pre><code>vagrant ssh
+</code></pre>
+<p>And then run:</p>
+<pre><code>rm -rf /var/hyperledger/production
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../FAQ/chaincode_FAQ/" class="btn btn-neutral float-right" title="ChaincodeFAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../MemberServicesAPI/" class="btn btn-neutral" title="MemberServicesAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../MemberServicesAPI/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../FAQ/chaincode_FAQ/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

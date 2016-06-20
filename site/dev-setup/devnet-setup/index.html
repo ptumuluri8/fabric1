@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="rameshthoomu">
+  
+  <title>Devnet setup - ChainCode</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Devnet setup";
+    var mkdocs_page_input_path = "dev-setup/devnet-setup.md";
+    var mkdocs_page_url = "/dev-setup/devnet-setup/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ChainCode</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">HOME</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">CONTRIBUTING</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../README/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../TravisCI_Readme/">TravisCI Readme</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">CoreAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">MemberServicesAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/SandboxSetup/">SandboxSetup</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChaincodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity managementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Biz</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecase</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Dev setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ca-setup/">Ca setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../devenv/">Devenv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Devnet setup</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#setting-up-a-network-for-development">Setting Up a Network For Development</a></li>
+                
+                    <li><a class="toctree-l4" href="#setting-up-docker-image">Setting up Docker image</a></li>
+                
+                    <li><a class="toctree-l4" href="#starting-up-validating-peers">Starting up validating peers</a></li>
+                
+                    <li><a class="toctree-l4" href="#enrolllogin-a-test-user-if-security-is-enabled">Enroll/Login a test user (if security is enabled):</a></li>
+                
+                    <li><a class="toctree-l4" href="#deploy-invoke-and-query-a-chaincode">Deploy, Invoke, and Query a Chaincode</a></li>
+                
+                    <li><a class="toctree-l4" href="#using-consensus-plugin">Using Consensus Plugin</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Install</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../logging-control/">Logging control</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ChainCode</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Dev setup &raquo;</li>
+        
+      
+    
+    <li>Devnet setup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="setting-up-a-network-for-development">Setting Up a Network For Development</h2>
+<p>This document covers setting up a network on your local machine for development using Docker containers.</p>
+<p>All commands should be run from within the Vagrant environment described in <a href="../devenv/">Setting Up Development Environment</a>.
+See <a href="../logging-control/">Logging Control</a> for information on controlling
+logging output from the <code>peer</code> and chaincodes.</p>
+<p><strong>Note:</strong> When running with security enabled, follow the security setup instructions described in <a href="../../API/SandboxSetup/#security-setup-optional">Chaincode Development</a> to set up the CA server and log in registered users before sending chaincode transactions. In this case peers started using Docker images need to point to the correct CA address (default is localhost). CA addresses have to be specified in <code>peer/core.yaml</code> variables paddr of eca, tca and tlsca. Furthermore, if you are enabling security and privacy on the peer process with environment variables, it is important to include these environment variables in the command when executing all subsequent peer operations (e.g. deploy, invoke, or query).</p>
+<h3 id="setting-up-docker-image">Setting up Docker image</h3>
+<p>To create a Docker image for the <code>hyperledger/fabric</code>, first clean out any active containers (hyperledger/fabric-peer and chaincode) using <code>docker ps -a</code> and <code>docker rm</code> commands. Second, remove any old images with <code>docker images</code> and <code>docker rmi</code> commands. <strong>Careful:</strong> Do not remove any other images (like busybox or hyperledger/fabric-baseimage) as they are needed for a correct execution.</p>
+<p>Now we are ready to build a new docker image:</p>
+<pre><code>    cd $GOPATH/src/github.com/hyperledger/fabric
+    make peer-image
+</code></pre>
+
+<p>Check the available images again with <code>docker images</code>, and you should see <code>hyperledger/fabric-peer</code> image.</p>
+<h3 id="starting-up-validating-peers">Starting up validating peers</h3>
+<p>From the Vagrant environment, find out which IP address your docker0 interface is on with <code>ip add</code> command. For example,</p>
+<pre><code>vagrant@vagrant-ubuntu-trusty-64:/opt/gopath/src/github.com/hyperledger/fabric$ ip add
+
+&lt;&lt;&lt; detail removed &gt;&gt;&gt;
+
+3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 02:42:ad:be:70:cb brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:adff:febe:70cb/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre>
+
+<p>Your output might contain something like <code>inet 172.17.0.1/16 scope global docker0</code>. That means docker0 interface is on IP address 172.17.0.1. Use that IP address for the <code>CORE_VM_ENDPOINT</code> option. For more information on the environment variables, see <code>core.yaml</code> configuration file in the <code>fabric</code> repository.</p>
+<p>The ID value of <code>CORE_PEER_ID</code> must be lowercase since we use the ID as part of chaincode containers we build, and docker does not accept uppercase. The ID must also be unique for each validating peer.</p>
+<p>By default, we are using a consensus plugin called <code>NOOPS</code>, which doesn't really do consensus. If you want to use some other consensus plugin, see Using Consensus Plugin section at the end of the document.</p>
+<h4 id="start-up-the-first-validating-peer">Start up the first validating peer:</h4>
+<pre><code>docker run --rm -it -e CORE_VM_ENDPOINT=http://172.17.0.1:2375 -e CORE_PEER_ID=vp0 -e CORE_PEER_ADDRESSAUTODETECT=true hyperledger/fabric-peer peer node start
+</code></pre>
+
+<p>If starting the peer with security/privacy enabled, environment variables for security, CA address and peer's ID and password must be included:</p>
+<pre><code>docker run --rm -it -e CORE_VM_ENDPOINT=http://172.17.0.1:2375 -e CORE_PEER_ID=vp0 -e CORE_PEER_ADDRESSAUTODETECT=true -e CORE_SECURITY_ENABLED=true -e CORE_SECURITY_PRIVACY=true -e CORE_PEER_PKI_ECA_PADDR=172.17.0.1:50051 -e CORE_PEER_PKI_TCA_PADDR=172.17.0.1:50051 -e CORE_PEER_PKI_TLSCA_PADDR=172.17.0.1:50051 -e CORE_SECURITY_ENROLLID=vp0 -e CORE_SECURITY_ENROLLSECRET=vp0_secret  hyperledger/fabric-peer peer node start
+</code></pre>
+
+<p>Additionally, the validating peer <code>enrollID</code> and <code>enrollSecret</code> (<code>vp0</code> and <code>vp0_secret</code>) has to be added to <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a>.</p>
+<h4 id="start-up-the-second-validating-peer">Start up the second validating peer:</h4>
+<p>We need to get the IP address of the first validating peer, which will act as the root node that the new peer will connect to. The address is printed out on the terminal window of the first peer (e.g. 172.17.0.2) and should be passed in with the <code>CORE_PEER_DISCOVERY_ROOTNODE</code> environment variable. We'll use <code>vp1</code> as the ID for the second validating peer.</p>
+<pre><code>docker run --rm -it -e CORE_VM_ENDPOINT=http://172.17.0.1:2375 -e CORE_PEER_ID=vp1 -e CORE_PEER_ADDRESSAUTODETECT=true -e CORE_SECURITY_ENABLED=true -e CORE_SECURITY_PRIVACY=true -e CORE_PEER_PKI_ECA_PADDR=172.17.0.1:50051 -e CORE_PEER_PKI_TCA_PADDR=172.17.0.1:50051 -e CORE_PEER_PKI_TLSCA_PADDR=172.17.0.1:50051 -e CORE_SECURITY_ENROLLID=vp1 -e CORE_SECURITY_ENROLLSECRET=vp1_secret -e CORE_PEER_DISCOVERY_ROOTNODE=172.17.0.2:30303 hyperledger/fabric-peer peer node start
+</code></pre>
+
+<p>Again, the validating peer <code>enrollID</code> and <code>enrollSecret</code> (<code>vp1</code> and <code>vp1_secret</code>) has to be added to <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a>.</p>
+<p>You can start up a few more validating peers in a similar manner if you wish. Remember to change the peer ID and add the enrollID/enrollSecret to the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a>.</p>
+<h3 id="enrolllogin-a-test-user-if-security-is-enabled">Enroll/Login a test user (if security is enabled):</h3>
+<p>If security is enabled, you must enroll a user with the certificate authority before sending requests. Choose a user that is already registered, i.e. added to the <a href="https://github.com/hyperledger/fabric/blob/master/membersrvc/membersrvc.yaml">membersrvc.yaml</a>. Then, execute the command below to log in the user on the target validating peer. <code>CORE_PEER_ADDRESS</code> specifies the target validating peer for which the user is to be logged in.</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 peer network login jim
+</code></pre>
+
+<p><strong>Note:</strong> The certificate authority allows the enrollID and enrollSecret credentials to be used only <em>once</em>. Therefore, login by the same user from any other validating peer will result in an error. Currently, the application layer is responsible for duplicating the crypto material returned from the CA to other peer nodes. If you want to test secure transactions from more than one peer node without replicating the returned key and certificate, you can log in with a different user on other peer nodes.</p>
+<h3 id="deploy-invoke-and-query-a-chaincode">Deploy, Invoke, and Query a Chaincode</h3>
+<p><strong>Note:</strong> When security is enabled, modify the CLI commands to deploy, invoke, or query a chaincode to pass the username of a logged in user. To log in a registered user through the CLI, execute the login command from the section above. On the CLI the username is passed with the -u parameter.</p>
+<p>We can use the sample chaincode to test the network. You may find the chaincode here <code>$GOPATH/src/github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02</code>.</p>
+<p>Deploy the chaincode to the network. We can deploy to any validating peer by specifying <code>CORE_PEER_ADDRESS</code>:</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 peer chaincode deploy -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{&quot;Function&quot;:&quot;init&quot;, &quot;Args&quot;: [&quot;a&quot;,&quot;100&quot;, &quot;b&quot;, &quot;200&quot;]}'
+</code></pre>
+
+<p>With security enabled, modify the command as follows:</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode deploy -u jim -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{&quot;Function&quot;:&quot;init&quot;, &quot;Args&quot;: [&quot;a&quot;,&quot;100&quot;, &quot;b&quot;, &quot;200&quot;]}'
+</code></pre>
+
+<p>You can watch for the message "Received build request for chaincode spec" on the output screen of all validating peers.</p>
+<p><strong>Note:</strong> If your GOPATH environment variable contains more than one element, the chaincode must be found in the first one or deployment will fail.</p>
+<p>On successful completion, the above command will print the "name" assigned to the deployed chaincode. This "name" is used as the value of the "-n" parameter in invoke and query commands described below. For example the value of "name" could be</p>
+<pre><code>bb540edfc1ee2ac0f5e2ec6000677f4cd1c6728046d5e32dede7fea11a42f86a6943b76a8f9154f4792032551ed320871ff7b7076047e4184292e01e3421889c
+</code></pre>
+<p>In a script the name can be captured for subsequent use. For example, run</p>
+<pre><code>NAME=`CORE_PEER_ADDRESS=172.17.0.2:30303 CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode deploy ...`
+</code></pre>
+<p>and then replace <code>&lt;name_value_returned_from_deploy_command&gt;</code> in the examples below with <code>$NAME</code>.</p>
+<p>We can run an invoke transaction to move 10 units from the value of <code>a</code> to the value of <code>b</code>:</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 peer chaincode invoke -n &lt;name_value_returned_from_deploy_command&gt; -c '{&quot;Function&quot;: &quot;invoke&quot;, &quot;Args&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;10&quot;]}'
+</code></pre>
+
+<p>With security enabled, modify the command as follows:</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode invoke -u jim -n &lt;name_value_returned_from_deploy_command&gt; -c '{&quot;Function&quot;: &quot;invoke&quot;, &quot;Args&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;10&quot;]}'
+</code></pre>
+
+<p>We can also run a query to see the current value <code>a</code> has:</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 peer chaincode query -l golang -n &lt;name_value_returned_from_deploy_command&gt; -c '{&quot;Function&quot;: &quot;query&quot;, &quot;Args&quot;: [&quot;a&quot;]}'
+</code></pre>
+
+<p>With security enabled, modify the command as follows:</p>
+<pre><code>CORE_PEER_ADDRESS=172.17.0.2:30303 CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer chaincode query -u jim -l golang -n &lt;name_value_returned_from_deploy_command&gt; -c '{&quot;Function&quot;: &quot;query&quot;, &quot;Args&quot;: [&quot;a&quot;]}'
+</code></pre>
+
+<h3 id="using-consensus-plugin">Using Consensus Plugin</h3>
+<p>A consensus plugin might require some specific configuration that you need to set up. For example, to use Byzantine consensus plugin provided as part of the fabric, perform the following configuration:</p>
+<ol>
+<li>In <code>core.yaml</code>, set the <code>peer.validator.consensus</code> value to <code>pbft</code></li>
+<li>In <code>core.yaml</code>, make sure the <code>peer.id</code> is set sequentially as <code>vpX</code> where <code>X</code> is an integer that starts from <code>0</code> and goes to <code>N-1</code>. For example, with 4 validating peers, set the <code>peer.id</code> to<code>vp0</code>, <code>vp1</code>, <code>vp2</code>, <code>vp3</code>.</li>
+<li>In <code>consensus/obcpbft/config.yaml</code>, set the <code>general.mode</code> value to either <code>classic</code>, <code>batch</code>, or <code>sieve</code>, and the <code>general.N</code> value to the number of validating peers on the network (if you do <code>batch</code>, also set <code>general.batchsize</code> to the number of transactions per batch)</li>
+<li>In <code>consensus/obcpbft/config.yaml</code>, optionally set timer values for the batch period (<code>general.timeout.batch</code>), the acceptable delay between request and execution (<code>general.timeout.request</code>), and for view-change (<code>general.timeout.viewchange</code>)</li>
+</ol>
+<p>See <code>core.yaml</code> and <code>consensus/obcpbft/config.yaml</code> for more detail.</p>
+<p>All of these setting may be overriden via the command line environment variables, eg. <code>CORE_PEER_VALIDATOR_CONSENSUS_PLUGIN=pbft</code> or <code>CORE_PBFT_GENERAL_MODE=sieve</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../install/" class="btn btn-neutral float-right" title="Install">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../devenv/" class="btn btn-neutral" title="Devenv"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../devenv/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../install/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

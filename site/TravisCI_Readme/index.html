@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="rameshthoomu">
+  
+  <title>TravisCI Readme - ChainCode</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "TravisCI Readme";
+    var mkdocs_page_input_path = "TravisCI_Readme.md";
+    var mkdocs_page_url = "/TravisCI_Readme/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ChainCode</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">HOME</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../CONTRIBUTING/">CONTRIBUTING</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../README/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">TravisCI Readme</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#continuous-integration-process">Continuous Integration Process:</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#setting-up-continuous-integration-process">Setting up Continuous Integration Process:</a></li>
+                
+                    <li><a class="toctree-l4" href="#perform-travis-ci-integration-in-github">Perform Travis CI integration in GitHub:</a></li>
+                
+                    <li><a class="toctree-l4" href="#sync-and-enable-fabric-repository-in-travis">Sync and Enable fabric repository in Travis:</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../protocol-spec/">Protocol spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/CoreAPI/">CoreAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MemberServicesAPI/">MemberServicesAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/SandboxSetup/">SandboxSetup</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/chaincode_FAQ/">ChaincodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/identity_management_FAQ/">Identity managementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Biz</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../biz/usecases/">Usecase</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Dev setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/ca-setup/">Ca setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/devenv/">Devenv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/devnet-setup/">Devnet setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/install/">Install</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/logging-control/">Logging control</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/best-practices/">Best practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ChainCode</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>TravisCI Readme</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="continuous-integration-process">Continuous Integration Process:</h2>
+<p>Continuous Integration is a development practice that requires developers to integrate code into a shared repository. Each time developer checks in code into the repository, it is then verified by an automated build process. This process gives flexibility for the developer to detect any build issues early in the build life cycle.</p>
+<p><strong>hyperledger</strong> build process is fully automated using <strong>Travis CI</strong> Continuous Integration tool, which helps in building a real time solution for all the code check-ins, perform Unit and Functional Tests. Once the build execution completes, developer will get build result notifications on slack, GitHub and email (Depending on configuration settings provided in .travis.yml file)</p>
+<p><strong>Master Repository</strong> can be found at [<strong>hyperledger</strong>] (https://github.com/hyperledger/fabric.git).</p>
+<h2 id="setting-up-continuous-integration-process">Setting up Continuous Integration Process:</h2>
+<ul>
+<li>Login to [GitHub] (https://github.com) --&gt; Fork and clone the  <a href="https://github.com/hyperledger/fabric.git"><strong>hyperledger</strong></a> project into your <em>GitHub</em> account, if you weren't already. If you have a forked repository in your GitHub account, please pull <strong>hyperledger/fabric master repository</strong>. So that, updated .travis.yml (<code>Configuration file for Travis CI</code>) file will be copied into your repository.</li>
+</ul>
+<h6 id="perform-travis-ci-integration-in-github">Perform <strong>Travis CI</strong> integration in <strong>GitHub</strong>:</h6>
+<ul>
+<li>
+<p>Click on <strong>Settings</strong> tab in forked <strong>fabric</strong> GitHub repository and click on <strong>Webhooks &amp; Services</strong> option. Click on <strong>Add Service</strong> and click on <strong>Travis CI</strong> link in services panel. Provide below details</p>
+</li>
+<li>
+<p>User (GitHub User Name)</p>
+</li>
+<li>Token (Generate token from profile - settings - Personal access token - click on Generate New Token) - Check on "public_repo" scope and click on generate token button. Copy and paste it in Token field</li>
+<li>
+<p>Domain (Enter "notify.travis-ci.org")</p>
+</li>
+<li>
+<p>Click on Add Service button</p>
+</li>
+</ul>
+<p>This will enable integration between Travis CI and GitHub for the selected repository. After successful integration, <strong>Travis CI</strong> service will appear in Services menu.</p>
+<p><img alt="Webhook_Travis" src="../images/Travis_service.png" /></p>
+<h6 id="sync-and-enable-fabric-repository-in-travis">Sync and Enable fabric repository in Travis:</h6>
+<ul>
+<li>
+<p>Browse <a href="http://travis-ci.org">Travis CI</a> and click on <strong>Sign in with GitHub</strong> button and provide GitHub credentials.</p>
+</li>
+<li>
+<p>http://travis-ci.org - for Public Repositories. http://travis-ci.com - for Private repositories.</p>
+</li>
+<li>
+<p>After login to Travis CI --&gt; Click on <em>Accounts</em> link under Username (Available at the top of right corner) and click on <strong>Sync account</strong> button. This will sync and display all the repositories available for the logged in user. As a next step user has to flick ON for the required repositories. After successful flick, refresh the Travis home page and you see all the selected repositories available in <em>My Repositories</em> section in Travis home page. </p>
+</li>
+<li>
+<p>In more options menu, click on <strong>Settings</strong> and enable general settings (<strong>Build only if .travis.yml is present</strong> ,  <strong>Build Pushes</strong> ,  <strong>Limit Current jobs</strong>  , <strong>Build pull requests</strong>) for the selected repository. </p>
+</li>
+</ul>
+<p><img alt="Settings" src="../images/Travis_Settings.png" /> </p>
+<ul>
+<li>Disable <strong>Build Pull Requests</strong> option if you don't want to trigger automation build deployment for any <code>Pull Requests</code>.</li>
+</ul>
+<p><strong>Add Build status markdown link in Readme.md file</strong></p>
+<ul>
+<li>Copy markdown link from Travis CI home page and place it in Readme.md file of your working branch. Follow <a href="https://docs.travis-ci.com/user/status-images">Embedding Status Images</a> that helps you to setup the build status in Readme.md file.</li>
+</ul>
+<p>Note: Please make sure <strong>.travis.yml</strong> , <strong>foldercopy.sh</strong> and <strong>containerlogs.sh</strong> are present with below modifications in the master branch or the working branch in GitHub before performing any <code>git push</code> operations.</p>
+<ul>
+<li>Change notifications section as per user preferences:</li>
+</ul>
+<p>Follow <a href="https://docs.travis-ci.com/user/notifications">Travis Notification Settings</a> to setup notifications in .travis.yml file.</p>
+<p>Repository Owner has to provide slack token. Please get in touch with him/her for your Slack Token.</p>
+<pre><code>notifications:
+slack:&lt;Slack account name&gt;:&lt;User Slack Token&gt; ex: slack:openchain:&lt;user slack token&gt;
+ on_success: always
+ on_failure: always
+ email:
+    recipients:
+      - one@example.com
+      - other@example.com
+    on_success: [always|never|change] # default: change
+    on_failure: [always|never|change] # default: always
+  ```
+
+Now you have completed with Travis CI setup process. If you make any changes in your code and push code to remote repository, Travis CI automatically starts the build process and shows you the build results on your notification settings (Slack, email and on GitHub Readme.md).
+
+![Build Results](images/BuildStatus.png)
+
+**Build Process includes below steps:**
+
+1. git clone on updated git repository into Travis cloud environment from GitHub.
+2. Install all dependency software's and libraries
+3. Perform go build
+4. Start Peer process
+5. Perform unit tests (go tests)
+6. Perform Behave test suite (behave tests)
+7. Provides failed container log files in travis raw log file.
+8. Update slack channel (#fabric-ci-status) with build results.
+
+## More Information/Troubleshooting:
+
+- Developer can skip the Travis CI build process by providing ` [ci skip] ` in the git commit message.
+</code></pre>
+
+<p>git commit -m "Ignore build process [ci skip]"</p>
+<p>```
+- How to skip Travis Build execution for PR's:?</p>
+<ul>
+<li>Travis CI checks latest commit of PR and if the commit message is tagged with [ci skip], Travis CI ignores build process.</li>
+<li>This will be useful, when you want to open a pull request early for review but you are not necessarily ready to run the tests right away. Also, you can skip Travis build process for document changes.</li>
+<li>
+<p>Right now, Travis only supports above method to skip build process.</p>
+</li>
+<li>
+<p>What is the slack channel to view build results?</p>
+</li>
+<li>
+<p>We are sending build notifications to hyperledger <code>#fabric-ci-status</code> slack channel. (User must join in #fabric-ci-status slack channel to receive build notifications)</p>
+</li>
+<li>
+<p>What is build status <code>errored</code> mean?</p>
+</li>
+<li>
+<p>When "go build" and "Unit tests" fails, Travis stops the build process and exits and mark the build status as <code>errored</code>. When unit tests fail, Travis CI will not execute behave test scripts. <code>Failed</code>: If Behave test cases fail, Travis continues executing remaining test cases and exits with build status as <code>failed</code>.</p>
+</li>
+<li>
+<p>How to restart build without committing any changes to remote GitHub?</p>
+</li>
+<li>
+<p>Apply <code>git commit --allow-empty -m "Empty commit"</code> and do a git push or click on <code>Restart Job</code> (only users with push access to repository can do this) button on Travis CI home page.</p>
+</li>
+<li>
+<p>Where can I find Build log files?</p>
+</li>
+<li>
+<p>Click on <code>RAW log</code> link on Travis CI home page.</p>
+</li>
+<li>
+<p>Where can I find Behave Container log files?</p>
+</li>
+<li>Click on each container log file link displays bottom of the RAW log file.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../glossary/" class="btn btn-neutral float-right" title="Glossary">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../README/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/rameshthoomu/fabric" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../README/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../glossary/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
