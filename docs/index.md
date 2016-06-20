@@ -2,3 +2,4 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/hyperledger/fabric)](https://goreportcard.com/report/github.com/hyperledger/fabric)
 [![GoDoc](https://godoc.org/github.com/hyperledger/fabric?status.svg)](https://godoc.org/github.com/hyperledger/fabric)
 [![Documentation Status](https://readthedocs.org/projects/chaincode-docs/badge/?version=latest)](http://chaincode-docs.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/chaincode-docs/badge/?version=stable)](http://chaincode-docs.readthedocs.io/en/stable/?badge=stable)
