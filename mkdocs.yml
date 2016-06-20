@@ -1,0 +1,57 @@
+site_name: ChainCode
+site_url: http://chaincode-docs.readthedocs.io
+theme: readthedocs
+repo_url: https://github.com/rameshthoomu/fabric
+site_description: 'Testing Chaincode'
+site_author: 'rameshthoomu'
+#site_favicon: rams-favicon.ico
+extra_css: 
+- extra.css
+extra_javascript:
+- extra.js
+#site_favicon: images/favicon.ico
+markdown_extensions:
+# Convert ASCII dashes, quotes to HTML entity
+- smarty
+
+pages:
+- HOME: index.md
+- CONTRIBUTING: CONTRIBUTING.md
+- Getting started: README.md
+- TravisCI Readme: TravisCI_Readme.md
+- Glossary: glossary.md
+- Protocol spec: protocol-spec.md
+- API:
+  - Chaincode APIs: API/ChaincodeAPI.md
+  - CoreAPI: API/CoreAPI.md
+  - MemberServicesAPI: API/MemberServicesAPI.md 
+  - SandboxSetup: API/SandboxSetup.md
+- FAQ:
+  - ChaincodeFAQ: FAQ/chaincode_FAQ.md
+  - ConfidentialityFAQ: FAQ/confidentiality_FAQ.md
+  - ConsensusFAQ: FAQ/consensus_FAQ.md
+  - Identity managementFAQ: FAQ/identity_management_FAQ.md
+  - UsageFAQ: FAQ/usage_FAQ.md
+- Biz:
+  - Usecase: biz/usecases.md
+- Dev setup:
+  - Ca setup: dev-setup/ca-setup.md
+  - Devenv: dev-setup/devenv.md
+  - Devnet setup: dev-setup/devnet-setup.md
+  - Install: dev-setup/install.md
+  - Logging control: dev-setup/logging-control.md
+- Tech:
+  - Application ACL: tech/application-ACL.md
+  - Attributes: tech/attributes.md
+  - Best practices: tech/best-practices.md
+markdown_extensions:
+  - extra
+  - tables
+  - toc
+  - fenced_code
+#  - mdx_math:
+#      enable_dollar_delimiter: True #for use of inline $..$  
+  - footnotes
+
+copyright: Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.
+
