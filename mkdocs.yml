@@ -1,4 +1,4 @@
-site_name: BlockChain
+site_name: hyperledger-fabric
 site_url: http://fabric-testing.readthedocs.io
 theme: readthedocs
 repo_url: https://github.com/rameshthoomu/fabric
