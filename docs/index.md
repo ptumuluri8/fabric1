@@ -1,5 +1,6 @@
-Builds & Tests
---------------
+
+Welcome to the Hyperledger fabric documentation. This is Linux Foundation documentation, which is sourced on GitHub. To contribute to this documentation, simply update the GitHub source files in https://github.com/hyperledger/fabric/tree/master/docs
+
 
 **Hyperledger-fabric Build & Test Status @ Travis Continuous Integration (CI) service**
 
@@ -17,4 +18,4 @@ Builds & Tests
 
 [![Documentation Status](https://readthedocs.org/projects/chaincode-docs/badge/?version=latest)](http://chaincode-docs.readthedocs.io/en/latest/?badge=latest)
 
-Welcome to the Hyperledger fabric documentation. This is Linux Foundation documentation, which is sourced on GitHub. To contribute to this documentation, simply update the GitHub source files in https://github.com/hyperledger/fabric/tree/master/docs
+
