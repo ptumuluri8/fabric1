@@ -1,5 +1,5 @@
-site_name: ChainCode
-site_url: http://fabric.testing.io
+site_name: BlockChain
+site_url: http://fabric-testing.readthedocs.io
 theme: readthedocs
 repo_url: https://github.com/rameshthoomu/fabric
 site_description: 'Testing Chaincode'
