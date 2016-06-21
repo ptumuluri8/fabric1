@@ -7,6 +7,7 @@ Welcome to the Linux Foundation Hyperledger Project documentation README. This p
 - Table of Contents links to the complete library
 
 If you are new to the project, you can begin by reviewing the following documents:
+
 - [Whitepaper WG](https://github.com/hyperledger/hyperledger/wiki/Whitepaper-WG)
 - [Requirements WG](https://github.com/hyperledger/hyperledger/wiki/Requirements-WG)
 - [Glossary](glossary.md): to understand the terminology that we use throughout the website and project.
@@ -15,6 +16,7 @@ When you are ready to start building applications or to otherwise contribute to 
 
 ## Quickstart documentation
 In addition to the <b>Getting started</b> documentation, the following quickstart topics are available:
+
 - [Fabric FAQs](FAQ)
 - [Canonical use cases](biz/usecases.md)
 - [Development environment set-up](dev-setup/devenv.md)
