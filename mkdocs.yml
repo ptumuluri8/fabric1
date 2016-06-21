@@ -2,7 +2,7 @@ site_name: BlockChain
 site_url: http://fabric-testing.readthedocs.io
 theme: readthedocs
 repo_url: https://github.com/rameshthoomu/fabric
-site_description: 'Welcome to the Hyperledger fabric documentation'.
+site_description: 'Welcome to the Hyperledger fabric documentation'
 site_author: 'rameshthoomu'
 
 markdown_extensions:
@@ -53,4 +53,4 @@ markdown_extensions:
       enable_dollar_delimiter: True #for use of inline $..$  
   - footnotes
 
-copyright: Copyright &copy; 2016 <a href="https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/headers.txt">IBM Corp. 2016 </a>
+copyright: Copyright &copy; 2016 <a href="https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/headers.txt">IBM Corp.</a>
