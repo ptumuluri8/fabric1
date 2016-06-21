@@ -1,4 +1,3 @@
-
 # Hyperledger Fabric
 
 Welcome to the Hyperledger fabric documentation. This is Linux Foundation documentation, which is sourced on GitHub. To contribute to this documentation, simply update the GitHub source files in https://github.com/hyperledger/fabric/tree/master/docs
@@ -19,5 +18,3 @@ Welcome to the Hyperledger fabric documentation. This is Linux Foundation docume
 **Hyperledger Fabric Documenation**
 
 [![Documentation Status](https://readthedocs.org/projects/chaincode-docs/badge/?version=latest)](http://chaincode-docs.readthedocs.io/en/latest/?badge=latest)
-
-
