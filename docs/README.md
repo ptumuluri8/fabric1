@@ -2,11 +2,12 @@
 ## Getting started
 
 Welcome to the Linux Foundation Hyperledger Project documentation README. This page contains: 
+
 - Getting started doc links 
 - Quickstart doc links
 - Table of Contents links to the complete library
 
-If you are new to the project, you can begin by reviewing the following documents:
+If you are new to the project, you can begin by reviewing the following documents:                            
 
 - [Whitepaper WG](https://github.com/hyperledger/hyperledger/wiki/Whitepaper-WG)
 - [Requirements WG](https://github.com/hyperledger/hyperledger/wiki/Requirements-WG)
