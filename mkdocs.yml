@@ -1,5 +1,5 @@
 site_name: ChainCode
-site_url: http://chaincode-docs.readthedocs.io
+site_url: http://fabric.testing.io
 theme: readthedocs
 repo_url: https://github.com/rameshthoomu/fabric
 site_description: 'Testing Chaincode'
@@ -15,29 +15,34 @@ pages:
 - TravisCI Readme: TravisCI_Readme.md
 - Glossary: glossary.md
 - Protocol spec: protocol-spec.md
+
 - API:
-  - Chaincode APIs: API/ChaincodeAPI.md
+  - ChainCode APIs: API/ChaincodeAPI.md
   - CoreAPI: API/CoreAPI.md
   - MemberServicesAPI: API/MemberServicesAPI.md 
   - SandboxSetup: API/SandboxSetup.md
+
 - FAQ:
-  - ChaincodeFAQ: FAQ/chaincode_FAQ.md
+  - ChainCodeFAQ: FAQ/chaincode_FAQ.md
   - ConfidentialityFAQ: FAQ/confidentiality_FAQ.md
   - ConsensusFAQ: FAQ/consensus_FAQ.md
-  - Identity managementFAQ: FAQ/identity_management_FAQ.md
+  - Identity ManagementFAQ: FAQ/identity_management_FAQ.md
   - UsageFAQ: FAQ/usage_FAQ.md
+
 - Biz:
   - Usecase: biz/usecases.md
+
 - Dev setup:
-  - Ca setup: dev-setup/ca-setup.md
+  - CA Setup: dev-setup/ca-setup.md
   - Devenv: dev-setup/devenv.md
   - Devnet setup: dev-setup/devnet-setup.md
   - Install: dev-setup/install.md
-  - Logging control: dev-setup/logging-control.md
+  - Logging Control: dev-setup/logging-control.md
+
 - Tech:
   - Application ACL: tech/application-ACL.md
   - Attributes: tech/attributes.md
-  - Best practices: tech/best-practices.md
+  - Best Practices: tech/best-practices.md
 
 markdown_extensions:
   - extra
@@ -48,5 +53,4 @@ markdown_extensions:
       enable_dollar_delimiter: True #for use of inline $..$  
   - footnotes
 
-copyright: Copyright &copy; 2016 <a href="https://github.com/rameshthoomu/fabric.git">Fabric ChainCode</a>, <a href="http://chaincode-docs.readthedocs.io/en/latest/README/">README</a>.
-
+copyright: Copyright &copy; 2016 <a href="http://www.linuxfoundation.org/terms">Linux Foundation</a>
