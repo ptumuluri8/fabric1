@@ -11,10 +11,10 @@ markdown_extensions:
 
 pages:
 - HOME: index.md
-- Getting started: README.md
+- Getting Started: README.md
 - TravisCI Readme: TravisCI_Readme.md
 - Glossary: glossary.md
-- Protocol spec: protocol-spec.md
+- Protocol Spec: protocol-spec.md
 
 - API:
   - ChainCode APIs: API/ChaincodeAPI.md
@@ -35,7 +35,7 @@ pages:
 - Dev setup:
   - CA Setup: dev-setup/ca-setup.md
   - Devenv: dev-setup/devenv.md
-  - Devnet setup: dev-setup/devnet-setup.md
+  - Devnet Setup: dev-setup/devnet-setup.md
   - Install: dev-setup/install.md
   - Logging Control: dev-setup/logging-control.md
 
