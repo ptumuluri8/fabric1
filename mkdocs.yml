@@ -2,7 +2,7 @@ site_name: BlockChain
 site_url: http://fabric-testing.readthedocs.io
 theme: readthedocs
 repo_url: https://github.com/rameshthoomu/fabric
-site_description: 'Testing Chaincode'
+site_description: 'Welcome to the Hyperledger fabric documentation'.
 site_author: 'rameshthoomu'
 
 markdown_extensions:
