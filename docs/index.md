@@ -10,7 +10,7 @@ Welcome to the Hyperledger Fabric documentation. This is Linux Foundation docume
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/hyperledger/fabric)](https://goreportcard.com/report/github.com/hyperledger/fabric)
 
-**Go Doc reference of Hypereldger Fabric**
+**Go Doc reference of Hyperledger Fabric**
 
 [![GoDoc](https://godoc.org/github.com/hyperledger/fabric?status.svg)](https://godoc.org/github.com/hyperledger/fabric)
 
