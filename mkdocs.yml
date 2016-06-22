@@ -53,4 +53,4 @@ markdown_extensions:
       enable_dollar_delimiter: True #for use of inline $..$  
   - footnotes
 
-copyright: Copyright &copy; 2016 <a href="https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/headers.txt"> IBM Corp. </a> Contributed to the Hyperledger Project under the Apache Software License 2.0
+copyright: Copyright &copy; 2016 <a href="https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/headers.txt"> IBM Corp. </a> <br> </br> Contributed to the Hyperledger Project under the Apache Software License 2.0
