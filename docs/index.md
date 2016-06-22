@@ -1,6 +1,6 @@
 #Hyperledger Fabric
 
-Welcome to the Hyperledger Fabric documentation. This is Linux Foundation documentation, which is sourced on GitHub. To contribute to this documentation, simply update the GitHub source files in [![https://github.com/hyperledger/fabric/tree/master/docs](https://github.com/hyperledger/fabric/tree/master/docs)](https://github.com/hyperledger/fabric/tree/master/docs) repo.
+Welcome to the Hyperledger Fabric documentation. <br><br> This Linux Foundation documentation is sourced on GitHub. To contribute to this documentation, simply update the GitHub source files in the following repo, and submit a pull request: <br><br> https://github.com/hyperledger/fabric/tree/master/docs
 
 **Hyperledger Fabric Build & Test Status @ Travis Continuous Integration (CI) service**
 
