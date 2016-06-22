@@ -1,8 +1,8 @@
-site_name: hyperledger-Fabric
+site_name: Hyperledger-Fabric
 site_url: http://fabric-testing.readthedocs.io
 theme: readthedocs
 repo_url: https://github.com/rameshthoomu/fabric
-site_description: 'Welcome to the Hyperledger fabric documentation'
+site_description: 'Welcome to the Hyperledger Fabric documentation'
 site_author: 'rameshthoomu'
 
 markdown_extensions:
