@@ -1,9 +1,8 @@
 site_name: Hyperledger Fabric
-site_url: http://fabric-testing.readthedocs.io
+site_url: http://hyperledger-fabric.readthedocs.io
 theme: readthedocs
-repo_url: https://github.com/rameshthoomu/fabric
+repo_url: https://github.com/hyperledger/fabric
 site_description: 'Welcome to the Hyperledger Fabric documentation'
-site_author: 'rameshthoomu'
 
 markdown_extensions:
 # Convert ASCII dashes, quotes to HTML entity
@@ -52,5 +51,4 @@ markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: True #for use of inline $..$  
   - footnotes
-
 copyright: Copyright &copy; 2016 <a href="https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/headers.txt"> IBM Corp. </a> <br></br>Contributed to the Hyperledger Project under the Apache Software License 2.0
