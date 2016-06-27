@@ -9,7 +9,7 @@ markdown_extensions:
 - smarty
 
 pages:
-- HOME: index.md
+- HOME: docs/index.md
 - Getting Started: README.md
 - TravisCI Readme: TravisCI_Readme.md
 - Glossary: glossary.md
