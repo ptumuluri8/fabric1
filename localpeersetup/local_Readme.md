@@ -1,6 +1,6 @@
 # Spinup Local Peer Network
 
-The purpose of this script is to spinup peers in local machine using docker. Script launches peers in docker containers and uses approved peer, membersrvc and latest hyperledger/fabric base image pulls from rameshthoomu docker hub account. Look for the commits pushed to docker hub account. (https://hub.docker.com/u/rameshthoomu)
+The purpose of this script is to spinup peers in local machine using docker. Script launches peers in docker containers and uses approved peer, membersrvc and latest hyperledger/fabric base image pulls from rameshthoomu docker hub account. Look for the commits pushed to docker hub account. (https://hub.docker.com/u/hyperledger/)
 
 Before execute local_fabric.sh script in your system, make sure your system satisfies the below requirements.
 
@@ -26,7 +26,7 @@ Before execute local_fabric.sh script in your system, make sure your system sati
 
 ###Pulling Docker Images:
 
-Fabric script automatically pulls specified commits of hyperledger/fabric-peer and hyperledger/fabric-membersrvc from Docker Hub (Please check the commit number associated to the latest tag in rameshthoomu/peer and rameshthoomu/membersrvc docker hub). [Docker Hub Account](https://hub.docker.com/u/rameshthoomu/)
+Fabric script automatically pulls specified commits of hyperledger/fabric-peer and hyperledger/fabric-membersrvc from Docker Hub (Please check the commit number associated to the latest tag in rameshthoomu/peer and rameshthoomu/membersrvc docker hub). [Docker Hub Account](https://hub.docker.com/u/hyperledger/)
 
 ###Spinup peers in local network:
 
