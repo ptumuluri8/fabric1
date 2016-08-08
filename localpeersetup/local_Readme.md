@@ -157,11 +157,11 @@ root@7efbae933829:/opt/gopath/src/github.com/hyperledger/fabric# peer chaincode 
 
 ### 1. Pull images from DockerHub
 
-First, pull latest peer and membersrvc images or pull specific commit docker images from [Docker Hub](https://hub.docker.com/u/rameshthoomu/)
+First, pull latest peer and membersrvc images or pull specific commit docker images from [Docker Hub](https://hub.docker.com/u/hyperledger/)
 
 ```
-  docker pull rameshthoomu/peer:latest
-  docker pull rameshthoomu/membersrvc:latest
+  docker pull hyperledger/fabric-peer:latest
+  docker pull hyperledger/fabric-membersrvc:latest
 ```
 
 Once the images are pulled from dockerhub, follow below process to modify configuration files of peer image.
@@ -171,7 +171,7 @@ List out all the docker images available in your system:
 `docker images`
 
 ```
-rameshthoomu/peer     3e0e80a             895b42b528a6        3 days ago          1.447 GB
+hyperledger/fabric-peer 3e0e80a             895b42b528a6        3 days ago          1.447 GB
 ```
 
 ### 2. Run Docker Image
