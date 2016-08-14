@@ -26,7 +26,7 @@ Before execute local_fabric.sh script in your system, make sure your system sati
 
 ###Pulling Docker Images:
 
-Fabric script automatically pulls specified commits of hyperledger/fabric-peer and hyperledger/fabric-membersrvc from Docker Hub (Please check the commit number associated to the latest tag in rameshthoomu/peer and rameshthoomu/membersrvc docker hub). [Docker Hub Account](https://hub.docker.com/u/hyperledger/)
+Fabric script automatically pulls specified commits of hyperledger/fabric-peer and hyperledger/fabric-membersrvc from Docker Hub (Please check the commit number associated to the latest tag in hyperledger/fabric-peer and hyperledger/fabric-membersrvc docker hub). [Docker Hub Account](https://hub.docker.com/u/hyperledger/)
 
 ###Spinup peers in local network:
 
