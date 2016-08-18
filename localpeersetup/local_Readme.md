@@ -40,7 +40,7 @@ Example:
 
   - chmod +x local_fabric.sh 
   - dos2unix ./local_fabric.sh //to make sure file is good to execute in unix environment.
-  - ./local_fabric.sh -n 4 -s -c 346f9fb -l debug -m pbft
+  - ./local_fabric.sh -n 4 -s -c master-deb72a0 -l debug -m pbft
 
 ####USAGE:
 ```
@@ -55,7 +55,7 @@ OPTIONS:
 -l   - Enable logging method
 -m   - Enable consensus mode
  Example: 
-./local_fabric.sh -n 4 -s -c 346f9fb -l debug -m pbft
+./local_fabric.sh -n 4 -s -c master-deb72a0 -l debug -m pbft
 ```
 
 ![4 peer network](peers.png)
