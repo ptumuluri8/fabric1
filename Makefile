@@ -190,8 +190,12 @@ images-clean: $(patsubst %,%-image-clean, $(IMAGES))
 
 node-sdk: sdk/node
 
-node-sdk-unit-tests: peer membersrvc
+node-sdk-unit-tests: node-ci peer membersrvc
 	cd sdk/node && $(MAKE) unit-tests
+
+node-ci:
+	@echo "Jenkins CI node setup"
+	@./scripts/nodesdk.sh
 
 .PHONY: $(SUBDIRS:=-clean)
 $(SUBDIRS:=-clean):
