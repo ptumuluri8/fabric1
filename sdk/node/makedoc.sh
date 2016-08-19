@@ -20,7 +20,7 @@
 # under the License.
 #
 # -------------------------------------------------------------
-
+#
 typedoc=$(which typedoc)
 if [[ $? -ne 0 ]]; then
     echo "Installing typedoc ..."
