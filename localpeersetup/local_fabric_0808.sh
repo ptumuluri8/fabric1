@@ -192,8 +192,8 @@ echo "Is Security and Privacy enabled $SECURITY"
 echo "--------> Pulling Base Docker Images from Docker Hub"
 
 #Pulling latest docker image from rameshthoomu/baseimage repository
-docker pull rameshthoomu/baseimage:latest
-docker tag rameshthoomu/baseimage:latest hyperledger/fabric-baseimage:latest
+docker pull rameshthoomu/baseimage:gitv0.5
+docker tag rameshthoomu/baseimage:gitv0.5 hyperledger/fabric-baseimage:latest
 docker pull rameshthoomu/peer:$COMMIT
 docker pull rameshthoomu/membersrvc:$COMMIT
 
