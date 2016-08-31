@@ -30,7 +30,13 @@ Fabric script automatically pulls specified commits of hyperledger/fabric-peer a
 
 ###Spinup peers in local network:
 
+Use below script to spinup peers on gerrit code base:
+
 curl [local_fabric.sh](https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric.sh) file into local machine and follow below instructions to run the script.
+
+Use below script to spinup peers on github code base:
+
+curl [local_fabric_0808.sh](https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric_0808.sh) file into local machine and follow below instructions to run the script.
 
 Example:
 
@@ -40,7 +46,7 @@ Example:
 
   - chmod +x local_fabric.sh 
   - dos2unix ./local_fabric.sh //to make sure file is good to execute in unix environment.
-  - ./local_fabric.sh -n 4 -s -c master-deb72a0 -l debug -m pbft
+  - ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft // commit message format is different in both gerrit and github. For github commit tags, please click [rameshthoomu Docker hub account](https://hub.docker.com/r/rameshthoomu/) and check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags.
 
 ####USAGE:
 ```
@@ -55,7 +61,7 @@ OPTIONS:
 -l   - Enable logging method
 -m   - Enable consensus mode
  Example: 
-./local_fabric.sh -n 4 -s -c master-deb72a0 -l debug -m pbft
+./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft
 ```
 
 ![4 peer network](peers.png)
