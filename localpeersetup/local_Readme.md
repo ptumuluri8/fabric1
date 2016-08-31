@@ -32,11 +32,11 @@ Fabric script automatically pulls specified commits of hyperledger/fabric-peer a
 
 Use below script to spinup peers on gerrit code base:
 
-curl [local_fabric.sh](https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric.sh) file into local machine and follow below instructions to run the script.
+curl [local_fabric.sh](https://raw.githubusercontent.com/rameshthoomu/fabric1/tools/localpeersetup/local_fabric.sh) file into local machine and follow below instructions to run the script.
 
 Use below script to spinup peers on github code base:
 
-curl [local_fabric_0808.sh](https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric_0808.sh) file into local machine and follow below instructions to run the script.
+curl [local_fabric_0808.sh](https://raw.githubusercontent.com/rameshthoomu/fabric1/tools/localpeersetup/local_fabric_0808.sh) file into local machine and follow below instructions to run the script.
 
 Example:
 
