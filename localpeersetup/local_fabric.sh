@@ -24,7 +24,7 @@
 #       -?/-h- Prints Usage
 #
 # SAMPLE :
-#       ./local_fabric.sh -n 4 -s -c 346f9fb -l debug -m pbft
+#       ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft
 # ------------------------------------------------------------------
 
 PEER_IMAGE=hyperledger/fabric-peer
@@ -149,7 +149,7 @@ done
 function usage()
 {
         echo "USAGE :  local_fabric.sh -n <number of Peers> -s <enable security and privacy> -c <commit number> -l <logging level> -m <consensus mode>"
-        echo "ex: ./local_fabric.sh -n 4 -s -c 346f9fb -l debug -m pbft "
+        echo "ex: ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft "
 }
 
 while getopts "\?hsn:c:l:m:" option; do
@@ -202,7 +202,7 @@ docker pull hyperledger/fabric-membersrvc:$COMMIT
 #curl -L https://github.com/rameshthoomu/fabric/blob/master/scripts/provision/common.sh -o common.sh
 #curl -L https://raw.githubusercontent.com/rameshthoomu/fabric/master/scripts/provision/docker.sh -o docker.sh
 #chmod +x docker.sh
-#sudo ./docker.sh 0.0.9
+#sudo ./docker.sh 0.0.10
 
 if [ "$SECURITY" == "Y" ] ; then
         echo "--------> Fetching IP address"
