@@ -30,6 +30,7 @@
 #   - images[-clean] - ensures all docker images are available[/cleaned]
 #   - peer-image[-clean] - ensures the peer-image is available[/cleaned] (for behave, etc)
 #   - membersrvc-image[-clean] - ensures the membersrvc-image is available[/cleaned] (for behave, etc)
+#   - node-sdk-image[-clean] - ensures the node sdk's image is available[/cleaned] for samples to use
 #   - protos - generate all protobuf artifacts based on .proto files
 #   - node-sdk - builds the node.js client sdk
 #   - node-sdk-unit-tests - runs the node.js client sdk unit tests
@@ -69,9 +70,9 @@ BASEIMAGE_DEPS    = $(shell git ls-files images/base scripts/provision)
 
 JAVASHIM_DEPS =  $(shell git ls-files core/chaincode/shim/java)
 PROJECT_FILES = $(shell git ls-files)
-IMAGES = base src ccenv peer membersrvc javaenv
+IMAGES = base src ccenv peer membersrvc javaenv node-sdk
 
-all: peer membersrvc checks
+all: peer membersrvc node-sdk checks
 
 checks: linter unit-test behave
 
@@ -90,8 +91,8 @@ membersrvc-image: build/image/membersrvc/.dummy
 unit-test: peer-image gotools
 	@./scripts/goUnitTests.sh $(DOCKER_TAG) "$(GO_LDFLAGS)"
 
-node-sdk: sdk/node
-
+node-sdk: sdk/node node-sdk-image
+node-sdk-image: build/image/node-sdk/.dummy
 node-sdk-unit-tests: peer membersrvc
 	cd sdk/node && $(MAKE) unit-tests
 
@@ -208,6 +209,20 @@ build/image/ccenv/.dummy: build/image/src/.dummy build/image/ccenv/bin/protoc-ge
 	docker tag $(PROJECT_NAME)-ccenv $(PROJECT_NAME)-ccenv:$(DOCKER_TAG)
 	@touch $@
 
+# Special override for node-sdk-image -- nodejs client image
+build/image/node-sdk/.dummy: membersrvc-image peer-image
+		@echo "Building node sdk image"
+		@mkdir -p $(@D)
+		@echo "$@"
+		@echo "#######################"
+		@cat images/node-sdk/Dockerfile.in \
+			| sed -e 's/_TAG_/$(DOCKER_TAG)/g' \
+			> $(@D)/Dockerfile
+		@echo "$(DOCKER_TAG)"
+		docker build -t $(PROJECT_NAME)-node-sdk $(@D)
+		docker tag $(PROJECT_NAME)-node-sdk $(PROJECT_NAME)-node-sdk:$(DOCKER_TAG)
+		@touch $@
+
 # Special override for java-image
 # Following items are packed and sent to docker context while building image
 # 1. Java shim layer source code
@@ -244,7 +259,7 @@ base-image-clean:
 	-docker rmi -f $(PROJECT_NAME)-baseimage
 	-@rm -rf build/image/base ||:
 
-src-image-clean: ccenv-image-clean peer-image-clean membersrvc-image-clean
+src-image-clean: ccenv-image-clean peer-image-clean membersrvc-image-clean node-sdk-image-clean
 
 %-image-clean:
 	$(eval TARGET = ${patsubst %-image-clean,%,${@}})

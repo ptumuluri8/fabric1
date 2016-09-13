@@ -1,0 +1,15 @@
+FROM hyperledger/fabric-peer:_TAG_
+
+WORKDIR $GOPATH/src/github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02
+
+RUN go build
+# this is temporary until sdk is built in the overall make
+# This will install the HFC as a global nodejs package and setup 'hfc' command line
+WORKDIR $GOPATH/src/github.com/hyperledger/fabric/sdk/node
+RUN make all
+RUN sudo npm install --unsafe-perm -g
+
+ENV NODE_PATH=/usr/local/lib/node_modules
+# now switch to the sample node app location when the shell is opened in the docker
+
+WORKDIR $GOPATH/src/github.com/hyperledger/fabric/examples/sdk/node/example02
