@@ -10,7 +10,8 @@ This section describes how to set up a self contained environment for Node.js ap
 
 2. Create a docker-compose file called *docker-compose.yml*
 
-   ```yaml
+   ```
+   yaml
 membersrvc:
   # try 'docker ps' to see the container status after starting this compose
   container_name: membersrvc
