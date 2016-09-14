@@ -40,7 +40,7 @@ curl [local_fabric_v0.5-developer-preview.sh](https://raw.githubusercontent.com/
 
 Example:
 
-`curl -L https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric.sh -o local_fabric.sh`
+`curl -L https://raw.githubusercontent.com/rameshthoomu/fabric1/tools/localpeersetup/local_fabric.sh -o local_fabric.sh`
 
 ####Follow below steps:
 
