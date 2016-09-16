@@ -3,6 +3,8 @@ site_url: http://hyperledger-fabric.readthedocs.io
 theme: readthedocs
 repo_url: http://gerrit.hyperledger.org/r/fabric
 site_description: 'Welcome to the Hyperledger fabric documentation'
+strict: true
+theme_dir: 'docs/custom_theme'
 
 pages:
 - Home: index.md
@@ -48,6 +50,17 @@ pages:
   - Application ACL: tech/application-ACL.md
   - Attributes: tech/attributes.md
   - Best Practices: tech/best-practices.md
+
+  
+- NodeSDK:
+
+  - App-developer-env-setup: nodeSDK/app-developer-env-setup.md
+  - App-Overview: nodeSDK/app-overview.md
+  - Node-SDK-guide: nodeSDK/node-sdk-guide.md
+  - Node-SDK-indepth: nodeSDK/node-sdk-indepth.md
+  - Node-SDK-self-contained: nodeSDK/node-sdk-self-contained.md
+  - Sample-Standalone-app: nodeSDK/sample-standalone-app.md
+  - Sample-web-app: nodeSDK/sample-web-app.md
 
 markdown_extensions:
   - extra
