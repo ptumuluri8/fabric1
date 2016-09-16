@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Gerrit - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Gerrit";
+    var mkdocs_page_input_path = "Gerrit\gerrit.md";
+    var mkdocs_page_url = "/Gerrit/gerrit/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Gerrit</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#working-with-gerrit">Working with Gerrit</a></li>
+                
+                    <li><a class="toctree-l4" href="#git-review">Git-review</a></li>
+                
+                    <li><a class="toctree-l4" href="#sandbox-project">Sandbox project</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-deeper-into-gerrit">Getting deeper into Gerrit</a></li>
+                
+                    <li><a class="toctree-l4" href="#working-with-a-local-clone-of-the-repository">Working with a local clone of the repository</a></li>
+                
+                    <li><a class="toctree-l4" href="#submitting-a-change">Submitting a Change</a></li>
+                
+                    <li><a class="toctree-l4" href="#adding-reviewers">Adding reviewers</a></li>
+                
+                    <li><a class="toctree-l4" href="#reviewing-using-gerrit">Reviewing Using Gerrit</a></li>
+                
+                    <li><a class="toctree-l4" href="#viewing-pending-changes">Viewing Pending Changes</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Fabric Developer &raquo;</li>
+        
+      
+    
+    <li>Gerrit</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="working-with-gerrit">Working with Gerrit</h1>
+<p>Follow these instructions to collaborate on the Hyperledger Fabric Project
+through the Gerrit review system.</p>
+<p>Please be sure that you are subscribed to the <a href="http://lists.hyperledger.org/mailman/listinfo/hyperledger-fabric">mailing
+list</a> and of
+course, you can reach out on <a href="https://hyperledgerproject.slack.com/">Slack</a> if
+you need help.</p>
+<p>Gerrit assigns the following roles to users:</p>
+<ul>
+<li><strong>Submitters</strong>: May submit changes for consideration, review other code
+  changes, and make recommendations for acceptance or rejection by voting
+  +1 or -1, respectively.</li>
+<li><strong>Maintainers</strong>: May approve or reject changes based upon feedback from
+  reviewers voting +2 or -2, respectively.</li>
+<li><strong>Builders</strong>: (e.g. Jenkins) May use the build automation infrastructure to
+  verify the change.</li>
+</ul>
+<p>Maintainers should be familiar with the <a href="../reviewing/">review process</a>. However,
+anyone is welcome to (and encouraged!) review changes, and hence may find that
+document of value.</p>
+<h2 id="git-review">Git-review</h2>
+<p>There&rsquo;s a <strong>very</strong> useful tool for working with Gerrit called
+<a href="https://www.mediawiki.org/wiki/Gerrit/git-review">git-review</a>. This
+command-line tool can automate most of the ensuing sections for you. Of course,
+reading the information below is also highly recommended so that you understand
+what&rsquo;s going on behind the scenes.</p>
+<h2 id="sandbox-project">Sandbox project</h2>
+<p>We have created a <a href="https://gerrit.hyperledger.org/r/#/admin/projects/lf-sandbox">sandbox
+project</a> to allow
+developers to familiarize themselves with Gerrit and our workflows. Please do
+feel free to use this project to experiment with the commands and tools, below.</p>
+<h2 id="getting-deeper-into-gerrit">Getting deeper into Gerrit</h2>
+<p>A comprehensive walk-through of Gerrit is beyond the scope of this document.
+There are plenty of resources available on the Internet. A good summary can be
+found <a href="https://www.mediawiki.org/wiki/Gerrit/Tutorial">here</a>. We have also
+provided a set of <a href="../best-practices/">Best Practices</a> that you may find helpful.</p>
+<h2 id="working-with-a-local-clone-of-the-repository">Working with a local clone of the repository</h2>
+<p>To work on something, whether a new feature or a bugfix:</p>
+<ol>
+<li>
+<p>Open the Gerrit <a href="https://gerrit.hyperledger.org/r/#/admin/projects/">Projects page</a></p>
+</li>
+<li>
+<p>Select the project you wish to work on.</p>
+</li>
+<li>
+<p>Open a terminal window and clone the project locally using the <code>Clone with git
+hook</code> URL. Be sure that <code>ssh</code> is also selected, as this will make authentication
+much simpler:</p>
+</li>
+</ol>
+<pre><code>git clone ssh://LFID@gerrit.hyperledger.org:29418/fabric &amp;&amp; scp -p -P 29418 LFID@gerrit.hyperledger.org:hooks/commit-msg fabric/.git/hooks/
+</code></pre>
+
+<p><strong>Note:</strong> if you are cloning the fabric project repository, you will want to
+clone it to the <code>$GOPATH/src/github.com/hyperledger</code> directory so that it will
+build, and so that you can use it with the Vagrant <a href="../../dev-setup/devenv/">development
+environment</a>.</p>
+<ol>
+<li>Create a descriptively-named branch off of your cloned repository</li>
+</ol>
+<pre><code>cd fabric
+git checkout -b issue-nnnn
+</code></pre>
+
+<ol>
+<li>Commit your code. For an in-depth discussion of creating an effective commit,
+please read <a href="../changes/">this document</a>.</li>
+</ol>
+<pre><code>git commit -s -a
+</code></pre>
+
+<p>Then input precise and readable commit msg and submit.</p>
+<ol>
+<li>Any code changes that affect documentation should be accompanied by
+corresponding changes (or additions) to the documentation and tests. This
+will ensure that if the merged PR is reversed, all traces of the change will
+be reversed as well.</li>
+</ol>
+<h2 id="submitting-a-change">Submitting a Change</h2>
+<p>Currently, Gerrit is the only method to submit a change for review. <strong>Please review
+the <a href="../changes/">guidelines</a> for making and submitting a change</strong>.</p>
+<h3 id="use-git-review">Use git review</h3>
+<p><strong>Note:</strong> if you prefer, you can use the <a href="#git-review">git-review</a> tool instead
+of the following. e.g.</p>
+<p>Add the following section to <code>.git/config</code>, and replace <code>&lt;USERNAME&gt;</code> with your 
+gerrit id.</p>
+<pre><code>[remote &quot;gerrit&quot;]
+    url = ssh://&lt;USERNAME&gt;@gerrit.hyperledger.org:29418/fabric.git
+    fetch = +refs/heads/*:refs/remotes/gerrit/*
+</code></pre>
+
+<p>Then submit your change with <code>git review</code>.</p>
+<pre><code>$ cd &lt;your code dir&gt;
+$ git review
+</code></pre>
+
+<p>When you update your patch, you can commit with <code>git commit --amend</code>, and then 
+repeat the <code>git review</code> command.</p>
+<h3 id="not-use-git-review">Not Use git review</h3>
+<p>Directions for building the source code can be found <a href="../../dev-setup/build/">here</a>.</p>
+<p>When a change is ready for submission, Gerrit requires that the
+change be pushed to a special branch. The name of this special branch
+contains a reference to the final branch where the code should reside,
+once accepted.</p>
+<p>For the Hyperledger Fabric Project, the special branch is called <code>refs/for/master</code>.</p>
+<p>To push the current local development branch to the gerrit server, open a
+terminal window at the root of your cloned repository:</p>
+<pre><code>cd &lt;your clone dir&gt;
+git push origin HEAD:refs/for/master
+</code></pre>
+
+<p>If the command executes correctly, the output should look similar to this:</p>
+<pre><code>Counting objects: 3, done.
+Writing objects: 100% (3/3), 306 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: new: 1, refs: 1, done
+remote:
+remote: New Changes:
+remote:   https://gerrit.hyperledger.org/r/6 Test commit
+remote:
+To ssh://LFID@gerrit.hyperledger.org:29418/fabric
+* [new branch]      HEAD -&gt; refs/for/master
+</code></pre>
+
+<p>The gerrit server generates a link where the change can be tracked.</p>
+<h2 id="adding-reviewers">Adding reviewers</h2>
+<p>Optionally, you can add reviewers to your change.</p>
+<p>To specify a list of reviewers via the command line, add
+<code>%r=reviewer@project.org</code> to your push command. For example:</p>
+<pre><code>git push origin HEAD:refs/for/master%r=rev1@email.com,r=rev2@notemail.com
+</code></pre>
+
+<p>Alternatively, you can auto-configure GIT to add a set of reviewers if your
+   commits will have the same reviewers all at the time.</p>
+<p>To add a list of default reviewers, open the :file:<code>.git/config</code> file in the
+   project directory and add the following line in the <code>[ branch “master” ]</code>
+   section:</p>
+<pre><code>[branch &quot;master&quot;] #.... push =
+HEAD:refs/for/master%r=rev1@email.com,r=rev2@notemail.com`
+</code></pre>
+
+<p>Make sure to use actual email addresses instead of the <code>@email.com and @notemail.com</code>
+addressses. Don&rsquo;t forget to replace <code>origin</code> with your git remote name.</p>
+<h2 id="reviewing-using-gerrit">Reviewing Using Gerrit</h2>
+<ul>
+<li>
+<p><strong>Add</strong>: This button allows the change submitter to manually add names of
+  people who should review a change; start typing a name and the system
+  will auto-complete based on the list of people registered and with
+  access to the system. They will be notified by email that you are
+  requesting their input.</p>
+</li>
+<li>
+<p><strong>Abandon</strong>: This button is available to the submitter only; it allows a
+  committer to abandon a change and remove it from the merge queue.</p>
+</li>
+<li>
+<p><strong>Change-ID</strong>: This ID is generated by Gerrit (or system). It becomes
+  useful when the review process determines that your commit(s) have to
+  be amended. You may submit a new version; and if the same Change-ID
+  header (and value) are present, Gerrit will remember it and present
+  it as another version of the same change.</p>
+</li>
+<li>
+<p><strong>Status</strong>: Currently, the example change is in review status, as indicated
+  by “Needs Verified” in the upper-left corner. The list of
+  Reviewers will all emit their opinion, voting +1 if they agree to the
+  merge, -1 if they disagree. Gerrit users with a Maintainer role can
+  agree to the merge or refuse it by voting +2 or -2 respectively.</p>
+</li>
+</ul>
+<p>Notifications are sent to the email address in your commit message&rsquo;s
+Signed-off-by line. Visit your <a href="https://gerrit.hyperledger.org/r/#/dashboard/self">Gerrit dashboard</a>, to check the progress of your requests.</p>
+<p>The history tab in Gerrit will show you the in-line comments and the author of
+the review.</p>
+<h2 id="viewing-pending-changes">Viewing Pending Changes</h2>
+<p>Find all pending changes by clicking on the <code>All --&gt; Changes</code> link in the
+upper-left corner, or <a href="https://gerrit.hyperledger.org/r/#/q/project:fabric">open this link</a>.</p>
+<p>If you collaborate in multiple projects, you may wish to limit searching to
+the specific branch through the search bar in the upper-right side.</p>
+<p>Add the filter <em>project:fabric</em> to limit the visible changes to
+only those from the Hyperledger Fabric Project.</p>
+<p>List all current changes you submitted, or list just those changes in need
+of your input by clicking on <code>My --&gt; Changes</code> or <a href="https://gerrit.hyperledger.org/r/#/dashboard/self">open this link</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../dev-setup/devenv/" class="btn btn-neutral float-right" title="Fabric Developer Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lf-account/" class="btn btn-neutral" title="Getting an Account"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../lf-account/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../dev-setup/devenv/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

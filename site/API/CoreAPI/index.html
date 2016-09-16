@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Core API - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Core API";
+    var mkdocs_page_input_path = "API\CoreAPI.md";
+    var mkdocs_page_url = "/API/CoreAPI/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Core API</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#apis-cli-rest-and-nodejs">APIs - CLI, REST, and Node.js</a></li>
+                
+                    <li><a class="toctree-l4" href="#overview">Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#cli">CLI</a></li>
+                
+                    <li><a class="toctree-l4" href="#rest-api">REST API</a></li>
+                
+                    <li><a class="toctree-l4" href="#nodejs-application">Node.js Application</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>APIs &raquo;</li>
+        
+      
+    
+    <li>Core API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="apis-cli-rest-and-nodejs">APIs - CLI, REST, and Node.js</h1>
+<h2 id="overview">Overview</h2>
+<p>This document covers the available APIs for interacting with a peer node. Three interface choices are provided:</p>
+<ol>
+<li><a href="#cli">CLI</a></li>
+<li><a href="#rest-api">REST API</a></li>
+<li><a href="#nodejs-application">Node.js Application</a></li>
+<li><a href="#using-swagger-js-plugin">Using Swagger JS Plugin</a></li>
+<li><a href="#marbles-demo-application">Marbles Demo Application</a></li>
+<li><a href="#commercial-paper-demo-application">Commercial Paper Demo Application</a></li>
+</ol>
+<p><strong>Note:</strong> If you are working with APIs with security enabled, please review the <a href="https://github.com/hyperledger/fabric/blob/master/docs/Setup/Chaincode-setup.md#security-setup-optional">security setup instructions</a> before proceeding.</p>
+<h2 id="cli">CLI</h2>
+<p>To view the currently available CLI commands, execute the following:</p>
+<pre><code>cd /opt/gopath/src/github.com/hyperledger/fabric
+build/bin/peer
+</code></pre>
+<p>You will see output similar to the example below (<strong>NOTE:</strong> rootcommand below is hardcoded in <a href="https://github.com/hyperledger/fabric/blob/master/main.go">main.go</a>. Currently, the build will create a <em>peer</em> executable file).</p>
+<pre><code>    Usage:
+      peer [flags]
+      peer [command]
+
+    Available Commands:
+      version     Print fabric peer version.
+      node        node specific commands.
+      network     network specific commands.
+      chaincode   chaincode specific commands.
+      help        Help about any command
+
+    Flags:
+      -h, --help[=false]: help for peer
+          --logging-level=&quot;&quot;: Default logging level and overrides, see core.yaml for full syntax
+          --test.coverprofile=&quot;coverage.cov&quot;: Done
+      -v, --version[=false]: Show current version number of fabric peer server
+
+
+    Use &quot;peer [command] --help&quot; for more information about a command.
+
+</code></pre>
+
+<p>The <code>peer</code> command supports several subcommands and flags, as shown above. To
+facilitate its use in scripted applications, the <code>peer</code> command always
+produces a non-zero return code in the event of command failure. Upon success,
+many of the subcommands produce a result on <strong>stdout</strong> as shown in the table
+below:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th><strong>stdout</strong> result in the event of success</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>String form of <code>peer.version</code> defined in <a href="https://github.com/hyperledger/fabric/blob/master/peer/core.yaml">core.yaml</a></td>
+</tr>
+<tr>
+<td><code>node start</code></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>node status</code></td>
+<td>String form of <a href="https://github.com/hyperledger/fabric/blob/master/protos/server_admin.proto#L36">StatusCode</a></td>
+</tr>
+<tr>
+<td><code>node stop</code></td>
+<td>String form of <a href="https://github.com/hyperledger/fabric/blob/master/protos/server_admin.proto#L36">StatusCode</a></td>
+</tr>
+<tr>
+<td><code>network login</code></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>network list</code></td>
+<td>The list of network connections to the peer node.</td>
+</tr>
+<tr>
+<td><code>chaincode deploy</code></td>
+<td>The chaincode container name (hash) required for subsequent <code>chaincode invoke</code> and <code>chaincode query</code> commands</td>
+</tr>
+<tr>
+<td><code>chaincode invoke</code></td>
+<td>The transaction ID (UUID)</td>
+</tr>
+<tr>
+<td><code>chaincode query</code></td>
+<td>By default, the query result is formatted as a printable string. Command line options support writing this value as raw bytes (-r, &ndash;raw), or formatted as the hexadecimal representation of the raw bytes (-x, &ndash;hex). If the query response is empty then nothing is output.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deploy-a-chaincode">Deploy a Chaincode</h3>
+<p>Deploy creates the docker image for the chaincode and subsequently deploys the package to the validating peer. An example is below.</p>
+<p><code>peer chaincode deploy -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{"Function":"init", "Args": ["a","100", "b", "200"]}'</code></p>
+<p>The response to the chaincode deploy command will contain the chaincode identifier (hash) which will be required on subsequent <code>chaincode invoke</code> and <code>chaincode query</code> commands in order to identify the deployed chaincode.</p>
+<p>With security enabled, modify the command to include the -u parameter passing the username of a logged in user as follows:</p>
+<p><code>peer chaincode deploy -u jim -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{"Function":"init", "Args": ["a","100", "b", "200"]}'</code></p>
+<p><strong>Note:</strong> If your GOPATH environment variable contains more than one element, the chaincode must be found in the first one or deployment will fail.</p>
+<h3 id="verify-results">Verify Results</h3>
+<p>To verify that the block containing the latest transaction has been added to the blockchain, use the <code>/chain</code> REST endpoint from the command line. Target the IP address of either a validating or a non-validating node. In the example below, 172.17.0.2 is the IP address of a validating or a non-validating node and 7050 is the REST interface port defined in <a href="https://github.com/hyperledger/fabric/blob/master/peer/core.yaml">core.yaml</a>.</p>
+<p><code>curl 172.17.0.2:7050/chain</code></p>
+<p>An example of the response is below.</p>
+<pre><code>{
+    &quot;height&quot;:1,
+    &quot;currentBlockHash&quot;:&quot;4Yc4yCO95wcpWHW2NLFlf76OGURBBxYZMf3yUyvrEXs5TMai9qNKfy9Yn/==&quot;
+}
+</code></pre>
+
+<p>The returned BlockchainInfo message is defined inside <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L96">fabric.proto</a>.</p>
+<pre><code>message BlockchainInfo {
+    uint64 height = 1;
+    bytes currentBlockHash = 2;
+    bytes previousBlockHash = 3;
+}
+</code></pre>
+
+<p>To verify that a specific block is inside the blockchain, use the <code>/chain/blocks/{Block}</code> REST endpoint. Likewise, target the IP address of either a validating or a non-validating node on port 7050.</p>
+<p><code>curl 172.17.0.2:7050/chain/blocks/0</code></p>
+<p>The returned Block message structure is defined inside <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L84">fabric.proto</a>.</p>
+<pre><code>message Block {
+    uint32 version = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    repeated Transaction transactions = 3;
+    bytes stateHash = 4;
+    bytes previousBlockHash = 5;
+    bytes consensusMetadata = 6;
+    NonHashData nonHashData = 7;
+}
+</code></pre>
+
+<p>An example of a returned Block structure is below.</p>
+<pre><code>{
+    &quot;transactions&quot;:[{
+        &quot;type&quot;:1,
+        &quot;chaincodeID&quot;: {
+            &quot;path&quot;:&quot;github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02&quot;
+        },
+        &quot;payload&quot;:&quot;ClwIARJYCk9naXRod...&quot;,
+        &quot;uuid&quot;:&quot;abdcec99-ae5e-415e-a8be-1fca8e38ba71&quot;
+    }],
+    &quot;stateHash&quot;:&quot;PY5YcQRu2g1vjiAqHHshoAhnq8CFP3MqzMslcEAJbnmXDtD+LopmkrUHrPMOGSF5UD7Kxqhbg1XUjmQAi84paw==&quot;
+}
+</code></pre>
+
+<p>For additional information on the available CLI commands, please see the <a href="https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md">protocol specification</a> section 6.3 on CLI.</p>
+<h2 id="rest-api">REST API</h2>
+<p>You can work with the REST API through any tool of your choice. For example, the curl command line utility or a browser based client such as the Firefox Rest Client or Chrome Postman. You can likewise trigger REST requests directly through <a href="http://swagger.io/">Swagger</a>. You can utilize the Swagger service directly or, if you prefer, you can set up Swagger locally by following the instructions <a href="#to-set-up-swagger-ui">here</a>.</p>
+<p><strong>Note:</strong> The default REST interface port is <code>7050</code>. It can be configured in <a href="https://github.com/hyperledger/fabric/blob/master/peer/core.yaml">core.yaml</a> using the <code>rest.address</code> property. If using Vagrant, the REST port mapping is defined in <a href="https://github.com/hyperledger/fabric/blob/master/devenv/Vagrantfile">Vagrantfile</a>.</p>
+<p><strong>Note on constructing a test blockchain</strong> If you want to test the REST API locally, construct a test blockchain by running the TestServerOpenchain_API_GetBlockCount test implemented inside <a href="https://github.com/hyperledger/fabric/blob/master/core/rest/api_test.go">api_test.go</a>. This test will create a test blockchain with 5 blocks. Subsequently restart the peer process.</p>
+<pre><code>    cd /opt/gopath/src/github.com/hyperledger/fabric/core/rest
+    go test -v -run TestServerOpenchain_API_GetBlockCount
+</code></pre>
+
+<h3 id="rest-endpoints">REST Endpoints</h3>
+<p>To learn about the REST API through Swagger, please take a look at the Swagger document <a href="https://github.com/hyperledger/fabric/blob/master/core/rest/rest_api.json">here</a>. You can upload the service description file to the Swagger service directly or, if you prefer, you can set up Swagger locally by following the instructions <a href="#to-set-up-swagger-ui">here</a>.</p>
+<ul>
+<li><a href="#block">Block</a></li>
+<li>GET /chain/blocks/{Block}</li>
+<li><a href="#blockchain">Blockchain</a></li>
+<li>GET /chain</li>
+<li><a href="#chaincode">Chaincode</a><ul>
+<li>POST /chaincode</li>
+</ul>
+</li>
+<li><a href="#network">Network</a></li>
+<li>GET /network/peers</li>
+<li><a href="#registrar">Registrar</a></li>
+<li>POST /registrar</li>
+<li>DELETE /registrar/{enrollmentID}</li>
+<li>GET /registrar/{enrollmentID}</li>
+<li>GET /registrar/{enrollmentID}/ecert</li>
+<li>GET /registrar/{enrollmentID}/tcert</li>
+<li><a href="#transactions">Transactions</a><ul>
+<li>GET /transactions/{UUID}</li>
+</ul>
+</li>
+</ul>
+<h4 id="block">Block</h4>
+<ul>
+<li><strong>GET /chain/blocks/{Block}</strong></li>
+</ul>
+<p>Use the Block API to retrieve the contents of various blocks from the blockchain. The returned Block message structure is defined inside <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L84">fabric.proto</a>.</p>
+<pre><code>message Block {
+    uint32 version = 1;
+    google.protobuf.Timestamp Timestamp = 2;
+    repeated Transaction transactions = 3;
+    bytes stateHash = 4;
+    bytes previousBlockHash = 5;
+}
+</code></pre>
+
+<h4 id="blockchain">Blockchain</h4>
+<ul>
+<li><strong>GET /chain</strong></li>
+</ul>
+<p>Use the Chain API to retrieve the current state of the blockchain. The returned BlockchainInfo message is defined inside <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L96">fabric.proto</a>.</p>
+<pre><code>message BlockchainInfo {
+    uint64 height = 1;
+    bytes currentBlockHash = 2;
+    bytes previousBlockHash = 3;
+}
+</code></pre>
+
+<h4 id="chaincode">Chaincode</h4>
+<ul>
+<li><strong>POST /chaincode</strong></li>
+</ul>
+<p>Use the /chaincode endpoint to deploy, invoke, and query a target chaincode. This service endpoint implements the <a href="http://www.jsonrpc.org/specification">JSON RPC 2.0 specification</a> with the payload identifying the desired chaincode operation within the <code>method</code> field. The supported methods are <code>deploy</code>, <code>invoke</code>, and <code>query</code>.</p>
+<p>The /chaincode endpoint implements the <a href="http://www.jsonrpc.org/specification">JSON RPC 2.0 specification</a> and as such, must have the required fields of <code>jsonrpc</code>, <code>method</code>, and in our case <code>params</code> supplied within the payload. The client should also add the <code>id</code> element within the payload if they wish to receive a response to the request. If the <code>id</code> element is missing from the request payload, the request is assumed to be a notification and the server will not produce a response.</p>
+<p>The following sample payloads may be used to deploy, invoke, and query a sample chaincode. To deploy a chaincode, supply the <a href="https://github.com/hyperledger/fabric/blob/master/protos/chaincode.proto#L60">ChaincodeSpec</a> identifying the chaincode to deploy within the request payload.</p>
+<p>Chaincode Deployment Request without security enabled:</p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;deploy&quot;,
+  &quot;params&quot;: {
+    &quot;type&quot;: 1,
+    &quot;chaincodeID&quot;:{
+        &quot;path&quot;:&quot;github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02&quot;
+    },
+    &quot;ctorMsg&quot;: {
+        &quot;function&quot;:&quot;init&quot;,
+        &quot;args&quot;:[&quot;a&quot;, &quot;1000&quot;, &quot;b&quot;, &quot;2000&quot;]
+    }
+  },
+  &quot;id&quot;: 1
+}
+</code></pre>
+
+<p>To deploy a chaincode with security enabled, supply the <code>secureContext</code> element containing the registrationID of a registered and logged in user together with the payload from above.</p>
+<p>Chaincode Deployment Request with security enabled (add <code>secureContext</code> element):</p>
+<pre><code>POST host:port/chaincode
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;deploy&quot;,
+  &quot;params&quot;: {
+    &quot;type&quot;: 1,
+    &quot;chaincodeID&quot;:{
+        &quot;path&quot;:&quot;github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02&quot;
+    },
+    &quot;ctorMsg&quot;: {
+        &quot;function&quot;:&quot;init&quot;,
+        &quot;args&quot;:[&quot;a&quot;, &quot;1000&quot;, &quot;b&quot;, &quot;2000&quot;]
+    },
+    &quot;secureContext&quot;: &quot;lukas&quot;
+  },
+  &quot;id&quot;: 1
+}
+</code></pre>
+
+<p>The response to a chaincode deployment request will contain a <code>status</code> element confirming successful completion of the request. The response to a successful deployment request will likewise contain the generated chaincode hash which must be used in subsequent invocation and query requests sent to this chaincode.</p>
+<p>Chaincode Deployment Response:</p>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;result&quot;: {
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;message&quot;: &quot;52b0d803fc395b5e34d8d4a7cd69fb6aa00099b8fabed83504ac1c5d61a425aca5b3ad3bf96643ea4fdaac132c417c37b00f88fa800de7ece387d008a76d3586&quot;
+    },
+    &quot;id&quot;: 1
+}
+</code></pre>
+
+<p>To invoke a chaincode, supply the <a href="https://github.com/hyperledger/fabric/blob/master/protos/chaincode.proto#L60">ChaincodeSpec</a> identifying the chaincode to invoke within the request payload. Note the chaincode <code>name</code> field, which is the hash returned from the deployment request.</p>
+<p>Chaincode Invocation Request without security enabled:</p>
+<pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;invoke&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;52b0d803fc395b5e34d8d4a7cd69fb6aa00099b8fabed83504ac1c5d61a425aca5b3ad3bf96643ea4fdaac132c417c37b00f88fa800de7ece387d008a76d3586&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;invoke&quot;,
+         &quot;args&quot;:[&quot;a&quot;, &quot;b&quot;, &quot;100&quot;]
+      }
+  },
+  &quot;id&quot;: 3
+}
+</code></pre>
+
+<p>To invoke a chaincode with security enabled, supply the <code>secureContext</code> element containing the registrationID of a registered and logged in user together with the payload from above.</p>
+<p>Chaincode Invocation Request with security enabled (add <code>secureContext</code> element):</p>
+<pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;invoke&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;52b0d803fc395b5e34d8d4a7cd69fb6aa00099b8fabed83504ac1c5d61a425aca5b3ad3bf96643ea4fdaac132c417c37b00f88fa800de7ece387d008a76d3586&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;invoke&quot;,
+         &quot;args&quot;:[&quot;a&quot;, &quot;b&quot;, &quot;100&quot;]
+      },
+      &quot;secureContext&quot;: &quot;lukas&quot;
+  },
+  &quot;id&quot;: 3
+}
+</code></pre>
+
+<p>The response to a chaincode invocation request will contain a <code>status</code> element confirming successful completion of the request. The response will likewise contain the transaction id number for that specific transaction. The client may use the returned transaction id number to check on the status of the transaction after it has been submitted to the system, as the transaction execution is asynchronous.</p>
+<p>Chaincode Invocation Response:</p>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;result&quot;: {
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;message&quot;: &quot;5a4540e5-902b-422d-a6ab-e70ab36a2e6d&quot;
+    },
+    &quot;id&quot;: 3
+}
+</code></pre>
+
+<p>To query a chaincode, supply the <a href="https://github.com/hyperledger/fabric/blob/master/protos/chaincode.proto#L60">ChaincodeSpec</a> identifying the chaincode to query within the request payload. Note the chaincode <code>name</code> field, which is the hash returned from the deployment request.</p>
+<p>Chaincode Query Request without security enabled:</p>
+<pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;query&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;52b0d803fc395b5e34d8d4a7cd69fb6aa00099b8fabed83504ac1c5d61a425aca5b3ad3bf96643ea4fdaac132c417c37b00f88fa800de7ece387d008a76d3586&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;query&quot;,
+         &quot;args&quot;:[&quot;a&quot;]
+      }
+  },
+  &quot;id&quot;: 5
+}
+</code></pre>
+
+<p>To query a chaincode with security enabled, supply the <code>secureContext</code> element containing the registrationID of a registered and logged in user together with the payload from above.</p>
+<p>Chaincode Query Request with security enabled (add <code>secureContext</code> element):</p>
+<pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;query&quot;,
+  &quot;params&quot;: {
+      &quot;type&quot;: 1,
+      &quot;chaincodeID&quot;:{
+          &quot;name&quot;:&quot;52b0d803fc395b5e34d8d4a7cd69fb6aa00099b8fabed83504ac1c5d61a425aca5b3ad3bf96643ea4fdaac132c417c37b00f88fa800de7ece387d008a76d3586&quot;
+      },
+      &quot;ctorMsg&quot;: {
+         &quot;function&quot;:&quot;query&quot;,
+         &quot;args&quot;:[&quot;a&quot;]
+      },
+      &quot;secureContext&quot;: &quot;lukas&quot;
+  },
+  &quot;id&quot;: 5
+}
+</code></pre>
+
+<p>The response to a chaincode query request will contain a <code>status</code> element confirming successful completion of the request. The response will likewise contain an appropriate <code>message</code>, as defined by the chaincode. The <code>message</code> received depends on the chaincode implementation and may be a string or number indicating the value of a specific chaincode variable.</p>
+<p>Chaincode Query Response:</p>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;result&quot;: {
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;message&quot;: &quot;-400&quot;
+    },
+    &quot;id&quot;: 5
+}
+</code></pre>
+
+<h4 id="network">Network</h4>
+<ul>
+<li><strong>GET /network/peers</strong></li>
+</ul>
+<p>Use the Network APIs to retrieve information about the network of peer nodes comprising the blockchain network.</p>
+<p>The /network/peers endpoint returns a list of all existing network connections for the target peer node. The list includes both validating and non-validating peers. The list of peers is returned as type <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L138"><code>PeersMessage</code></a>, containing an array of <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L127"><code>PeerEndpoint</code></a>.</p>
+<pre><code>message PeersMessage {
+    repeated PeerEndpoint peers = 1;
+}
+</code></pre>
+
+<pre><code>message PeerEndpoint {
+    PeerID ID = 1;
+    string address = 2;
+    enum Type {
+      UNDEFINED = 0;
+      VALIDATOR = 1;
+      NON_VALIDATOR = 2;
+    }
+    Type type = 3;
+    bytes pkiID = 4;
+}
+</code></pre>
+
+<pre><code>message PeerID {
+    string name = 1;
+}
+</code></pre>
+
+<h4 id="registrar">Registrar</h4>
+<ul>
+<li><strong>POST /registrar</strong></li>
+<li><strong>DELETE /registrar/{enrollmentID}</strong></li>
+<li><strong>GET /registrar/{enrollmentID}</strong></li>
+<li><strong>GET /registrar/{enrollmentID}/ecert</strong></li>
+<li><strong>GET /registrar/{enrollmentID}/tcert</strong></li>
+</ul>
+<p>Use the Registrar APIs to manage end user registration with the CA. These API endpoints are used to register a user with the CA, determine whether a given user is registered, and to remove any login tokens for a target user preventing them from executing any further transactions. The Registrar APIs are also used to retrieve user enrollment and transaction certificates from the system.</p>
+<p>The /registrar endpoint is used to register a user with the CA. The required Secret payload is defined in <a href="https://github.com/hyperledger/fabric/blob/master/protos/devops.proto#L50">devops.proto</a>.</p>
+<pre><code>message Secret {
+    string enrollId = 1;
+    string enrollSecret = 2;
+}
+</code></pre>
+
+<p>The response to the registration request is either a confirmation of successful registration or an error, containing a reason for the failure. An example of a valid Secret message to register user &lsquo;lukas&rsquo; is shown below.</p>
+<pre><code>{
+  &quot;enrollId&quot;: &quot;lukas&quot;,
+  &quot;enrollSecret&quot;: &quot;NPKYL39uKbkj&quot;
+}
+</code></pre>
+
+<p>The GET /registrar/{enrollmentID} endpoint is used to confirm whether a given user is registered with the CA. If so, a confirmation will be returned. Otherwise, an authorization error will result.</p>
+<p>The DELETE /registrar/{enrollmentID} endpoint is used to delete login tokens for a target user. If the login tokens are deleted successfully, a confirmation will be returned. Otherwise, an authorization error will result. No payload is required for this endpoint. Note, that registration with the CA is a one time process for a given user, utilizing a single-use registrationID and registrationPW. If the user registration is deleted through this API, the user will not be able to register with the CA a second time.</p>
+<p>The GET /registrar/{enrollmentID}/ecert endpoint is used to retrieve the enrollment certificate of a given user from local storage. If the target user has already registered with the CA, the response will include a URL-encoded version of the enrollment certificate. If the target user has not yet registered, an error will be returned. If the client wishes to use the returned enrollment certificate after retrieval, keep in mind that it must be URL-decoded. This can be accomplished with the QueryUnescape method in the &ldquo;net/url&rdquo; package.</p>
+<p>The /registrar/{enrollmentID}/tcert endpoint retrieves the transaction certificates for a given user that has registered with the certificate authority. If the user has registered, a confirmation message will be returned containing an array of URL-encoded transaction certificates. Otherwise, an error will result. The desired number of transaction certificates is specified with the optional &lsquo;count&rsquo; query parameter. The default number of returned transaction certificates is 1; and 500 is the maximum number of certificates that can be retrieved with a single request. If the client wishes to use the returned transaction certificates after retrieval, keep in mind that they must be URL-decoded. This can be accomplished with the QueryUnescape method in the &ldquo;net/url&rdquo; package.</p>
+<h4 id="transactions">Transactions</h4>
+<ul>
+<li><strong>GET /transactions/{UUID}</strong></li>
+</ul>
+<p>Use the /transactions/{UUID} endpoint to retrieve an individual transaction matching the UUID from the blockchain. The returned transaction message is defined inside <a href="https://github.com/hyperledger/fabric/blob/master/protos/fabric.proto#L28">fabric.proto</a>.</p>
+<pre><code>message Transaction {
+    enum Type {
+        UNDEFINED = 0;
+        CHAINCODE_DEPLOY = 1;
+        CHAINCODE_INVOKE = 2;
+        CHAINCODE_QUERY = 3;
+        CHAINCODE_TERMINATE = 4;
+    }
+    Type type = 1;
+    bytes chaincodeID = 2;
+    bytes payload = 3;
+    string uuid = 4;
+    google.protobuf.Timestamp timestamp = 5;
+
+    ConfidentialityLevel confidentialityLevel = 6;
+    bytes nonce = 7;
+
+    bytes cert = 8;
+    bytes signature = 9;
+}
+</code></pre>
+
+<p>For additional information on the REST endpoints and more detailed examples, please see the <a href="https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md">protocol specification</a> section 6.2 on the REST API.</p>
+<h3 id="to-set-up-swagger-ui">To set up Swagger-UI</h3>
+<p><a href="http://swagger.io/">Swagger</a> is a convenient package that allows you to describe and document your REST API in a single file. The REST API is described in <a href="https://github.com/hyperledger/fabric/blob/master/core/rest/rest_api.json">rest_api.json</a>. To interact with the peer node directly through the Swagger-UI, you can upload the available Swagger definition to the <a href="http://swagger.io/">Swagger service</a>. Alternatively, you may set up a Swagger installation on your machine by following the instructions below.</p>
+<ol>
+<li>
+<p>You can use Node.js to serve up the rest_api.json locally. To do so, make sure you have Node.js installed on your local machine. If it is not installed, please download the <a href="https://nodejs.org/en/download/">Node.js</a> package and install it.</p>
+</li>
+<li>
+<p>Install the Node.js http-server package with the command below:</p>
+<p><code>npm install http-server -g</code></p>
+</li>
+<li>
+<p>Start up an http-server on your local machine to serve up the rest_api.json.</p>
+<p><code>cd /opt/gopath/src/github.com/hyperledger/fabric/core/rest
+http-server -a 0.0.0.0 -p 5554 --cors</code></p>
+</li>
+<li>
+<p>Make sure that you are successfully able to access the API description document within your browser at this link:</p>
+<p><code>http://localhost:5554/rest_api.json</code></p>
+</li>
+<li>
+<p>Download the Swagger-UI package with the following command:</p>
+<p><code>git clone https://github.com/swagger-api/swagger-ui.git</code></p>
+</li>
+<li>
+<p>Navigate to the /swagger-ui/dist directory and click on the index.html file to bring up the Swagger-UI interface inside your browser.</p>
+</li>
+<li>
+<p>Start up the peer node with no connections to a leader or validator as follows.</p>
+<p><code>cd /opt/gopath/src/github.com/hyperledger/fabric
+build/bin/peer node start</code></p>
+</li>
+<li>
+<p>If you need to construct a test blockchain on the local peer node, run the the TestServerOpenchain_API_GetBlockCount test implemented inside <a href="https://github.com/hyperledger/fabric/blob/master/core/rest/api_test.go">api_test.go</a>. This test will create a blockchain with 5 blocks. Subsequently restart the peer process.</p>
+<p><code>cd /opt/gopath/src/github.com/hyperledger/fabric/core/rest
+go test -v -run TestServerOpenchain_API_GetBlockCount</code></p>
+</li>
+<li>
+<p>Go back to the Swagger-UI interface inside your browser and load the API description. You should now be able to issue queries against the pre-built blockchain directly from Swagger.</p>
+</li>
+</ol>
+<h2 id="nodejs-application">Node.js Application</h2>
+<p>You can interface with the peer process from a Node.js application. One way to accomplish that is by relying on the Swagger API description document, <a href="https://github.com/hyperledger/fabric/blob/master/core/rest/rest_api.json">rest_api.json</a> and the <a href="https://github.com/swagger-api/swagger-js">swagger-js plugin</a>. Another way to accomplish that relies upon the IBM Blockchain <a href="https://github.com/IBM-Blockchain/ibm-blockchain-js">JS SDK</a>. Use the approach that you find the most convenient.</p>
+<h3 id="using-swagger-js-plugin"><a href="https://github.com/hyperledger/fabric/blob/master/docs/API/Samples/Sample_1.js">Using Swagger JS Plugin</a></h3>
+<ul>
+<li>Demonstrates interfacing with a peer node from a Node.js application.</li>
+<li>Utilizes the Node.js swagger-js plugin: https://github.com/swagger-api/swagger-js</li>
+</ul>
+<p><strong>To run:</strong></p>
+<ol>
+<li>
+<p>Build and install the <a href="https://github.com/hyperledger/fabric/blob/master/README.md#building-the-fabric-core-">fabric core</a>.</p>
+<p><code>cd /opt/gopath/src/github.com/hyperledger/fabric
+make peer</code></p>
+</li>
+<li>
+<p>Run a local peer node only (not a complete network) with:</p>
+<p><code>build/bin/peer node start</code></p>
+</li>
+<li>
+<p>Set up a test blockchain data structure (with 5 blocks only) by running a test from within Vagrant as follows. Subsequently restart the peer process.</p>
+<p><code>cd /opt/gopath/src/github.com/hyperledger/fabric/core/rest
+go test -v -run TestServerOpenchain_API_GetBlockCount</code></p>
+</li>
+<li>
+<p>Start up an http-server on your local machine to serve up the rest_api.json.</p>
+<p><code>npm install http-server -g
+cd /opt/gopath/src/github.com/hyperledger/fabric/core/rest
+http-server -a 0.0.0.0 -p 5554 --cors</code></p>
+</li>
+<li>
+<p>Download and unzip <a href="https://github.com/hyperledger/fabric/blob/master/docs/API/Samples/Sample_1.zip">Sample_1.zip</a></p>
+<p><code>unzip Sample_1.zip -d Sample_1
+cd Sample_1</code></p>
+</li>
+<li>
+<p>Update the api_url variable within <a href="https://github.com/hyperledger/fabric/blob/master/docs/API/Samples/Sample_1.js">openchain.js</a> to the appropriate URL if it is not already the default</p>
+<p><code>var api_url = 'http://localhost:5554/rest_api.json';</code></p>
+</li>
+<li>
+<p>Run the Node.js app</p>
+<p><code>node ./openchain.js</code></p>
+</li>
+</ol>
+<p>You will observe several responses on the console and the program will appear to hang for a few moments at the end. This is expected, as is it waiting for the invocation transaction to complete in order to then execute a query. You can take a look at the sample output of the program inside the &lsquo;openchain_test&rsquo; file located in the Sample_1 directory.</p>
+<h3 id="marbles-demo-application"><a href="https://github.com/IBM-Blockchain/marbles">Marbles Demo Application</a></h3>
+<ul>
+<li>Demonstrates an alternative way of interfacing with a peer node from a Node.js app.</li>
+<li>Demonstrates deploying a Blockchain application as a Bluemix service.</li>
+</ul>
+<p>Hold on to your hats everyone, this application is going to demonstrate transferring marbles between two users leveraging IBM Blockchain. We are going to do this in Node.js and a bit of GoLang. The backend of this application will be the GoLang code running in our blockchain network. The chaincode itself will create a marble by storing it to the chaincode state. The chaincode itself is able to store data as a string in a key/value pair setup. Thus we will stringify JSON objects to store more complex structures.</p>
+<p>For more inforation on the IBM Blockchain marbles demo, set-up, and instructions, please visit <a href="https://github.com/IBM-Blockchain/marbles">this page</a>.</p>
+<h3 id="commercial-paper-demo-application"><a href="https://github.com/IBM-Blockchain/cp-web">Commercial Paper Demo Application</a></h3>
+<ul>
+<li>Demonstrates an alternative way of interfacing with a peer node from a Node.js app.</li>
+<li>Demonstrates deploying a Blockchain application as a Bluemix service.</li>
+</ul>
+<p>This application is a demonstration of how a commercial paper trading network might be implemented on IBM Blockchain. The components of the demo are:</p>
+<ul>
+<li>An interface for creating new users on the network.</li>
+<li>An interface for creating new commercial papers to trade.</li>
+<li>A Trade Center for buying and selling existing trades.</li>
+<li>A special interface just for auditors of the network to examine trades.</li>
+</ul>
+<p>For more inforation on the IBM Blockchain commercial paper demo, set-up, and instructions, please visit <a href="https://github.com/IBM-Blockchain/cp-web">this page</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../MemberServicesAPI/" class="btn btn-neutral float-right" title="CA API">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ChaincodeAPI/" class="btn btn-neutral" title="Chaincode APIs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ChaincodeAPI/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../MemberServicesAPI/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

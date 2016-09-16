@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>CA API - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CA API";
+    var mkdocs_page_input_path = "API\MemberServicesAPI.md";
+    var mkdocs_page_url = "/API/MemberServicesAPI/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">CA API</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#certificate-authority-api">Certificate Authority API</a></li>
+                
+                    <li><a class="toctree-l4" href="#enrollment-certificate-authority">Enrollment Certificate Authority</a></li>
+                
+                    <li><a class="toctree-l4" href="#transaction-certificate-authority">Transaction Certificate Authority</a></li>
+                
+                    <li><a class="toctree-l4" href="#tls-certificate-authority">TLS Certificate Authority</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>APIs &raquo;</li>
+        
+      
+    
+    <li>CA API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="certificate-authority-api">Certificate Authority API</h1>
+<p>Each of the CA services is split into two <a href="http://www.grpc.io">GRPC</a> interfaces, namely a public one (indicated by a <em>P</em> suffix) and an administrator one (indicated by an <em>A</em> suffix).</p>
+<h2 id="enrollment-certificate-authority">Enrollment Certificate Authority</h2>
+<p>The administrator interface of the ECA provides the following functions:</p>
+<pre><code>service ECAA { // admin
+    rpc RegisterUser(RegisterUserReq) returns (Token);
+    rpc ReadUserSet(ReadUserSetReq) returns (UserSet);
+    rpc RevokeCertificate(ECertRevokeReq) returns (CAStatus); // not yet implemented
+    rpc PublishCRL(ECertCRLReq) returns (CAStatus); // not yet implemented
+}
+</code></pre>
+<p>The <code>RegisterUser</code> function allows you to register a new user by specifiying their name and roles in the <code>RegisterUserReq</code> structure. If the user has not been registered before, the ECA registers the new user and returns a unique one-time password, which can be used by the user to request their enrollment certificate pair via the public interface of the ECA. Otherwise an error is returned.</p>
+<p>The <code>ReadUserSet</code> function allows only auditors to retrieve the list of users registered with the blockchain.</p>
+<p>The public interface of the ECA provides the following functions:</p>
+<pre><code>service ECAP { // public
+    rpc ReadCACertificate(Empty) returns (Cert);
+    rpc CreateCertificatePair(ECertCreateReq) returns (ECertCreateResp);
+    rpc ReadCertificatePair(ECertReadReq) returns (CertPair);
+    rpc ReadCertificateByHash(Hash) returns (Cert);
+    rpc RevokeCertificatePair(ECertRevokeReq) returns (CAStatus); // not yet implemented
+}
+</code></pre>
+<p>The <code>ReadCACertificate</code> function returns the certificate of the ECA itself.</p>
+<p>The <code>CreateCertificatePair</code> function allows a user to create and read their enrollment certificate pair. For this, the user has to do two successive invocations of this function. Firstly, both the signature and encryption public keys have to be handed to the ECA together with the one-time password previously returned by the <code>RegisterUser</code> function invocation. The request has to be signed by the user&rsquo;s private signature key to demonstrate that the user is in possession of the private signature key. The ECA in return gives the user a challenge encrypted with the user&rsquo;s public encryption key. The user has to decrypt the challenge, thereby demonstrating that they are in possession of the private encryption key, and then re-issue the certificate creation request - this time with the decrypted challenge instead of the one-time password passed in the invocation. If the challenge has been decrypted correctly, the ECA issues and returns the enrollment certificate pair for the user.</p>
+<p>The <code>ReadCertificatePair</code> function allows any user of the blockchain to read the certificate pair of any other user of the blockchain.</p>
+<p>The <code>ReadCertificatePairByHash</code> function allows any user of the blockchain to read a certificate from the ECA matching a given hash.</p>
+<h2 id="transaction-certificate-authority">Transaction Certificate Authority</h2>
+<p>The administrator interface of the TCA provides the following functions:</p>
+<pre><code>service TCAA { // admin
+    rpc RevokeCertificate(TCertRevokeReq) returns (CAStatus); // not yet implemented
+    rpc RevokeCertificateSet(TCertRevokeSetReq) returns (CAStatus); // not yet implemented
+    rpc PublishCRL(TCertCRLReq) returns (CAStatus); // not yet implemented
+}
+</code></pre>
+<p>The public interface of the TCA provides the following functions:</p>
+<pre><code>service TCAP { // public
+    rpc ReadCACertificate(Empty) returns (Cert);
+    rpc CreateCertificate(TCertCreateReq) returns (TCertCreateResp);
+    rpc CreateCertificateSet(TCertCreateSetReq) returns (TCertCreateSetResp);
+    rpc RevokeCertificate(TCertRevokeReq) returns (CAStatus); // not yet implemented
+    rpc RevokeCertificateSet(TCertRevokeSetReq) returns (CAStatus); // not yet implemented
+}
+</code></pre>
+<p>The <code>ReadCACertificate</code> function returns the certificate of the TCA itself.</p>
+<p>The <code>CreateCertificate</code> function allows a user to create and retrieve a new transaction certificate.</p>
+<p>The <code>CreateCertificateSet</code> function allows a user to create and retrieve a set of transaction certificates in a single call.</p>
+<h2 id="tls-certificate-authority">TLS Certificate Authority</h2>
+<p>The administrator interface of the TLSCA provides the following functions:</p>
+<pre><code>service TLSCAA { // admin
+    rpc RevokeCertificate(TLSCertRevokeReq) returns (CAStatus); not yet implemented
+}
+</code></pre>
+<p>The public interface of the TLSCA provides the following functions:</p>
+<pre><code>service TLSCAP { // public
+    rpc ReadCACertificate(Empty) returns (Cert);
+    rpc CreateCertificate(TLSCertCreateReq) returns (TLSCertCreateResp);
+    rpc ReadCertificate(TLSCertReadReq) returns (Cert);
+    rpc RevokeCertificate(TLSCertRevokeReq) returns (CAStatus); // not yet implemented
+}
+</code></pre>
+<p>The <code>ReadCACertificate</code> function returns the certificate of the TLSCA itself.</p>
+<p>The <code>CreateCertificate</code> function allows a user to create and retrieve a new TLS certificate.</p>
+<p>The <code>ReadCertificate</code> function allows a user to retrieve a previously created TLS certificate.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../SystemChaincodes/noop/" class="btn btn-neutral float-right" title="System Chaincode">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../CoreAPI/" class="btn btn-neutral" title="Core API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../CoreAPI/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../SystemChaincodes/noop/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

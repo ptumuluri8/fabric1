@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Fabric Developer Setup - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Fabric Developer Setup";
+    var mkdocs_page_input_path = "dev-setup\devenv.md";
+    var mkdocs_page_url = "/dev-setup/devenv/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Fabric Developer Setup</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#setting-up-the-development-environment">Setting up the development environment</a></li>
+                
+                    <li><a class="toctree-l4" href="#overview">Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#prerequisites">Prerequisites</a></li>
+                
+                    <li><a class="toctree-l4" href="#steps">Steps</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-the-fabric">Building the fabric</a></li>
+                
+                    <li><a class="toctree-l4" href="#notes">Notes</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Fabric Developer &raquo;</li>
+        
+      
+    
+    <li>Fabric Developer Setup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="setting-up-the-development-environment">Setting up the development environment</h2>
+<h3 id="overview">Overview</h3>
+<p>The current development environment utilizes Vagrant running an Ubuntu image, which in turn launches Docker containers. Conceptually, the Host launches a VM, which in turn launches Docker containers.</p>
+<p><strong>Host -&gt; VM -&gt; Docker</strong></p>
+<p>This model allows developers to leverage their favorite OS/editors and execute the system in a controlled environment that is consistent amongst the development team.</p>
+<ul>
+<li>Note that your Host should not run within a VM. If you attempt this, the VM within your Host may fail to boot with a message indicating that VT-x is not available.</li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li><a href="https://git-scm.com/downloads">Git client</a></li>
+<li><a href="https://golang.org/">Go</a> - 1.6 or later</li>
+<li><a href="https://www.vagrantup.com/">Vagrant</a> - 1.7.4 or later</li>
+<li><a href="https://www.virtualbox.org/">VirtualBox</a> - 5.0 or later</li>
+<li>
+<p>BIOS Enabled Virtualization - Varies based on hardware</p>
+</li>
+<li>
+<p>Note: The BIOS Enabled Virtualization may be within the CPU or Security settings of the BIOS</p>
+</li>
+</ul>
+<h3 id="steps">Steps</h3>
+<h4 id="set-your-gopath">Set your GOPATH</h4>
+<p>Make sure you have properly setup your Host&rsquo;s <a href="https://github.com/golang/go/wiki/GOPATH">GOPATH environment variable</a>. This allows for both building within the Host and the VM.</p>
+<h4 id="note-to-windows-users">Note to Windows users</h4>
+<p>If you are running Windows, before running any <code>git clone</code> commands, run the following command.</p>
+<pre><code>git config --get core.autocrlf
+</code></pre>
+
+<p>If <code>core.autocrlf</code> is set to <code>true</code>, you must set it to <code>false</code> by running</p>
+<pre><code>git config --global core.autocrlf false
+</code></pre>
+
+<p>If you continue with <code>core.autocrlf</code> set to <code>true</code>, the <code>vagrant up</code> command will fail with the error <code>./setup.sh: /bin/bash^M: bad interpreter: No such file or directory</code></p>
+<h4 id="cloning-the-fabric-project">Cloning the Fabric project</h4>
+<p>Since the Fabric project is a <code>Go</code> project, you&rsquo;ll need to clone the Fabric repo to your $GOPATH/src directory. If your $GOPATH has multiple path components, then you will want to use the first one. There&rsquo;s a little bit of setup needed:</p>
+<pre><code>cd $GOPATH/src
+mkdir -p github.com/hyperledger
+cd github.com/hyperledger
+</code></pre>
+
+<p>Recall that we are using <code>Gerrit</code> for source control, which has its own internal git repositories. Hence, we will need to <a href="../../Gerrit/gerrit/#Working-with-a-local-clone-of-the-repository">clone from Gerrit</a>. For brevity, the command is as follows:</p>
+<pre><code>git clone ssh://LFID@gerrit.hyperledger.org:29418/fabric &amp;&amp; scp -p -P 29418 LFID@gerrit.hyperledger.org:hooks/commit-msg fabric/.git/hooks/
+</code></pre>
+
+<p><strong>Note:</strong> of course, you would want to replace <code>LFID</code> with your <a href="../../Gerrit/lf-account/">Linux Foundation ID</a>.</p>
+<h4 id="boostrapping-the-vm-using-vagrant">Boostrapping the VM using Vagrant</h4>
+<p>Now you&rsquo;re ready to launch Vagrant.</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric/devenv
+vagrant up
+</code></pre>
+
+<p>Go get coffee&hellip; this will take a few minutes. Once complete, you should be able to <code>ssh</code> into the Vagrant VM just created.</p>
+<pre><code>vagrant ssh
+</code></pre>
+
+<h3 id="building-the-fabric">Building the fabric</h3>
+<p>Once you have your vagrant development environment established, you can proceed to <a href="../build/">build and test</a> the fabric. Once inside the VM, you can find the peer project under <code>$GOPATH/src/github.com/hyperledger/fabric</code>. It is also mounted as  <code>/hyperledger</code>.</p>
+<h3 id="notes">Notes</h3>
+<p><strong>NOTE:</strong> any time you change any of the files in your local fabric directory (under <code>$GOPATH/src/github.com/hyperledger/fabric</code>), the update will be instantly available within the VM fabric directory.</p>
+<p><strong>NOTE:</strong> If you intend to run the development environment behind an HTTP Proxy, you need to configure the guest so that the provisioning process may complete. You can achieve this via the <em>vagrant-proxyconf</em> plugin. Install with <code>vagrant plugin install vagrant-proxyconf</code> and then set the VAGRANT_HTTP_PROXY and VAGRANT_HTTPS_PROXY environment variables <em>before</em> you execute <code>vagrant up</code>. More details are available here: https://github.com/tmatilai/vagrant-proxyconf/</p>
+<p><strong>NOTE:</strong> The first time you run this command it may take quite a while to complete (it could take 30 minutes or more depending on your environment) and at times it may look like it&rsquo;s not doing anything. As long you don&rsquo;t get any error messages just leave it alone, it&rsquo;s all good, it&rsquo;s just cranking.</p>
+<p><strong>NOTE to Windows 10 Users:</strong> There is a known problem with vagrant on Windows 10 (see <a href="https://github.com/mitchellh/vagrant/issues/6754">mitchellh/vagrant#6754</a>). If the <code>vagrant up</code> command fails it may be because you do not have Microsoft Visual C++ Redistributable installed. You can download the missing package at the following address: http://www.microsoft.com/en-us/download/details.aspx?id=8328</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../build/" class="btn btn-neutral float-right" title="Building Fabric">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Gerrit/gerrit/" class="btn btn-neutral" title="Gerrit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../Gerrit/gerrit/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../build/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

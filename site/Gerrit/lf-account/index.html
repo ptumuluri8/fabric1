@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Getting an Account - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting an Account";
+    var mkdocs_page_input_path = "Gerrit\lf-account.md";
+    var mkdocs_page_url = "/Gerrit/lf-account/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Getting an Account</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#requesting-a-linux-foundation-account">Requesting a Linux Foundation Account</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-a-linux-foundation-id">Creating a Linux Foundation ID</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-gerrit-to-use-ssh">Configuring Gerrit to Use SSH</a></li>
+                
+                    <li><a class="toctree-l4" href="#checking-out-the-source-code">Checking Out the Source Code</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev-setup/build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Fabric Developer &raquo;</li>
+        
+      
+    
+    <li>Getting an Account</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="requesting-a-linux-foundation-account">Requesting a Linux Foundation Account</h1>
+<p>Contributions to the Fabric code base require a Linux Foundation account.
+Follow the steps below to create a Linux Foundation account.</p>
+<h2 id="creating-a-linux-foundation-id">Creating a Linux Foundation ID</h2>
+<ol>
+<li>
+<p>Go to the <a href="https://identity.linuxfoundation.org/">Linux Foundation ID website</a>.</p>
+</li>
+<li>
+<p>Select the option <code>I need to create a Linux Foundation ID</code>.</p>
+</li>
+<li>
+<p>Fill out the form that appears:</p>
+</li>
+<li>
+<p>Open your email account and look for a message with the subject line:
+   &ldquo;Validate your Linux Foundation ID email&rdquo;.</p>
+</li>
+<li>
+<p>Open the received URL to validate your email address.</p>
+</li>
+<li>
+<p>Verify the browser displays the message <code>You have successfully
+   validated your e-mail address</code>.</p>
+</li>
+<li>
+<p>Access <code>Gerrit</code> by selecting <code>Sign In</code>:</p>
+</li>
+<li>
+<p>Use your Linux Foundation ID to Sign In:</p>
+</li>
+</ol>
+<h2 id="configuring-gerrit-to-use-ssh">Configuring Gerrit to Use SSH</h2>
+<p>Gerrit uses SSH to interact with your Git client. A SSH private key
+needs to be generated on the development machine with a matching public
+key on the Gerrit server.</p>
+<p>If you already have a SSH key-pair, skip this section.</p>
+<p>As an example, we provide the steps to generate the SSH key-pair on a Linux
+environment. Follow the equivalent steps on your OS.</p>
+<ol>
+<li>Create a key-pair, enter:</li>
+</ol>
+<pre><code>ssh-keygen -t rsa -C &quot;John Doe john.doe@example.com&quot;
+</code></pre>
+
+<p><strong>Note:</strong> This will ask you for a password to protect the private key as it
+generates a unique key. Please keep this password private, and DO NOT
+enter a blank password.</p>
+<p>The generated key-pair is found in: <code>~/.ssh/id_rsa</code> and <code>~/.ssh/id_rsa.pub</code>.</p>
+<ol>
+<li>Add the private key in the <code>id_rsa</code> file in your key ring, e.g.:</li>
+</ol>
+<pre><code>ssh-add ~/.ssh/id_rsa
+</code></pre>
+
+<p>Once the key-pair has been generated, the public key must be added to Gerrit.</p>
+<p>Follow these steps to add your public key <code>id_rsa.pub</code> to the Gerrit
+account:</p>
+<ol>
+<li>
+<p>Go to <a href="https://gerrit.hyperledger.org/r/#/admin/projects/fabric">Gerrit</a>.</p>
+</li>
+<li>
+<p>Click on your account name in the upper right corner.</p>
+</li>
+<li>
+<p>From the pop-up menu, select <code>Settings</code>.</p>
+</li>
+<li>
+<p>On the left side menu, click on <code>SSH Public Keys</code>.</p>
+</li>
+<li>
+<p>Paste the contents of your public key <code>~/.ssh/id_rsa.pub</code> and click
+   <code>Add key</code>.</p>
+</li>
+</ol>
+<p><strong>Note:</strong> The <code>id_rsa.pub</code> file can be opened with any text editor. Ensure
+   that all the contents of the file are selected, copied and pasted into the
+   <code>Add SSH key</code> window in Gerrit.</p>
+<p><strong>Note:</strong> The ssh key generation instructions operate on the assumtion that
+you are using the default naming. It is possible to generate multiple ssh Keys
+and to name the resulting files differently. See the <a href="https://en.wikipedia.org/wiki/Ssh-keygen">ssh-keygen</a>
+documentation for details on how to do that. Once you have generated non-default
+keys, you need to configure ssh to use the correct key for Gerrit. In that case,
+you need to create a <code>~/.ssh/config</code> file modeled after the one below.</p>
+<pre><code>host gerrit.hyperledger.org
+ HostName gerrit.hyperledger.org
+ IdentityFile ~/.ssh/id_rsa_hyperledger_gerrit
+ User &lt;LFID&gt;
+</code></pre>
+
+<p>where <LFID> is your Linux Foundation ID and the value of IdentityFile is the
+name of the public key file you generated.</p>
+<p><strong>Warning:</strong> Potential Security Risk! Do not copy your private key
+   <code>~/.ssh/id_rsa</code> Use only the public <code>~/.ssh/id_rsa.pub</code>.</p>
+<h2 id="checking-out-the-source-code">Checking Out the Source Code</h2>
+<ol>
+<li>
+<p>Ensure that SSH has been set up properly. See
+   <code>Configuring Gerrit to Use SSH</code> for details.</p>
+</li>
+<li>
+<p>Clone the repository with your Linux Foundation ID (<LFID>):</p>
+</li>
+</ol>
+<pre><code>git clone ssh://&lt;LFID&gt;@gerrit.hyperledger.org:29418/fabric fabric
+</code></pre>
+
+<p>You have successfully checked out a copy of the source code to your local
+machine.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gerrit/" class="btn btn-neutral float-right" title="Gerrit">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../CONTRIBUTING/" class="btn btn-neutral" title="Contributing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../CONTRIBUTING/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../gerrit/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

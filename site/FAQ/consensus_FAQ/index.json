@@ -1,0 +1,6 @@
+{
+    "content": "<h2 id=\"consensus-algorithm\">Consensus Algorithm</h2>\n<p>&nbsp;</p>\n<h5 id=\"which-consensus-algorithm-is-used-in-the-fabric\">Which Consensus Algorithm is used in the fabric?</h5>\n<p>The fabric is built on a pluggable architecture such that developers can configure their deployment with the consensus module that best suits their needs. The initial release package will offer three consensus implementations for users to select from: 1) No-op (consensus ignored); and 2) Batch PBFT.</p>",
+    "language": "en",
+    "url": "/FAQ/consensus_FAQ/",
+    "title": "ConsensusFAQ"
+}

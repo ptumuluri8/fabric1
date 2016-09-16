@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Building Fabric - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building Fabric";
+    var mkdocs_page_input_path = "dev-setup\build.md";
+    var mkdocs_page_url = "/dev-setup/build/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../API/MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Building Fabric</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#building-the-fabric">Building the fabric</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-the-unit-tests">Running the unit tests</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-nodejs-unit-tests">Running Node.js Unit Tests</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-behave-bdd-tests">Running Behave BDD Tests</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#building-outside-of-vagrant">Building outside of Vagrant</a></li>
+                
+                    <li><a class="toctree-l4" href="#prerequisites">Prerequisites</a></li>
+                
+                    <li><a class="toctree-l4" href="#docker">Docker</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-rocksdb">Building RocksDB</a></li>
+                
+                    <li><a class="toctree-l4" href="#pip-behave-and-docker-compose">pip, behave and docker-compose</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-on-z">Building on Z</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-on-power-platform">Building on Power Platform</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-natively-on-osx">Building natively on OSX</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#logging">Logging</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gerrit/changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Fabric Developer &raquo;</li>
+        
+      
+    
+    <li>Building Fabric</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="building-the-fabric">Building the fabric</h2>
+<p>The following instructions assume that you have already set up your <a href="../devenv/">development environment</a>.</p>
+<p>To access your VM, run <code>vagrant ssh</code> from within the devenv directory of your locally cloned fabric repository.</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric/devenv
+vagrant ssh
+</code></pre>
+
+<p>From within the VM, you can build, run, and test your environment.</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric
+make peer
+</code></pre>
+
+<p>To see what commands are available, simply execute the following commands:</p>
+<pre><code>peer help
+</code></pre>
+
+<p>You should see the following output:</p>
+<pre><code>    Usage:
+      peer [command]
+
+    Available Commands:
+      node        node specific commands.
+      network     network specific commands.
+      chaincode   chaincode specific commands.
+      help        Help about any command
+
+    Flags:
+      -h, --help[=false]: help for peer
+          --logging-level=&quot;&quot;: Default logging level and overrides, see core.yaml for full syntax
+
+
+    Use &quot;peer [command] --help&quot; for more information about a command.
+</code></pre>
+
+<p>The <code>peer node start</code> command will initiate a peer process, with which one can interact by executing other commands. For example, the <code>peer node status</code> command will return the status of the running peer. The full list of commands is the following:</p>
+<pre><code>      node
+        start       Starts the node.
+        status      Returns status of the node.
+        stop        Stops the running node.
+      network
+        login       Logs in user to CLI.
+        list        Lists all network peers.
+      chaincode
+        deploy      Deploy the specified chaincode to the network.
+        invoke      Invoke the specified chaincode.
+        query       Query using the specified chaincode.
+      help        Help about any command
+</code></pre>
+
+<p><strong>Note:</strong> If your GOPATH environment variable contains more than one element, the chaincode must be found in the first one or deployment will fail.</p>
+<h3 id="running-the-unit-tests">Running the unit tests</h3>
+<p>Use the following sequence to run all unit tests</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric
+make unit-test
+</code></pre>
+
+<p>To run a specific test use the <code>-run RE</code> flag where RE is a regular expression that matches the test case name. To run tests with verbose output use the <code>-v</code> flag. For example, to run the <code>TestGetFoo</code> test case, change to the directory containing the <code>foo_test.go</code> and call/excecute</p>
+<pre><code>go test -v -run=TestGetFoo
+</code></pre>
+
+<h3 id="running-nodejs-unit-tests">Running Node.js Unit Tests</h3>
+<p>You must also run the Node.js unit tests to insure that the Node.js client SDK is not broken by your changes. To run the Node.js unit tests, follow the instructions <a href="https://github.com/hyperledger/fabric/tree/master/sdk/node#unit-tests">here</a>.</p>
+<h3 id="running-behave-bdd-tests">Running Behave BDD Tests</h3>
+<p><a href="http://pythonhosted.org/behave/">Behave</a> tests will setup networks of peers with different security and consensus configurations and verify that transactions run properly. To run these tests</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric
+make behave
+</code></pre>
+
+<p>Some of the Behave tests run inside Docker containers. If a test fails and you want to have the logs from the Docker containers, run the tests with this option</p>
+<pre><code>behave -D logs=Y
+</code></pre>
+
+<p>Note, in order to run behave directly, you must run &lsquo;make images&rsquo; first to build the necessary <code>peer</code> and <code>member services</code> docker images. These images can also be individually built when <code>go test</code> is called with the following parameters:</p>
+<pre><code>go test github.com/hyperledger/fabric/core/container -run=BuildImage_Peer
+go test github.com/hyperledger/fabric/core/container -run=BuildImage_Obcca
+</code></pre>
+
+<h2 id="building-outside-of-vagrant">Building outside of Vagrant</h2>
+<p>It is possible to build the project and run peers outside of Vagrant. Generally speaking, one has to &lsquo;translate&rsquo; the vagrant <a href="https://github.com/hyperledger/fabric/blob/master/devenv/setup.sh">setup file</a> to the platform of your choice.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li><a href="https://git-scm.com/downloads">Git client</a></li>
+<li><a href="https://golang.org/">Go</a> - 1.6 or later</li>
+<li><a href="https://github.com/facebook/rocksdb/blob/master/INSTALL.md">RocksDB</a> version 4.1 and its dependencies</li>
+<li><a href="https://docs.docker.com/engine/installation/">Docker</a></li>
+<li><a href="https://pip.pypa.io/en/stable/installing/">Pip</a></li>
+<li>Set the maximum number of open files to 10000 or greater for your OS</li>
+</ul>
+<h3 id="docker">Docker</h3>
+<p>Make sure that the Docker daemon initialization includes the options</p>
+<pre><code>-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+</code></pre>
+
+<p>Typically, docker runs as a <code>service</code> task, with configuration file at <code>/etc/default/docker</code>.</p>
+<p>Be aware that the Docker bridge (the <code>CORE_VM_ENDPOINT</code>) may not come
+up at the IP address currently assumed by the test environment
+(<code>172.17.0.1</code>). Use <code>ifconfig</code> or <code>ip addr</code> to find the docker bridge.</p>
+<h3 id="building-rocksdb">Building RocksDB</h3>
+<pre><code>apt-get install -y libsnappy-dev zlib1g-dev libbz2-dev
+cd /tmp
+git clone https://github.com/facebook/rocksdb.git
+cd rocksdb
+git checkout v4.1
+PORTABLE=1 make shared_lib
+INSTALL_PATH=/usr/local make install-shared
+</code></pre>
+
+<h3 id="pip-behave-and-docker-compose"><code>pip</code>, <code>behave</code> and <code>docker-compose</code></h3>
+<pre><code>pip install --upgrade pip
+pip install behave nose docker-compose
+pip install -I flask==0.10.1 python-dateutil==2.2 pytz==2014.3 pyyaml==3.10 couchdb==1.0 flask-cors==2.0.1 requests==2.4.3
+</code></pre>
+
+<h3 id="building-on-z">Building on Z</h3>
+<p>To make building on Z easier and faster, <a href="https://github.com/hyperledger/fabric/tree/master/devenv/setupRHELonZ.sh">this script</a> is provided (which is similar to the <a href="https://github.com/hyperledger/fabric/blob/master/devenv/setup.sh">setup file</a> provided for vagrant). This script has been tested only on RHEL 7.2 and has some assumptions one might want to re-visit (firewall settings, development as root user, etc.). It is however sufficient for development in a personally-assigned VM instance.</p>
+<p>To get started, from a freshly installed OS:</p>
+<pre><code>sudo su
+yum install git
+mkdir -p $HOME/git/src/github.com/hyperledger
+cd $HOME/git/src/github.com/hyperledger
+git clone http://gerrit.hyperledger.org/r/fabric
+source fabric/devenv/setupRHELonZ.sh
+</code></pre>
+
+<p>From this point, you can proceed as described above for the Vagrant development environment.</p>
+<pre><code>cd $GOPATH/src/github.com/hyperledger/fabric
+make peer unit-test behave
+</code></pre>
+
+<h3 id="building-on-power-platform">Building on Power Platform</h3>
+<p>Development and build on Power (ppc64le) systems is done outside of vagrant as outlined <a href="#building-outside-of-vagrant-">here</a>. For ease of setting up the dev environment on Ubuntu, invoke <a href="https://github.com/hyperledger/fabric/tree/master/devenv/setupUbuntuOnPPC64le.sh">this script</a> as root. This script has been validated on Ubuntu 16.04 and assumes certain things (like, development system has OS repositories in place, firewall setting etc) and in general can be improvised further.</p>
+<p>To get started on Power server installed with Ubuntu, first ensure you have properly setup your Host&rsquo;s <a href="https://github.com/golang/go/wiki/GOPATH">GOPATH environment variable</a>. Then, execute the following commands to build the fabric code:</p>
+<pre><code>mkdir -p $GOPATH/src/github.com/hyperledger
+cd $GOPATH/src/github.com/hyperledger
+git clone http://gerrit.hyperledger.org/r/fabric
+sudo ./fabric/devenv/setupUbuntuOnPPC64le.sh
+cd $GOPATH/src/github.com/hyperledger/fabric
+make dist-clean all
+</code></pre>
+
+<h3 id="building-natively-on-osx">Building natively on OSX</h3>
+<p>First, install Docker, as described <a href="https://docs.docker.com/engine/installation/mac/">here</a>.
+The database by default writes to /var/hyperledger. You can override this in the <code>core.yaml</code> configuration file, under <code>peer.fileSystemPath</code>.</p>
+<pre><code>brew install go rocksdb snappy gnu-tar     # For RocksDB version 4.1, you can compile your own, as described earlier
+
+# You will need the following two for every shell you want to use
+eval $(docker-machine env)
+export PATH=&quot;/usr/local/opt/gnu-tar/libexec/gnubin:$PATH&quot;
+
+cd $GOPATH/src/github.com/hyperledger/fabric
+make peer
+</code></pre>
+
+<h2 id="configuration">Configuration</h2>
+<p>Configuration utilizes the <a href="https://github.com/spf13/viper">viper</a> and <a href="https://github.com/spf13/cobra">cobra</a> libraries.</p>
+<p>There is a <strong>core.yaml</strong> file that contains the configuration for the peer process. Many of the configuration settings can be overridden on the command line by setting ENV variables that match the configuration setting, but by prefixing with <em>&lsquo;CORE_&rsquo;</em>. For example, logging level manipulation through the environment is shown below:</p>
+<pre><code>CORE_PEER_LOGGING_LEVEL=CRITICAL peer
+</code></pre>
+<h2 id="logging">Logging</h2>
+<p>Logging utilizes the <a href="https://github.com/op/go-logging">go-logging</a> library. </p>
+<p>The available log levels in order of increasing verbosity are: <em>CRITICAL | ERROR | WARNING | NOTICE | INFO | DEBUG</em></p>
+<p>See <a href="https://github.com/hyperledger/fabric/blob/master/docs/Setup/logging-control.md">specific logging control</a> instructions when running the peer process.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Gerrit/best-practices/" class="btn btn-neutral float-right" title="Best Practices">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../devenv/" class="btn btn-neutral" title="Fabric Developer Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../devenv/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../Gerrit/best-practices/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -3,7 +3,8 @@ site_url: http://hyperledger-fabric.readthedocs.io
 theme: readthedocs
 repo_url: http://gerrit.hyperledger.org/r/fabric
 site_description: 'Welcome to the Hyperledger fabric documentation'
-
+strict: true
+theme_dir: 'custom_theme'
 pages:
 - Home: index.md
 - Glossary: glossary.md
@@ -55,8 +56,8 @@ markdown_extensions:
   - toc
   - fenced_code
   - smarty
-  - mdx_math:
-      enable_dollar_delimiter: True #for use of inline $..$
   - footnotes
+extra_javascript:
+  - js/extra.js
 
 copyright: Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a>

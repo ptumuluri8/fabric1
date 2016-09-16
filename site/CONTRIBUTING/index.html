@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Contributing - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Contributing";
+    var mkdocs_page_input_path = "CONTRIBUTING.md";
+    var mkdocs_page_url = "/CONTRIBUTING/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Contributing</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#contributions-welcome">Contributions Welcome!</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-a-linux-foundation-account">Getting a Linux Foundation account</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-help">Getting help</a></li>
+                
+                    <li><a class="toctree-l4" href="#requirements-and-use-cases">Requirements and Use Cases</a></li>
+                
+                    <li><a class="toctree-l4" href="#reporting-bugs">Reporting bugs</a></li>
+                
+                    <li><a class="toctree-l4" href="#fixing-issues-and-working-stories">Fixing issues and working stories</a></li>
+                
+                    <li><a class="toctree-l4" href="#working-with-a-local-clone-and-gerrit">Working with a local clone and Gerrit</a></li>
+                
+                    <li><a class="toctree-l4" href="#coding-guidelines">Coding guidelines</a></li>
+                
+                    <li><a class="toctree-l4" href="#legal-stuff">Legal stuff</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Fabric Developer &raquo;</li>
+        
+      
+    
+    <li>Contributing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="contributions-welcome">Contributions Welcome!</h1>
+<p>We welcome contributions to the Hyperledger Project in many forms, and
+there&rsquo;s always plenty to do!</p>
+<p>First things first, please review the Hyperledger Project&rsquo;s <a href="https://github.com/hyperledger/hyperledger/wiki/Hyperledger-Project-Code-of-Conduct">Code of
+Conduct</a>
+before participating. It is important that we keep things civil.</p>
+<h2 id="getting-a-linux-foundation-account">Getting a Linux Foundation account</h2>
+<p>In order to participate in the development of the Hyperledger Fabric project,
+you will need an <a href="../Gerrit/lf-account/">LF account</a>. This will give you single
+sign-on to all the community tools, including Gerrit and Jira (coming soon!).</p>
+<h2 id="getting-help">Getting help</h2>
+<p>If you are looking for something to work on, or need some expert assistance in
+debugging a problem or working out a fix to an issue, our
+<a href="https://www.hyperledger.org/community">community</a> is always eager to help. We
+hang out on <a href="https://hyperledgerproject.slack.com/">Slack</a>, IRC (#hyperledger on
+freenode.net) and the <a href="http://lists.hyperledger.org/">mailing lists</a>. Most of us
+don&rsquo;t bite ;-) and will be glad to help.</p>
+<h2 id="requirements-and-use-cases">Requirements and Use Cases</h2>
+<p>We have a <a href="https://github.com/hyperledger/hyperledger/wiki/Requirements-WG">Requirements
+WG</a> that is
+documenting use cases and from those use cases deriving requirements. If you are
+interested in contributing to this effort, please feel free to join the
+discussion in
+<a href="https://hyperledgerproject.slack.com/messages/requirements/">slack</a>.</p>
+<h2 id="reporting-bugs">Reporting bugs</h2>
+<p>If you are a user and you find a bug, please submit an
+<a href="https://github.com/hyperledger/fabric/issues">issue</a>. Please try to provide
+sufficient information for someone else to reproduce the issue. One of the
+project&rsquo;s maintainers should respond to your issue within 24 hours. If not,
+please bump the issue and request that it be reviewed.</p>
+<h2 id="fixing-issues-and-working-stories">Fixing issues and working stories</h2>
+<p>Review the <a href="https://github.com/hyperledger/fabric/issues">issues list</a> and find
+something that interests you. You could also check the <a href="https://github.com/hyperledger/fabric/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22">&ldquo;help
+wanted&rdquo;</a>
+and <a href="https://github.com/hyperledger/fabric/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-bug">&ldquo;good first
+bug&rdquo;</a>
+lists. It is wise to start with something relatively straight forward and
+achievable. Usually there will be a comment in the issue that indicates whether
+someone has already self-assigned the issue. If no one has already taken it,
+then add a comment assigning the issue to yourself, eg.: <code>I'll work on this
+issue.</code>. Please be considerate and rescind the offer in comments if you cannot
+finish in a reasonable time, or add a comment saying that you are still actively
+working the issue if you need a little more time.</p>
+<h2 id="working-with-a-local-clone-and-gerrit">Working with a local clone and Gerrit</h2>
+<p>We are using <a href="https://gerrit.hyperledger.org/r/#/admin/projects/fabric">Gerrit</a>
+to manage code contributions. If you are unfamiliar, please review <a href="../Gerrit/gerrit/">this
+document</a> before proceeding.</p>
+<p>After you have familiarized yourself with <code>Gerrit</code>, and maybe played around with
+the <code>lf-sandbox</code> project, you should be ready to set up your local <a href="../dev-setup/devenv/">development
+environment</a>. We use a Vagrant-based approach to
+development that simplifies things greatly.</p>
+<h2 id="coding-guidelines">Coding guidelines</h2>
+<p>Be sure to check out the language-specific <a href="../Style-guides/go-style/">style
+guides</a> before making any changes. This will ensure a
+smoother review.</p>
+<h3 id="becoming-a-maintainer">Becoming a maintainer</h3>
+<p>This project is managed under open governance model as described in our
+<a href="https://www.hyperledger.org/about/charter">charter</a>. Projects or sub-projects
+will be lead by a set of maintainers. New projects can designate an initial set
+of maintainers that will be approved by the Technical Steering Committee when
+the project is first approved. The project&rsquo;s maintainers will, from
+time-to-time, consider adding or removing a maintainer. An existing maintainer
+will post a patchset to the <a href="../MAINTAINERS/">MAINTAINERS.md</a> file. If a
+majority of the maintainers concur in the comments, the pull request is then
+merged and the individual becomes a (or is removed as a) maintainer. Note that
+removing a maintainer should not be taken lightly, but occasionally, people do
+move on - hence the bar should be some period of inactivity, an explicit
+resignation, some infraction of the code of conduct or consistently
+demonstrating poor judgement.</p>
+<h2 id="legal-stuff">Legal stuff</h2>
+<p><strong>Note:</strong> Each source file must include a license header for the Apache Software
+License 2.0. A template of that header can be found <a href="https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/headers.txt">here</a>.</p>
+<p>We have tried to make it as easy as possible to make contributions. This
+applies to how we handle the legal aspects of contribution. We use the same
+approach&mdash;the <a href="../docs/biz/DCO1.1.txt">Developer&rsquo;s Certificate of Origin 1.1 (DCO)</a>&mdash;that
+the Linux&reg; Kernel <a href="http://elinux.org/Developer_Certificate_Of_Origin">community</a> uses to manage code contributions.</p>
+<p>We simply ask that when submitting a patch for review, the developer must include
+a sign-off statement in the commit message.</p>
+<p>Here is an example Signed-off-by line, which indicates that the submitter
+accepts the DCO:</p>
+<pre><code>Signed-off-by: John Doe &lt;john.doe@hisdomain.com&gt;
+</code></pre>
+
+<p>You can include this automatically when you commit a change to your local git
+repository using <code>git commit -s</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Gerrit/lf-account/" class="btn btn-neutral float-right" title="Getting an Account">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../SystemChaincodes/noop/" class="btn btn-neutral" title="System Chaincode"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../SystemChaincodes/noop/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Gerrit/lf-account/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

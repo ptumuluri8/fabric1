@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Glossary - Hyperledger Fabric</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Glossary";
+    var mkdocs_page_input_path = "glossary.md";
+    var mkdocs_page_url = "/glossary/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../js/extra.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Glossary</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#roles-personas">Roles &amp; Personas</a></li>
+                
+                    <li><a class="toctree-l4" href="#roles">Roles</a></li>
+                
+                    <li><a class="toctree-l4" href="#participants">Participants</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#business-network">Business Network</a></li>
+                
+                    <li><a class="toctree-l4" href="#types-of-networks-business-view">Types of Networks (Business View)</a></li>
+                
+                    <li><a class="toctree-l4" href="#types-of-chains-conceptual-view">Types of Chains (Conceptual View)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#network-management">Network Management</a></li>
+                
+                    <li><a class="toctree-l4" href="#member-management">Member management</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#transactions">Transactions</a></li>
+                
+                    <li><a class="toctree-l4" href="#types-of-transactions">Types of Transactions</a></li>
+                
+                    <li><a class="toctree-l4" href="#confidentiality-of-transactions">Confidentiality of Transactions</a></li>
+                
+                    <li><a class="toctree-l4" href="#inter-chain-transactions">Inter-chain Transactions</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#network-entities">Network Entities</a></li>
+                
+                    <li><a class="toctree-l4" href="#systems">Systems</a></li>
+                
+                    <li><a class="toctree-l4" href="#membership-service-components">Membership Service Components</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hyperledger-fabric-entities">Hyperledger Fabric Entities</a></li>
+                
+                    <li><a class="toctree-l4" href="#chaincode">Chaincode</a></li>
+                
+                    <li><a class="toctree-l4" href="#ledger">Ledger</a></li>
+                
+                    <li><a class="toctree-l4" href="#node">Node</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../protocol-spec/">Protocol Spec</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../biz/usecases/">Usecases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation and setup</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/Chaincode-setup/">Chaincode or Application Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/JAVAChaincode/">Java Chaincode Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/Network-setup/">Fabric Network Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/NodeSDK-setup/">NodeSDK Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/ca-setup/">CA Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Setup/logging-control/">Logging</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>APIs</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/ChaincodeAPI/">Chaincode APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/CoreAPI/">Core API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MemberServicesAPI/">CA API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SystemChaincodes/noop/">System Chaincode</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Fabric Developer</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CONTRIBUTING/">Contributing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/lf-account/">Getting an Account</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/gerrit/">Gerrit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/devenv/">Fabric Developer Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev-setup/build/">Building Fabric</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MAINTAINERS/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/reviewing/">Reviewing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Gerrit/changes/">Changes</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Style guides</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Style-guides/go-style/">Golang</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/chaincode_FAQ/">ChainCodeFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/confidentiality_FAQ/">ConfidentialityFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/consensus_FAQ/">ConsensusFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/identity_management_FAQ/">Identity ManagementFAQ</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/usage_FAQ/">UsageFAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tech</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/application-ACL/">Application ACL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/attributes/">Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tech/best-practices/">Best Practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Glossary</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="roles-personas">Roles &amp; Personas</h2>
+<h4 id="roles"><em>Roles</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Chain Member</b></td>
+<td>
+Entities that do not participate in the validation process of a blockchain network, but help to maintain the integrity of a network. Unlike Chain transactors, chain members maintain a local copy of the ledger.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Chain Transactor</b></td>
+<td>
+Entities that have permission to create transactions and query network data.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Chain Validator</b></td>
+<td>
+Entities that own a stake of a chain network. Each chain validator has a voice in deciding whether a transaction is valid, therefore chain validators can interrogate all transactions sent to their chain.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Chain Auditor</b></td>
+<td>
+Entities with the permission to interrogate transactions.
+</td>
+</tr>
+</table></p>
+<h4 id="participants"><em>Participants</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Solution User</b></td>
+<td>
+End users are agnostic about the details of chain networks, they typically initiate transactions on a chain network through applications made available by solutions providers.
+<p><p>
+<span style="text-decoration:underline">Roles:</span> None
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Solution Provider</b></td>
+<td>
+Organizations that develop mobile and/or browser based applications for end (solution) users to access chain networks. Some application owners may also be network owners.
+<p><p>
+Roles: Chain Transactor
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Network Proprietor</b></td>
+<td>
+Proprietor(s) setup and define the purpose of a chain network. They are the stakeholders of a network.
+<p><p>
+Roles: Chain Transactor, Chain Validator
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Network Owner</b></td>
+<td>
+Owners are stakeholders of a network that can validate transactions. After a network is first launched, its proprietor (who then becomes an owner) will invite business partners to co-own the network (by assigning them validating nodes). Any new owner added to a network must be approved by its existing owners.
+<p><p>
+Roles: Chain Transactor, Chain Validator
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Network Member</b></td>
+<td>
+Members are participants of a blockchain network that cannot validate transactions but has the right to add users to the network.
+<p><p>
+Roles: Chain Transactor, Chain Member
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Network Users</b></td>
+<td>
+End users of a network are also solution users. Unlike network owners and members, users do not own nodes. They transact with the network through an entry point offered by a member or an owner node.
+<p><p>
+Roles: Chain Transactor
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Network Auditors</b></td>
+<td>
+Individuals or organizations with the permission to interrogate transactions.
+<p><p>
+Roles: Chain Auditor
+</td>
+</tr>
+</table></p>
+<p>&nbsp;</p>
+<h2 id="business-network">Business Network</h2>
+<h4 id="types-of-networks-business-view"><em>Types of Networks (Business View)</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Industry Network</b></td>
+<td>
+A chain network that services solutions built for a particular industry.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Regional Industry Network</b></td>
+<td>
+A chain network that services applications built for a particular industry and region.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Application Network</b></td>
+<td>
+A chain network that only services a single solution.
+</td>
+</tr>
+</table></p>
+<h4 id="types-of-chains-conceptual-view"><em>Types of Chains (Conceptual View)</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Main Chain</b></td>
+<td>
+A business network; each main chain operates one or multiple applications/solutions validated by the same group of organizations.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Confidential Chain</b></td>
+<td>
+A special purpose chain created to run confidential business logic that is only accessible by contract stakeholders.
+</td>
+</tr>
+</table></p>
+<p>&nbsp;</p>
+<h2 id="network-management">Network Management</h2>
+<h4 id="member-management"><em>Member management</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Owner Registration</b></td>
+<td>
+The process of registering and inviting new owner(s) to a blockchain network. Approval from existing network owners is required when adding or deleting a participant with ownership right
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Member Registration</b></td>
+<td>
+The process of registering and inviting new network members to a blockchain network.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>User Registration</b></td>
+<td>
+The process of registering new users to a blockchain network. Both members and owners can register users on their own behalf as long as they follow the policy of their network.
+</td>
+</tr>
+</table></p>
+<p>&nbsp;</p>
+<h2 id="transactions">Transactions</h2>
+<h4 id="types-of-transactions"><em>Types of Transactions</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Deployment Transaction</b></td>
+<td>
+Transactions that deploy a new chaincode to a chain.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Invocation Transaction</b></td>
+<td>
+Transactions that invoke a function on a chaincode.
+</td>
+</tr>
+</table></p>
+<h4 id="confidentiality-of-transactions"><em>Confidentiality of Transactions</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Public Transaction</b></td>
+<td>
+A transaction with its payload in the open. Anyone with access to a chain network can interrogate the details of public transactions.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Confidential Transaction</b></td>
+<td>
+A transaction with its payload cryptographically hidden such that no one besides the stakeholders of a transaction can interrogate its content.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Confidential Chaincode Transaction</b></td>
+<td>
+A transaction with its payload encrypted such that only validators can decrypt them. Chaincode confidentiality is determined during deploy time. If a chaincode is deployed as a confidential chaincode, then the payload of all subsequent invocation transactions to that chaincode will be encrypted.
+</td>
+</tr>
+</table></p>
+<h4 id="inter-chain-transactions"><em>Inter-chain Transactions</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Inter-Network Transaction</b></td>
+<td>
+Transactions between two business networks (main chains).
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Inter-Chain Transaction</b></td>
+<td>
+Transactions between confidential chains and main chains. Chaincodes in a confidential chain can trigger transactions on one or multiple main chain(s).
+</td>
+</tr>
+</table></p>
+<p>&nbsp;</p>
+<h2 id="network-entities">Network Entities</h2>
+<h4 id="systems"><em>Systems</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Application Backend</b></td>
+<td>
+  Purpose: Backend application service that supports associated mobile and/or browser based applications.
+  <p><p>
+  Key Roles:<p>
+  1)    Manages end users and registers them with the membership service
+  <p>
+  2)    Initiates transactions requests, and sends the requests to a node
+  <p><p>
+  Owned by: Solution Provider, Network Proprietor
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Non Validating Node (Peer)</b></td>
+<td>
+  Purpose: Constructs transactions and forwards them to validating nodes. Peer nodes keep a copy of all transaction records so that solution providers can query them locally.
+  <p><p>
+  Key Roles:<p>
+  1)    Manages and maintains user certificates issued by the membership service<p>
+  2)    Constructs transactions and forwards them to validating nodes <p>
+  3)    Maintains a local copy of the ledger, and allows application owners to query information locally.
+  <p><p>
+    Owned by: Solution Provider, Network Auditor
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Validating Node (Peer)</b></td>
+<td>
+  Purpose: Creates and validates transactions, and maintains the state of chaincodes<p><p>
+  Key Roles:<p>
+  1)    Manages and maintains user certificates issued by membership service<p>
+  2)    Creates transactions<p>
+  3)    Executes and validates transactions with other validating nodes on the network<p>
+  4)    Maintains a local copy of ledger<p>
+  5)    Participates in consensus and updates ledger
+  <p><p>
+  Owned by: Network Proprietor, Solution Provider (if they belong to the same entity)
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Membership Service</b></td>
+<td>
+  Purpose: Issues and manages the identity of end users and organizations<p><p>
+  Key Roles:<p>
+  1)    Issues enrollment certificate to each end user and organization<p>
+  2)    Issues transaction certificates associated to each end user and organization<p>
+  3)    Issues TLS certificates for secured communication between Hyperledger fabric entities<p>
+  4)    Issues chain specific keys
+  <p><p>
+  Owned by: Third party service provider
+</td>
+</tr>
+</table></p>
+<h4 id="membership-service-components"><em>Membership Service Components</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Registration Authority</b></td>
+<td>
+Assigns registration username &amp; registration password pairs to network participants. This username/password pair will be used to acquire enrollment certificate from ECA.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Enrollment Certificate Authority (ECA)</b></td>
+<td>
+Issues enrollment certificates (ECert) to network participants that have already registered with a membership service. ECerts are long term certificates used to identify individual entities participating in one or more networks.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Transaction Certificate Authority (TCA)</b></td>
+<td>
+Issues transaction certificates (TCerts) to ECert owners. An infinite number of TCerts can be derived from each ECert. TCerts are used by network participants to send transactions. Depending on the level of security requirements, network participants may choose to use a new TCert for every transaction.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>TLS-Certificate Authority (TLS-CA)</b></td>
+<td>
+Issues TLS certificates to systems that transmit messages in a chain network. TLS certificates are used to secure the communication channel between systems.
+</td>
+</tr>
+</table></p>
+<p>&nbsp;</p>
+<h2 id="hyperledger-fabric-entities">Hyperledger Fabric Entities</h2>
+<h4 id="chaincode"><em>Chaincode</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Public Chaincode</b></td>
+<td>
+Chaincodes deployed by public transactions, these chaincodes can be invoked by any member of the network.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Confidential Chaincode</b></td>
+<td>
+Chaincodes deployed by confidential transactions, these chaincodes can only be invoked by validating members (Chain validators) of the network.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Access Controlled Chaincode</b></td>
+<td>
+Chaincodes deployed by confidential transactions that also embed the tokens of approved invokers. These invokers are also allowed to invoke confidential chaincodes even though they are not validators.
+</td>
+</tr>
+</table></p>
+<h4 id="ledger"><em>Ledger</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>Chaincode-State</b></td>
+<td>
+HPL provides state support; Chaincodes access internal state storage through state APIs. States are created and updated by transactions calling chaincode functions with state accessing logic.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Transaction List</b></td>
+<td>
+All processed transactions are kept in the ledger in their original form (with payload encrypted for confidential transactions), so that network participants can interrogate past transactions to which they have access permissions.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Ledger Hash</b></td>
+<td>
+A hash that captures the present snapshot of the ledger. It is a product of all validated transactions processed by the network since the genesis transaction.
+</td>
+</tr>
+</table></p>
+<h4 id="node"><em>Node</em></h4>
+<hr />
+<p><table border="0">
+<col>
+<col>
+<tr>
+<td width="20%"><b>DevOps Service</b></td>
+<td>
+The frontal module on a node that provides APIs for clients to interact with their node and chain network. This module is also responsible to construct transactions, and work with the membership service component to receive and store all types of certificates and encryption keys in its storage.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Node Service</b></td>
+<td>
+The main module on a node that is responsible to process transactions, deploy and execute chaincodes, maintain ledger data, and trigger the consensus process.
+</td>
+</tr>
+<tr>
+<td width="20%"><b>Consensus</b></td>
+<td>
+The default consensus algorithm of Hyperledger fabric is an implementation of PBFT.
+</td>
+</tr>
+</table></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../protocol-spec/" class="btn btn-neutral float-right" title="Protocol Spec">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../protocol-spec/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

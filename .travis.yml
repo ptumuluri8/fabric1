@@ -59,8 +59,8 @@ after_failure:
    chmod +x scripts/containerlogs.sh
    sudo ./scripts/containerlogs.sh
 
-notifications:
+#notifications:
 
-  slack: 'hyperledgerproject:azMP8Mw3cfGigXkqi5RujZXr'
-  on_success: always
-  on_failure: always
+#  slack: 'hyperledgerproject:azMP8Mw3cfGigXkqi5RujZXr'
+#  on_success: always
+#  on_failure: always
