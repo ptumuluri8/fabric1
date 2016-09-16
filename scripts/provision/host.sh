@@ -39,8 +39,8 @@ apt-get install --yes tcl tclx tcllib
 apt-get install --yes npm
 
 # Install JDK 1.8 for Java chaincode development
-add-apt-repository ppa:openjdk-r/ppa -y
-apt-get update && apt-get install openjdk-8-jdk -y
+#add-apt-repository ppa:openjdk-r/ppa -y
+apt-get update && apt-get install openjdk-8-jdk openjdk-8-jre -y
 
 # Download Gradle and create sym link
 wget https://services.gradle.org/distributions/gradle-2.12-bin.zip -P /tmp --quiet
@@ -55,4 +55,4 @@ curl -fsSL http://apache.osuosl.org/maven/maven-3/$MAVEN_VERSION/binaries/apache
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 # Set the default JDK to 1.8
-update-java-alternatives -s java-1.8.0-openjdk-amd64
+#update-java-alternatives -s java-1.8.0-openjdk-amd64
