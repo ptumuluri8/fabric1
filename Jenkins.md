@@ -8,8 +8,8 @@ We have implemented Continuous Integration using jenkins in a very prominent way
 
 Following Events have been implemented in Jenkins:
 
--- When ever a "Patchset created" event is triggerd in "Gerrit" 
--- When ever a "Merged created" event is triggered in "Gerrit"
+- When ever a "Patchset created" event is triggerd in "Gerrit" 
+- When ever a "Merged created" event is triggered in "Gerrit"
 
 in the above two cases, Jenkins triggers jenkins jobs and executes below tests:
 
