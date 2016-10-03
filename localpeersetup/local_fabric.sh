@@ -27,8 +27,35 @@
 #       ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft
 # ------------------------------------------------------------------
 
-PEER_IMAGE=hyperledger/fabric-peer
-MEMBERSRVC_IMAGE=hyperledger/fabric-membersrvc
+ARCH=`uname -m`
+echo "ARCH value is" $ARCH
+if [ $ARCH = "xppc64le" ]
+then
+
+    PEER_IMAGE=hyperledger/fabric-peer-ppc64le
+    MEMBERSRVC_IMAGE=hyperledger/fabric-membersrvc-ppc64le
+fi
+
+
+if [ "$ARCH" == "x86_64" ]
+then
+    PEER_IMAGE=rameshthoomu/peer
+    MEMBERSRVC_IMAGE=rameshthoomu/membersrvc
+fi
+
+
+if [ "$ARCH" == "s390x" ]
+then
+    PEER_IMAGE=hyperledger/fabric-peer-s390x
+    MEMBERSRVC_IMAGE=hyperledger/fabric-membersrvc-s390x
+fi
+
+#PEER_IMAGE=hyperledger/fabric-peer
+#MEMBERSRVC_IMAGE=hyperledger/fabric-membersrvc
+
+PEER_IMAGE=rameshthoomu/peer
+MEMBERSRVC_IMAGE=rameshthoomu/membersrvc
+
 REST_PORT=7050
 USE_PORT=30000
 CA_PORT=7054
@@ -149,7 +176,7 @@ done
 function usage()
 {
         echo "USAGE :  local_fabric.sh -n <number of Peers> -s <enable security and privacy> -c <commit number> -l <logging level> -m <consensus mode>"
-        echo "ex: ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft "
+        echo "ex: ./local_fabric.sh -n 4 -s -c 7e20032 -l debug -m pbft "
 }
 
 while getopts "\?hsn:c:l:m:" option; do
@@ -194,10 +221,13 @@ echo "Is Security and Privacy enabled $SECURITY"
 echo "--------> Pulling Base Docker Images from Docker Hub"
 
 #Pulling latest docker image from rameshthoomu/baseimage repository
-docker pull rameshthoomu/baseimage:latest
-docker tag rameshthoomu/baseimage:latest hyperledger/fabric-baseimage:latest
-docker pull hyperledger/fabric-peer:$COMMIT
-docker pull hyperledger/fabric-membersrvc:$COMMIT
+docker pull rameshthoomu/baseimage:v0.6
+docker tag rameshthoomu/baseimage:v0.6 hyperledger/fabric-baseimage:latest
+#docker pull hyperledger/fabric-peer:$COMMIT
+#docker pull hyperledger/fabric-membersrvc:$COMMIT
+
+docker pull rameshthoomu/peer:$COMMIT
+docker pull rameshthoomu/membersrvc:$COMMIT
 
 #curl -L https://github.com/rameshthoomu/fabric/blob/master/scripts/provision/common.sh -o common.sh
 #curl -L https://raw.githubusercontent.com/rameshthoomu/fabric/master/scripts/provision/docker.sh -o docker.sh
