@@ -1,5 +1,7 @@
 Continuous Integration with Jenkins on Hyperledger/fabric Repository:
 
+We are excited to share our experience on setting up Continous Integration on Hyperledger Fabric Repository.
+
 * We have implemented CI using Jenkins tool on hyperledger fabric repository. What made us to take this decesion to implement Jenkins on Fabric.
 
 Considering all the limitations observed on Travis we decided to use Jenkins open source tool. Below is the process we have implemented:
@@ -26,5 +28,4 @@ We have created an repository in gerrit to control Jenkins job configuration. As
 
 We spinup Openstack VM's for each build and supports maximum of 10 builds concunrrently. Each VM runs on Ubuntu14.04 (non-vagrant) environment.
 
-
-
+Best Practises: 
