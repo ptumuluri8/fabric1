@@ -1,7 +1,7 @@
 site_name: Hyperledger Fabric
 site_url: http://hyperledger-fabric.readthedocs.io
 theme: readthedocs
-repo_url: http://gerrit.hyperledger.org/r/fabric
+repo_url: https://github.com/rameshthoomu/fabric1.git 
 site_description: 'Welcome to the Hyperledger fabric documentation'
 strict: true
 theme_dir: 'docs/custom_theme'
@@ -13,6 +13,9 @@ pages:
 - Usecases: biz/usecases.md
 - System Chaincode: SystemChaincode-noop.md
 
+- Starter Kit:
+  - Starter Kit: starter/fabric-starter-kit.md
+
 - Installation and setup:
   - Chaincode or Application Developer Setup: Setup/Chaincode-setup.md
   - Java Chaincode Setup: Setup/JAVAChaincode.md
@@ -21,7 +24,7 @@ pages:
   - CA Setup: Setup/ca-setup.md
   - Logging: Setup/logging-control.md
 
-- APIs:
+- API's:
   - Chaincode APIs: API/ChaincodeAPI.md
   - Core API: API/CoreAPI.md
   - CA API: API/MemberServicesAPI.md
@@ -29,18 +32,19 @@ pages:
 - Fabric Developer:
   - v1.0 Preview: abstract_v1.md
   - Contributing: CONTRIBUTING.md
-  - Getting an Account: Gerrit/lf-account.md
-  - Gerrit: Gerrit/gerrit.md
+  - Maintainers: MAINTAINERS.md
   - Fabric Developer Setup: dev-setup/devenv.md
   - Building Fabric: dev-setup/build.md
-  - Best Practices: Gerrit/best-practices.md
-  - Maintainers: MAINTAINERS.md
+  - Getting an Account: Gerrit/lf-account.md
+  - Gerrit: Gerrit/gerrit.md
   - Reviewing: Gerrit/reviewing.md
   - Changes: Gerrit/changes.md
+  - Best Practices: Gerrit/best-practices.md
+
 - Style guides:
     - Golang: Style-guides/go-style.md
 
-- FAQ:
+- FAQ's:
   - ChainCodeFAQ: FAQ/chaincode_FAQ.md
   - ConfidentialityFAQ: FAQ/confidentiality_FAQ.md
   - ConsensusFAQ: FAQ/consensus_FAQ.md
@@ -60,19 +64,24 @@ pages:
   - Sample-Standalone-app: nodeSDK/sample-standalone-app.md
   - Sample-web-app: nodeSDK/sample-web-app.md
 
-- Starter Kit:
-  - Starter Kit: starter/fabric-starter-kit.md
-
 - Releases: releases.md
 
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - js/extra.js
+
 markdown_extensions:
+  - toc:
+     permalink: True
+  - admonition
   - extra
   - tables
-  - toc
   - fenced_code
   - smarty
-  - mdx_math:
-      enable_dollar_delimiter: True #for use of inline $..$
+#  - mdx_math:
+#      enable_dollar_delimiter: True #for use of inline $..$
   - footnotes
 
 copyright: Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a>

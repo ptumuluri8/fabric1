@@ -25,4 +25,4 @@ See [Hyperledger fabric Node.js client SDK](../nodeSDK/node-sdk-guide.md) for mo
 
 First, you'll want to have a running peer node and member services. The
 instructions for setting up a network are
-[here](Network-setup.md). You may also use the [self contained environment](../nodeSDK/node-sdk-self-contained.md) that provides the network.
+[here](Network-setup.md). You may also use the  [fabric-starter-kit](../starter/fabric-starter-kit.md) that provides the network.
