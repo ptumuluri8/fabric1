@@ -68,11 +68,12 @@ pages:
 markdown_extensions:
   - extra
   - tables
-  - toc
+  - toc:
+      permalink: True
   - fenced_code
   - smarty
-  - mdx_math:
-      enable_dollar_delimiter: True #for use of inline $..$
+#  - mdx_math:
+#      enable_dollar_delimiter: True #for use of inline $..$
   - footnotes
 
 copyright: Copyright &copy; 2016 IBM Corp. <br></br>Contributed to the Hyperledger Project under the <a href="https://github.com/hyperledger/fabric/blob/master/LICENSE" target="_blank">Apache Software License 2.0</a>
