@@ -1,0 +1,167 @@
+# Spinup Local Peer Network
+
+The purpose of this script is to spinup peers n number of peer on docker environment. This script spins up the peer and membersrvc in docker containers and uses approved peer, membersrvc & base images from https://hub.docker.com/u/hyperledger/
+
+Before execute local_fabric.sh script in your system, make sure your system satisfies the below requirements.
+
+1. Install and configure docker https://github.com/hyperledger/fabric/blob/master/devenv/setup.sh
+
+2. If applicable, verify ufw firewall status in non-vagrant environment. Disable firewall if it is enabled.
+
+  - `sudo ufw status`
+  - `sudo ufw disable`
+
+3. Clear `iptables` rules (if firewall rules are rejecting docker requests) and re-start docker daemon.
+
+  - `iptables -L` //(to view iptable rules)
+  - `iptables -D INPUT 4` //ex: to delete Reject rules from INPUT policy. 4 is the row number to delete)
+
+4. Skip this step if you don't want to build images manually otherwise, build peer and membersrvc images in your local machine using makefile and provide the image name and commit number to local_fabric script otherwise take the image name for the specific commit from above mentioned docker hub account.
+
+Move to directory where the makefile is located (root of the fabric directory) 
+
+  - `cd $GOPATH/src/github.com/hyperledger/fabric`
+  - `make images`
+  - `docker tag <imagename>:<tagname> <newimagename>:<newtagname>` //usually newtagname will be a commit number
+
+###Spinup peers in local network:
+
+Use below script to spinup peers on gerrit code base:
+
+curl [local_fabric.sh](https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric.sh) file into local machine and follow below instructions to run the script.
+
+Use below script to spinup peers on fabric code base:
+
+curl [local_fabric.sh](https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric.sh) file into local machine and follow below instructions to run the script.
+
+Example:
+
+`curl -L https://raw.githubusercontent.com/rameshthoomu/fabric/tools/localpeersetup/local_fabric.sh -o local_fabric.sh`
+
+####Follow below steps:
+
+  - chmod +x local_fabric.sh 
+  - ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft // commit message format is different in both gerrit and github. Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags.
+
+####USAGE:
+```
+./local_fabric.sh -n <number of peers> -s <enable security and Privacy> -c <Specific Commit> -l <Enable Logging method> -m <Consensus Mode>
+
+OPTIONS:
+
+-h/? - Print a usage message
+-n   - Number of peers to launch
+-s   - Enable Security and Privacy
+-c   - Provide Specific peer and membersrvc docker image commit
+-l   - Enable logging method
+-m   - Enable consensus mode
+ Example: 
+./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft
+```
+
+![4 peer network](peers.png)
+
+###Useful Docker Commands:
+
+1. Kill all containers
+  - **docker rm $(docker kill $(docker ps -aq))** (user rm -f to force kill)
+2. Remove all exited containers
+  - **docker ps -aq -f status=exited | xargs docker rm**
+3. Remove all Images except 'openblockchain/baseimage'
+  - **docker rmi $(docker images | grep -v 'hyperledger/fabric-baseimage:latest' | awk {'print $3'})**
+4. Stop Docker container
+  - **docker stop <Container ID>**
+5. Start Docker container
+  - **docker start <Container ID>**
+6. To know running containers
+  - **docker ps**
+7. To know all containers (Including active and non-active)
+  - **docker ps -a**
+9. To view NetworkSettings of a Container
+  - **docker inspect <Container ID>**
+10. To View Logs of a Container
+  - **docker logs -f <Container ID>**
+
+## Testing Chaincode in CLI mode:
+
+Execute below command to get into PEER0 docker container `docker exec -it PEER0 bash` and execute below commands to Register an user, Deploy chaincode, Invoke transaction and Query transaction commands from container CLI.
+
+### Registering user inside PEER0 container:
+
+`peer network login test_user0` or `peer network login test_user0 -p MS9qrN8hFjlE`
+
+```
+root@7efbae933829:/opt/gopath/src/github.com/hyperledger/fabric# peer network login test_user0
+2016/07/23 00:51:09 Load docker HostConfig: %+v &{[] [] []  [] false map[] [] false [] [] [] [] host    { 0} [] { map[]} false []  0 0 0 false 0    0 0 0 []}
+00:51:09.492 [crypto] main -> INFO 002 Log level recognized 'info', set to INFO
+00:51:09.493 [main] networkLogin -> INFO 003 CLI client login...
+00:51:09.493 [main] networkLogin -> INFO 004 Local data store for client loginToken: /var/hyperledger/production/client/
+Enter password for user 'test_user0': ************
+00:51:14.863 [main] networkLogin -> INFO 005 Logging in user 'test_user0' on CLI interface...
+00:51:15.374 [main] networkLogin -> INFO 006 Storing login token for user 'test_user0'.
+00:51:15.374 [main] networkLogin -> INFO 007 Login successful for user 'test_user0'.
+00:51:15.374 [main] main -> INFO 008 Exiting.....
+```
+
+### Deploy Chaincode inside Peer0 container:
+Once user is registered, execute the below command to deploy chaincode on PEER0. Below command is to deploy chaincode on PEER0 when peer is running with Security enabled.
+
+```
+peer chaincode deploy -u test_user0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{"Args": ["init","a", "100", "b", "200"]}'
+```
+Chaincode ID creates after chaincode is successfully executed
+```
+ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539
+```
+### Invoke Chaincode inside Container:
+
+Submit Invoke transaction using the above chaincode ID:
+```
+peer chaincode invoke -u test_user0 -n ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539 -c '{"Args": ["invoke", "a", "b", "10"]}'
+```
+### Query Chaincode inside Container:
+
+Submit Query Transaction using chaincode
+
+```
+peer chaincode query -n ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539 -c '{"Args": ["query", "a"]}'
+```
+
+## Modify existing configuration settings of core.yaml in peer docker image:
+
+### 1. Pull images from DockerHub:
+
+First, pull latest peer and membersrvc images or pull specific commit docker images from [Docker Hub](https://hub.docker.com/u/hyperledger/)
+
+```
+  docker pull hyperledger/fabric-peer
+  docker pull hyperledger/fabric-membersrvc
+```
+
+Once the images are pulled from dockerhub, follow below process to modify configuration files of peer image.
+
+List out all the docker images whcih are available in your system:
+
+`docker images`
+
+```
+hyperledger/fabric-peer 3e0e80a             895b42b528a6        3 days ago          1.447 GB
+```
+
+### 2. Run Docker Image
+
+Specify the ImageID or Imagename from the output of the above command
+
+`docker run -it <imageID> or <image name> bash`
+
+ex: `docker run -it hyperledge/fabric bash` or `docker run -it 895b42b528a6 bash`
+
+### 3. Saving changes inside Container
+
+Above command takes you to the container, modify any file inside container ex: `core.yaml` file and press `CTRL + P + Q`. In docker, CTRL + P + Q runs the container in background mode or detached mode and automatically exit from the container.
+
+Execute `docker ps` command to see the container running in detached mode. Take the container ID or container name and execute the below command
+
+`docker commit <ContainerID> <NewImageName>`
+
+Keep the above new Imagename in local_fabric.sh script and execute the script.
