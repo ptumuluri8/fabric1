@@ -65,17 +65,17 @@ OPTIONS:
 3. Remove all Images except 'openblockchain/baseimage'
   - **docker rmi $(docker images | grep -v 'hyperledger/fabric-baseimage:latest' | awk {'print $3'})**
 4. Stop Docker container
-  - **docker stop <Container ID>**
+  - **docker stop Container ID**
 5. Start Docker container
-  - **docker start <Container ID>**
+  - **docker start Container ID**
 6. To know running containers
   - **docker ps**
 7. To know all containers (Including active and non-active)
   - **docker ps -a**
 9. To view NetworkSettings of a Container
-  - **docker inspect <Container ID>**
+  - **docker inspect Container ID**
 10. To View Logs of a Container
-  - **docker logs -f <Container ID>**
+  - **docker logs -f Container ID**
 
 ## Testing Chaincode in CLI mode:
 
@@ -139,7 +139,7 @@ Once the images are pulled from dockerhub, follow below process to modify config
 
 List out all the docker images whcih are available in your system:
 
-`docker images`
+**docker images**
 
 ```
 hyperledger/fabric-peer 3e0e80a             895b42b528a6        3 days ago          1.447 GB
