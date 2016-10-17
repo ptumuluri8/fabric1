@@ -161,4 +161,4 @@ Execute `docker ps` command to see the container running in detached mode. Take 
 
 `docker commit <ContainerID> <NewImageName>`
 
-Keep the above new Imagename in local_fabric.sh script and execute the script.
+Keep the above new Imagename in spinup_peers.sh script and execute the script.
