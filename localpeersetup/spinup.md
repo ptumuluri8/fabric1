@@ -2,7 +2,7 @@
 
 The purpose of this script is to spinup n number of peers on docker environment. This script spins up the peer and membersrvc in docker containers and uses stable peer, membersrvc & base images from https://hub.docker.com/u/hyperledger/
 
-Before execute local_fabric.sh script in your system, make sure your system satisfies the below requirements.
+Before execute spinup_peers.sh script in your system, make sure your system satisfies the below requirements.
 
 1. Install and configure docker https://github.com/hyperledger/fabric/blob/master/devenv/setup.sh
 
@@ -14,20 +14,20 @@ Before execute local_fabric.sh script in your system, make sure your system sati
 3. Clear `iptables` rules (if firewall rules are rejecting docker requests) and re-start docker daemon.
 
   - `iptables -L` (to view iptable rules)
-  - `iptables -D INPUT 4` ex: to delete Reject rules from INPUT policy. 4 is the row number to delete)
+  - `iptables -D INPUT 4` (ex: to delete Reject rules from INPUT policy. 4 is the row number to delete)
 
 4. Skip this step if you don't want to build images manually otherwise, build peer and membersrvc images in your local machine using makefile and provide the image name and commit number to local_fabric script otherwise take the image name for the specific commit from above mentioned docker hub account.
 
-Move to directory where the makefile is located (root of the fabric directory) 
+   Move to directory where the makefile is located (root of the fabric directory) 
 
-  - `cd $GOPATH/src/github.com/hyperledger/fabric`
-  - `make images`
+    - `cd $GOPATH/src/github.com/hyperledger/fabric`
+    - `make images`
 
 ###Spinup peers in local network:
 
 Use below script to spinup peers on gerrit code base:
 
-curl [local_fabric.sh](https://raw.githubusercontent.com/hyperledger/fabric/scripts/spinup_peers.sh) file into local machine and follow below instructions to run the script.
+curl [spinup_peers.sh](https://raw.githubusercontent.com/hyperledger/fabric/scripts/spinup_peers.sh) file into local machine and follow below instructions to run the script.
 
 Example:
 
@@ -35,8 +35,8 @@ Example:
 
 ####Follow below steps:
 
-  - chmod +x spinup_peers.sh 
-  - ./spinup_peers.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
+  - `chmod +x spinup_peers.sh`
+  - `./spinup_peers.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft` (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
 
 ####USAGE:
 ```
