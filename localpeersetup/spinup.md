@@ -51,7 +51,7 @@ OPTIONS:
 -l   - Enable logging method
 -m   - Enable consensus mode
  Example: 
-./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft
+./local_fabric.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft
 ```
 
 ![4 peer network](peers.png)
