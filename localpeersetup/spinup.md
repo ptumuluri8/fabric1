@@ -1,8 +1,8 @@
 # Spinup Local Peer Network
 
-The purpose of this script is to spinup n number of peers on docker environment. This script spins up the peer and membersrvc in docker containers and uses stable peer, membersrvc & base images from https://hub.docker.com/u/hyperledger/
+The purpose of this script is to spinup N number of peers on docker environment. This script spins up the peer and membersrvc in docker containers and uses stable peer, membersrvc & base images from https://hub.docker.com/u/hyperledger/
 
-Before execute spinup_peers.sh script in your system, make sure your system satisfies the below requirements.
+Before execute spinup_peer_network.sh script in your system, make sure your system satisfies the below requirements.
 
 1. Install and configure docker https://github.com/hyperledger/fabric/blob/master/devenv/setup.sh
 
@@ -16,7 +16,7 @@ Before execute spinup_peers.sh script in your system, make sure your system sati
   - `iptables -L` (to view iptable rules)
   - `iptables -D INPUT 4` (ex: to delete Reject rules from INPUT policy. 4 is the row number to delete)
 
-4. Skip this step if you don't want to build images manually otherwise, build peer and membersrvc images in your local machine using makefile and provide the image name and commit number to local_fabric script otherwise take the image name for the specific commit from above mentioned docker hub account.
+4. (If you do not want to build images manually, skip this step and simply take the image name for the specific commit from above mentioned docker hub account.) Build peer and membersrvc images in your local machine using makefile and provide the image name and commit number to spinup_peer_network.sh script.
 
    Move to directory where the makefile is located (root of the fabric directory) 
 
@@ -27,31 +27,34 @@ Before execute spinup_peers.sh script in your system, make sure your system sati
 
 Use below script to spinup peers on gerrit code base:
 
-curl [spinup_peers.sh](https://raw.githubusercontent.com/hyperledger/fabric/scripts/spinup_peers.sh) file into local machine and follow below instructions to run the script.
+curl [spinup_peer_network.sh](https://raw.githubusercontent.com/hyperledger/fabric/scripts/spinup_peer_network.sh) file into local machine and follow below instructions to run the script.
 
 Example:
 
-`curl -L https://raw.githubusercontent.com/hyperledger/fabric/scripts/spinup_peers.sh -o spinup_peers.sh`
+`curl -L https://raw.githubusercontent.com/hyperledger/fabric/scripts/spinup_peer_network.sh -o spinup_peer_network.sh`
 
 ####Follow below steps:
 
-  - `chmod +x spinup_peers.sh`
-  - `./spinup_peers.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft` (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
+  - `chmod +x spinup_peer_network.sh`
+  - `./spinup_peer_network.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft` (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
+  - `./spinup_peer_network.sh -c x86_64-0.6.1-preview -l debug -m pbft` (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
 
 ####USAGE:
 ```
-./local_fabric.sh -n <number of peers> -s <enable security and Privacy> -c <Specific Commit> -l <Enable Logging method> -m <Consensus Mode>
+./spinup_peer_network.sh -n <number of peers, N> -s -c <specific Commit> -l <Logging detail level> -m <consensus Mode> -f <number of faulty peers, F> -b <batch size>
 
 OPTIONS:
 
 -h/? - Print a usage message
 -n   - Number of peers to launch
--s   - Enable Security and Privacy
+-s   - Enable Security and Privacy, and start memberservices (caserver)
 -c   - Provide Specific peer and membersrvc docker image commit
--l   - Enable logging method
--m   - Enable consensus mode
+-l   - Select logging method detail level
+-m   - Select consensus mode
+-f   - Number of faulty peers allowed in a pbft network (default is max possible value (N-1)/3)
+-b   - batch size
  Example: 
-./local_fabric.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft
+./spinup_peer_network.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft
 ```
 
 ![4 peer network](peers.png)
@@ -105,7 +108,7 @@ Once user is registered, execute the below command to deploy chaincode on PEER0.
 ```
 peer chaincode deploy -u test_user0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{"Args": ["init","a", "100", "b", "200"]}'
 ```
-After deploy is succesfully executed it creates a chaincode ID.
+After deploy is successfully executed it creates a chaincode ID.
 ```
 ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539
 ```
@@ -161,4 +164,4 @@ Execute `docker ps` command to see the container running in detached mode. Take 
 
 `docker commit <ContainerID> <NewImageName>`
 
-Keep the above new Imagename in spinup_peers.sh script and execute the script.
+Keep the above new Imagename in spinup_peer_network.sh script and execute the script.

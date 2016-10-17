@@ -1,7 +1,7 @@
 #!/bin/bash
 # ------------------------------------------------------------------
 # TITLE : Spinup local peer network
-# AUTHOR: Ramesh Thoomu & Barry
+# AUTHOR: Ramesh Thoomu & Barry Mosakowski
 # VERSION: 1.0
 
 # DESCRIPTION:
@@ -13,18 +13,20 @@
 # Pre-condition: Install docker in your local machine and start docker daemon
 
 ## USAGE:
-# local_fabric.sh [OPTIONS]
+# spinup_peer_network.sh [OPTIONS]
 
 # OPTIONS:
 #       -n   - Number of peers to launch
 #       -s   - Enable Security and Privacy
 #       -c   - Specific commit
-#       -l   - Enable logging method
-#       -m   - Enable consensus mode
-#       -?/-h- Prints Usage
+#       -l   - Logging detail level
+#       -m   - Consensus mode
+#       -b   - Set batch size, useful when using consensus pbft mode of batch
+#       -f   - Number of tolerated faulty peers, when using pbft for consensus, maximum (n-1)/3
+#       -?|-h - Prints Usage
 #
 # SAMPLE :
-#       ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft
+#       ./spinup_peer_network -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft -b 1000
 # ------------------------------------------------------------------
 
 ARCH=`uname -m`
@@ -98,9 +100,11 @@ docker run -d --name=PEER0 -it \
                 -e CORE_PEER_VALIDATOR_CONSENSUS_PLUGIN=$CONSENSUS_MODE \
                 -e CORE_PBFT_GENERAL_MODE=$PBFT_MODE \
                 -e CORE_PBFT_GENERAL_N=$NUM_PEERS \
+                -e CORE_PBFT_GENERAL_F=$F \
+                -e CORE_PBFT_GENERAL_BATCHSIZE=$PBFT_BATCHSIZE \
                 -e CORE_PBFT_GENERAL_TIMEOUT_REQUEST=10s \
                 -e CORE_PEER_LOGGING_LEVEL=$PEER_LOG \
-                -e CORE_LOGGING_LEVEL=debug \
+                -e CORE_LOGGING_LEVEL=$PEER_LOG \
                 -e CORE_VM_DOCKER_TLS_ENABLED=false \
                 --volume=/var/run/docker.sock:/var/run/docker.sock \
                 -e CORE_PEER_PROFILE_ENABLED=true \
@@ -138,9 +142,11 @@ docker run  -d --name=PEER$peer_id -it \
                 -e CORE_PEER_VALIDATOR_CONSENSUS_PLUGIN=$CONSENSUS_MODE \
                 -e CORE_PBFT_GENERAL_MODE=$PBFT_MODE \
                 -e CORE_PBFT_GENERAL_N=$NUM_PEERS \
+                -e CORE_PBFT_GENERAL_F=$F \
+                -e CORE_PBFT_GENERAL_BATCHSIZE=$PBFT_BATCHSIZE \
                 -e CORE_PBFT_GENERAL_TIMEOUT_REQUEST=10s \
                 -e CORE_PEER_LOGGING_LEVEL=$PEER_LOG \
-                -e CORE_LOGGING_LEVEL=debug \
+                -e CORE_LOGGING_LEVEL=$PEER_LOG \
                 --volume=/var/run/docker.sock:/var/run/docker.sock \
                 -e CORE_VM_DOCKER_TLS_ENABLED=false \
                 -e CORE_PEER_PROFILE_ENABLED=true \
@@ -164,6 +170,7 @@ docker run -d  -it --name=PEER0 \
                 -e CORE_PEER_ADDRESSAUTODETECT=true \
                 -e CORE_PEER_LISTENADDRESS=0.0.0.0:$PEER_gRPC \
                 -e CORE_PEER_LOGGING_LEVEL=$PEER_LOG \
+                -e CORE_LOGGING_LEVEL=$PEER_LOG \
                 --volume=/var/run/docker.sock:/var/run/docker.sock \
                 -e CORE_VM_DOCKER_TLS_ENABLED=false $PEER_IMAGE:$COMMIT peer node start
 
@@ -186,6 +193,7 @@ docker run -d -it --name=PEER$peer_id \
                 -e CORE_PEER_ADDRESS=$IP:`expr $USE_PORT + 1` \
                 -e CORE_PEER_LISTENADDRESS=0.0.0.0:$PEER_gRPC \
                 -e CORE_PEER_LOGGING_LEVEL=$PEER_LOG \
+                -e CORE_LOGGING_LEVEL=$PEER_LOG \
                 --volume=/var/run/docker.sock:/var/run/docker.sock \
                 -e CORE_VM_DOCKER_TLS_ENABLED=false $PEER_IMAGE:$COMMIT peer node start
 done
@@ -193,18 +201,19 @@ done
 
 function usage()
 {
-        echo "USAGE :  local_fabric.sh -n <number of Peers> -s <enable security and privacy> -c <commit number> -l <logging level> -m <consensus mode>"
-        echo "ex: ./local_fabric.sh -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft -a x86_64 "
+        echo "USAGE :  spinup_peer_network -n <number of Peers> -s <for enabling security and privacy> -c <commit number> -l <logging level> -m <consensus mode> -f <faulty peers tolerated> -b <batchsize>"
+        echo "ex: ./spinup_peer_network -n 4 -s -c x86_64-0.6.0-SNAPSHOT-f3c9a45 -l debug -m pbft -f 1 -b 500"
 }
 
-while getopts "\?hsn:c:l:m:" option; do
+while getopts "\?hsn:c:l:m:b:f:" option; do
   case "$option" in
      s)   SECURITY="Y"     ;;
      n)   NUM_PEERS="$OPTARG" ;;
      c)   COMMIT="$OPTARG"  ;;
      l)   PEER_LOG="$OPTARG" ;;
      m)   CONSENSUS_MODE="$OPTARG" ;;
-     a)   ARCH="$OPTARG" ;;
+     b)   PBFT_BATCHSIZE="$OPTARG" ;;
+     f)   F="$OPTARG" ;;
    \?|h)  usage
           exit 1
           ;;
@@ -216,27 +225,38 @@ done
 
 #kill all running containers and LOGFILES...Yet to implement Log rotate logic
 
+# Docker is not perfect; first we need to unpause any paused containers, before we can kill them.
+docker ps -aq -f status=paused | xargs docker unpause  1>/dev/null 2>&1
+
 docker kill $(docker ps -q) 1>/dev/null 2>&1
 docker ps -aq -f status=exited | xargs docker rm 1>/dev/null 2>&1
-rm LOG*
+rm -f LOGFILE_*
 docker rm -f $(docker ps -aq)
 rm -rf /var/hyperledger/*
 
-echo "--------> Setting default command line Arg values to without security & consensus and starts 5 peers"
+# echo "--------> Setting default Arg values that were not specified on the command line"
 : ${SECURITY:="N"}
-: ${NUM_PEERS="5"}
+: ${NUM_PEERS="4"}
 : ${COMMIT="latest"}
 : ${PEER_LOG="debug"}
 : ${CONSENSUS_MODE="pbft"}
+: ${PBFT_BATCHSIZE="500"}
+: ${F:=$((($NUM_PEERS-1)/3))} # set F default to max possible F value (N-1)/3 here when F was not specified in the command line
 SECURITY=$(echo $SECURITY | tr a-z A-Z)
 
-echo "Number of PEERS are $NUM_PEERS"
+echo "Number of PEERS (N): $NUM_PEERS"
 if [ $NUM_PEERS -le 0 ] ; then
-        echo "Enter valid number of PEERS"
+        echo "Must enter valid number of PEERS"
         exit 1
 fi
 
-echo "Is Security and Privacy enabled $SECURITY"
+echo "Number of Faulty Peers Tolerated (F): $F"
+if [ $NUM_PEERS -le $F ] ; then
+        echo "Warning: F should be <= (N-1)/3 for pbft, and certainly must be less than N. Test proceeding anyways to see what the code does with it..."
+fi
+
+echo "Is Security and Privacy enabled: $SECURITY"
+
 
 echo "--------> Pulling Base Docker Images from Docker Hub"
 
@@ -263,9 +283,15 @@ fi
 
 echo "--------> Printing list of Docker Containers"
 CONTAINERS=$(docker ps | awk 'NR>1 && $NF!~/caserv/ {print $1}')
-echo $CONTAINERS
+echo CONTAINERS: $CONTAINERS
 NUM_CONTAINERS=$(echo $CONTAINERS | awk '{FS=" "}; {print NF}')
-echo $NUM_CONTAINERS
+echo NUM_CONTAINERS: $NUM_CONTAINERS
+if [ $NUM_CONTAINERS -lt $NUM_PEERS ]
+then
+    echo "ERROR: NOT ALL THE CONTAINERS ARE RUNNING!!! Displaying debug info..."
+    echo "docker ps -a" 
+    docker ps -a
+fi
 
 # Printing Log files
 for (( container_id=1; $container_id<="$((NUM_CONTAINERS))"; container_id++ ))
@@ -278,6 +304,7 @@ done
 # Writing Peer data into a file for Go SDK
 
 cd $WORKDIR
+echo "creating networkcredentials file"
 touch networkcredentials
 echo "{" > $WORKDIR/networkcredentials
 echo "   \"PeerData\" :  [" >> $WORKDIR/networkcredentials
@@ -371,5 +398,5 @@ done
 
         echo "   ],"  >> $WORKDIR/networkcredentials
 
-        echo " \"Name\": \"localpeer_ramesh\" " >> $WORKDIR/networkcredentials
+        echo " \"Name\": \"spinup_peer_network\" " >> $WORKDIR/networkcredentials
         echo "} "  >> $WORKDIR/networkcredentials
