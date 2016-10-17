@@ -73,11 +73,9 @@ Below, you'll find the following sections:
 * [Getting started](#getting-started)
 * [Quickstart](#quickstart-documentation)
 * [Developer guides](#developer-guides)
-
-  * [Fabric developer's guide](#fabric-developer-guide)
-  * [Chaincode developer's guide](#chaincode-developer-guide)
-  * [API developer's guide](#api-developer-guide)
-
+    * [Fabric developer's guide](#fabric-developer-guide)
+    * [Chaincode developer's guide](#chaincode-developer-guide)
+    * [API developer's guide](#api-developer-guide)
 * [Operations guide](#operations-guide)
 
 # Getting started
