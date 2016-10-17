@@ -46,7 +46,8 @@ then
 #    MEMBERSRVC_IMAGE=hyperledger/fabric-membersrvc
     PEER_IMAGE=rameshthoomu/peer
     MEMBERSRVC_IMAGE=rameshthoomu/membersrvc
-#    docker pull hyperledger/fabric-baseimage
+    docker pull rameshthoomu/baseimage:v0.6
+    docker tag rameshthoomu/baseimage:v0.6 hyperledger/fabric-baseimage
 
 fi
 
