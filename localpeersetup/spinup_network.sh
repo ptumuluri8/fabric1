@@ -70,7 +70,7 @@ WORKDIR=$(pwd)
 # Membersrvc
 membersrvc_setup()
 {
-
+curl -L https://raw.githubusercontent.com/hyperledger/fabric/master/membersrvc/membersrvc.yaml -o membersrvc.yaml
 local NUM_PEERS=$1
 local IP=$2
 local PORT=$3
