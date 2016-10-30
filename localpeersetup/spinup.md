@@ -16,7 +16,7 @@ Before execute spinup_peer_network.sh script in your system, make sure your syst
   - `iptables -L` (to view iptable rules)
   - `iptables -D INPUT 4` (ex: to delete Reject rules from INPUT policy. 4 is the row number to delete)
 
-4. (If you do not want to build images manually, skip this step and simply take the image name for the specific commit from above mentioned docker hub account.) Build peer and membersrvc images in your local machine using makefile and provide the image name and commit number to spinup_peer_network.sh script.
+4. If you do not want to build images manually, skip this step and simply take the image name for the specific commit from above mentioned docker hub account. Build peer and membersrvc images in your local machine using makefile and provide the image name and commit number to spinup_peer_network.sh script.
 
    Move to directory where the makefile is located (root of the fabric directory) 
 
@@ -37,8 +37,7 @@ Example:
 
   - `chmod +x spinup_peer_network.sh`
   - `./spinup_peer_network.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft` (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
-  - `./spinup_peer_network.sh -c x86_64-0.6.1-preview -l debug -m pbft` (Check here [Hyperledger Docker hub account](https://hub.docker.com/u/hyperledger/) for gerrit commit tags)
-
+  
 ####USAGE:
 ```
 ./spinup_peer_network.sh -n <number of peers, N> -s -c <specific Commit> -l <Logging detail level> -m <consensus Mode> -f <number of faulty peers, F> -b <batch size>
@@ -82,7 +81,7 @@ OPTIONS:
 
 ## Testing Chaincode in CLI mode:
 
-Execute below command to get into PEER0 docker container `docker exec -it PEER0 bash` and execute below commands to Register an user, Deploy chaincode, Invoke transaction and Query transaction commands from container CLI.
+Execute below command to get into PEER0 docker container `docker exec -it PEER0 bash` and execute below commands to **Register** an user, **Deploy** chaincode, **Invoke** transaction and **Query** transaction commands from container CLI.
 
 ### Registering user inside PEER0 container:
 
