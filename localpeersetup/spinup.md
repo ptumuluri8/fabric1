@@ -56,7 +56,7 @@ OPTIONS:
 ./spinup_peer_network.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft
 ```
 
-![4 peer network](peers.png)
+![4 peer network](peers.PNG)
 
 ###Useful Docker Commands:
 
