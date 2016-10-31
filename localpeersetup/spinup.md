@@ -55,7 +55,7 @@ OPTIONS:
  Example: 
 ./spinup_peer_network.sh -n 4 -s -c x86_64-0.6.1-preview -l debug -m pbft
 ```
-
+**Reference:**
 ![4 peer network](peers.PNG)
 
 ###Useful Docker Commands:
@@ -123,7 +123,7 @@ peer chaincode invoke -u test_user0 -n ee5b24a1f17c356dd5f6e37307922e39ddba12e5d
 Submit Query Transaction using chaincode
 
 ```
-peer chaincode query -n ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539 -c '{"Args": ["query", "a"]}'
+peer chaincode query -u test_user0 -n ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539 -c '{"Args": ["query", "a"]}'
 ```
 
 ### Modify existing configuration settings of core.yaml in peer docker image:
@@ -144,7 +144,15 @@ List out all the docker images whcih are available in your system:
 **docker images**
 
 ```
-hyperledger/fabric-peer 3e0e80a             895b42b528a6        3 days ago          1.447 GB
+dev-vp3-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539   latest                 16ae0dc9c15a        3 minutes ago       1.353 GB
+dev-vp1-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539   latest                 7760a29b05cc        3 minutes ago       1.353 GB
+dev-vp0-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539   latest                 49785a72adcf        3 minutes ago       1.353 GB
+dev-vp2-ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539   latest                 686ee915990b        3 minutes ago       1.353 GB
+hyperledger/fabric-baseimage                                                                                                               latest                 5073cec7e9eb        10 days ago         1.318 GB
+hyperledger/fabric-baseimage                                                                                                               x86_64-0.2.0           5073cec7e9eb        10 days ago         1.318 GB
+hyperledger/fabric-membersrvc                                                                                                              x86_64-0.6.1-preview   b3654d32e4f9        12 days ago         1.417 GB
+hyperledger/fabric-peer                                                                                                                    x86_64-0.6.1-preview   21cb00fb27f4        12 days ago         1.424 GB
+busybox                                                                                                                                    latest                 e02e811dd08f        3 weeks ago         1.093 MB
 ```
 
 ### 2. Run Docker Image
