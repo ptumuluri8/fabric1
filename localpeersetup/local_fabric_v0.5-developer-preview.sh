@@ -33,6 +33,7 @@ REST_PORT=5000
 USE_PORT=30000
 PBFT_MODE=batch
 WORKDIR=$(pwd)
+CA_PORT=50051
 
 # Membersrvc
 membersrvc_setup()
@@ -46,6 +47,11 @@ echo "--------> Starting membersrvc Server"
 
 docker run -d --name=caserver -p 50051:50051 -p 50052:30303 -it $MEMBERSRVC_IMAGE:$COMMIT membersrvc
 
+sleep 10
+
+CA_CONTAINERID=$(docker ps | awk '{print $1}' | awk 'NR==2')
+CA_IP_ADDRESS=$(docker inspect --format '{{.NetworkSettings.IPAddress}}' $CA_CONTAINERID)
+
 echo "--------> Starting hyperledger PEER0"
 
 docker run -d --name=PEER0 -it \
@@ -55,9 +61,9 @@ docker run -d --name=PEER0 -it \
                 -e CORE_SECURITY_PRIVACY=true \
                 -e CORE_PEER_ADDRESSAUTODETECT=false -p $REST_PORT:5000 -p `expr $USE_PORT + 1`:30303 \
                 -e CORE_PEER_ADDRESS=$IP:`expr $USE_PORT + 1` \
-                -e CORE_PEER_PKI_ECA_PADDR=$IP:50051 \
-                -e CORE_PEER_PKI_TCA_PADDR=$IP:50051 \
-                -e CORE_PEER_PKI_TLSCA_PADDR=$IP:50051 \
+                -e CORE_PEER_PKI_ECA_PADDR=$CA_IP_ADDRESS:$CA_PORT \
+                -e CORE_PEER_PKI_TCA_PADDR=$CA_IP_ADDRESS:$CA_PORT \
+                -e CORE_PEER_PKI_TLSCA_PADDR=$CA_IP_ADDRESS:$CA_PORT \
                 -e CORE_PEER_LISTENADDRESS=0.0.0.0:30303 \
                 -e CORE_PEER_VALIDATOR_CONSENSUS_PLUGIN=$CONSENSUS_MODE \
                 -e CORE_PBFT_GENERAL_MODE=$PBFT_MODE \
@@ -89,9 +95,9 @@ docker run  -d --name=PEER$peer_id -it \
                 -e CORE_SECURITY_PRIVACY=true \
                 -e CORE_PEER_ADDRESSAUTODETECT=true -p $REST_PORT:5000 -p `expr $USE_PORT + 1`:30303 \
                 -e CORE_PEER_DISCOVERY_ROOTNODE=$IP:30001 \
-                -e CORE_PEER_PKI_ECA_PADDR=$IP:50051 \
-                -e CORE_PEER_PKI_TCA_PADDR=$IP:50051 \
-                -e CORE_PEER_PKI_TLSCA_PADDR=$IP:50051 \
+                -e CORE_PEER_PKI_ECA_PADDR=$CA_IP_ADDRESS:$CA_PORT \
+                -e CORE_PEER_PKI_TCA_PADDR=$CA_IP_ADDRESS:$CA_PORT \
+                -e CORE_PEER_PKI_TLSCA_PADDR=$CA_IP_ADDRESS:$CA_PORT \
                 -e CORE_PEER_LISTENADDRESS=0.0.0.0:30303 \
                 -e CORE_PEER_VALIDATOR_CONSENSUS_PLUGIN=$CONSENSUS_MODE \
                 -e CORE_PBFT_GENERAL_MODE=$PBFT_MODE \
