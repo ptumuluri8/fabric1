@@ -43,7 +43,9 @@ Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
 
 ## Running the Application in Bluemix Environment:
 
-#### Pre-condition: Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/) and peers and membersrvc are running in Bluemix with v0.5 code base.
+### Pre-condition: 
+
+Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/) and peers and membersrvc are running in Bluemix with v0.5 code base.
 
 ### Terminal 1
 
