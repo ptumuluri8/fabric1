@@ -7,7 +7,7 @@
 Please review instructions on setting up the [Development Environment](https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/devenv.md) as well as the setting up the [Sandbox Environment](https://github.com/hyperledger/fabric/blob/master/docs/Setup/Chaincode-setup.md) to execute the chaincode.
 # Usage -1 
 
-## Running the Application
+## Running the Application in Local Environment:
 
 Clone Asset Management application code from github repository (https://github.com/ITPeople-BlockChain4SCM/assetmanagement)**
 ```
@@ -41,15 +41,9 @@ Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
 
 # Usage - 2:
 
-## Running the Application
+## Running the Application in Bluemix Environment:
 
-Clone Asset Management application code from github repository (https://github.com/ITPeople-BlockChain4SCM/assetmanagement)**
-```
- cd $GOPATH/src/github.com/hyperledger/fabric
- git clone https://github.com/ITPeople-BlockChain4SCM/assetmanagement.git
-```
-
-## Pre-condition: Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/)
+### Pre-condition: Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/) and peers and membersrvc are running in Bluemix with v0.5 code base.
 
 ### Terminal 1
 
@@ -62,6 +56,7 @@ Copy MQLITE folder into assetmanagement directory and execute below command to s
   node sendmsg.js 
 ```
 the output of the above command will give you below *Connected to https://mqlight-lookup-prod01.messagehub.services.us-south.bluemix.net/Lookup?serviceId=4183a4b6-d535-4a5f-8848-49dbbf3245dc using client-id AUTO_038a364*
+
 ### Terminal 2
 Execute below command to post and update assests in *sendlocation* directory.
 
