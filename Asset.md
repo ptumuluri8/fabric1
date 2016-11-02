@@ -5,6 +5,7 @@
 ## Environment Setup
 
 Please review instructions on setting up the [Development Environment](https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/devenv.md) as well as the setting up the [Sandbox Environment](https://github.com/hyperledger/fabric/blob/master/docs/Setup/Chaincode-setup.md) to execute the chaincode.
+# Usage -1 
 
 ## Running the Application
 
@@ -24,16 +25,44 @@ follow below scripts to run spinup peer network
 
 ###Terminal 2
 
+```
+   cd $GOPATH/src/github.com/hyperledger/fabric/assetmanagement
+   npm install
+   node filewatcher.js
+```
+filewatcher.js is an alternative approach for MQLITE, it looks for json files placing under mqnode/input directory. When ever there is a file drops in input directory, filewatcher.js looks for the change and creates assets. User can view the assets in http://localhost:3000
+
+If you want to test asset status, modify json files placed in update directory for the specific asset with required details and copy it into input directory. 
+
+Above script takes 5 json files from update folder and send it to *sendlocation* directory. While executing this script, user can refresh bluemix application page to view the updated assets information.
+
+Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
+
+
+# Usage - 2:
+
+## Running the Application
+
+Clone Asset Management application code from github repository (https://github.com/ITPeople-BlockChain4SCM/assetmanagement)**
+```
+ cd $GOPATH/src/github.com/hyperledger/fabric
+ git clone https://github.com/ITPeople-BlockChain4SCM/assetmanagement.git
+```
+
+## Pre-condition: Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/)
+
+### Terminal 1
+
 Copy MQLITE folder into assetmanagement directory and execute below command to subscribe to bluemix msg-hub application
 ```
- * cd $GOPATH/src/github.com/hyperledger/fabric/assetmanagement
- * npm install mqlight
- * npm install
- * node sendmsg.js
+  cd $GOPATH/src/github.com/hyperledger/fabric/assetmanagement
+  npm install
+  npm install mqlight
+  npm install chokidar
+  node sendmsg.js 
 ```
 the output of the above command will give you below *Connected to https://mqlight-lookup-prod01.messagehub.services.us-south.bluemix.net/Lookup?serviceId=4183a4b6-d535-4a5f-8848-49dbbf3245dc using client-id AUTO_038a364*
-###Terminal 3
-
+### Terminal 2
 Execute below command to post and update assests in *sendlocation* directory.
 
 ```
