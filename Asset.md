@@ -14,7 +14,7 @@ Clone Asset Management application code from github repository (https://github.c
  cd $GOPATH/src/github.com/hyperledger/fabric
  git clone https://github.com/ITPeople-BlockChain4SCM/assetmanagement.git
 ```
-###Terminal 1
+### Terminal 1
 
 Spinup 4 peer and membersrvc network of pre-build docker images on *v0.5-developer-preview* branch using the below script [Peer network setup](https://raw.githubusercontent.com/rameshthoomu/fabric1/tools/localpeersetup/local_fabric_v0.5-developer-preview.sh)
 follow below scripts to run spinup peer network
@@ -23,7 +23,7 @@ follow below scripts to run spinup peer network
  * chmod +x local_fabric_v0.5-developer-preview.sh
  * ./local_fabric_v0.5-developer-preview.sh -n 4 -s -c cfc2099
 
-###Terminal 2
+### Terminal 2
 
 ```
    cd $GOPATH/src/github.com/hyperledger/fabric/assetmanagement
@@ -43,7 +43,7 @@ Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
 
 ## Running the Application in Bluemix Environment:
 
-### Pre-condition: Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/) and peers and membersrvc are running in Bluemix with v0.5 code base.
+#### Pre-condition: Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/) and peers and membersrvc are running in Bluemix with v0.5 code base.
 
 ### Terminal 1
 
