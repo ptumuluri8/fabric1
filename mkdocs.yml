@@ -12,6 +12,7 @@ pages:
 - Protocol Spec: protocol-spec.md
 - Usecases: biz/usecases.md
 - System Chaincode: SystemChaincode-noop.md
+- docker: docker.md
 
 - Installation and setup:
   - Chaincode or Application Developer Setup: Setup/Chaincode-setup.md
