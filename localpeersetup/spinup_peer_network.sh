@@ -78,7 +78,7 @@ local IP=$2
 local PORT=$3
 echo "--------> Starting membersrvc Server"
 
-docker run -d --name=caserver -p $CA_PORT:$CA_PORT --volume=/var/run/docker.sock:/var/run/docker.sock -p 50052:7051 -it $MEMBERSRVC_IMAGE:$COMMIT membersrvc
+docker run -d --name=caserver -p $CA_PORT:$CA_PORT -e MEMBERSRVC_CA_LOGGING_SERVER=$LOG_LEVEL --volume=/var/run/docker.sock:/var/run/docker.sock -p 50052:7051 -it $MEMBERSRVC_IMAGE:$COMMIT membersrvc
 
 sleep 10
 
