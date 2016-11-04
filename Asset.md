@@ -9,10 +9,8 @@ Please review instructions on setting up the [Development Environment](https://g
 
 ## Running the Application in Local Environment:
 
-Clone Asset Management application code from github repository (https://github.com/ITPeople-BlockChain4SCM/assetmanagement)**
-```
- cd $GOPATH/src/github.com/hyperledger/fabric
- git clone https://github.com/ITPeople-BlockChain4SCM/assetmanagement.git
+Clone Asset Management application code from github repository <<Repo Name>>
+git clone <<repo name>>
 ```
 ### Terminal 1
 
@@ -36,7 +34,7 @@ If you want to test asset status, modify json files placed in update directory f
 
 Above script takes 5 json files from update folder and send it to *sendlocation* directory. While executing this script, user can refresh bluemix application page to view the updated assets information.
 
-Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
+Access Bluemix Application from here:
 
 
 # Usage - 2:
@@ -45,7 +43,7 @@ Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
 
 ### Pre-condition: 
 
-Make sure asset management application is running in bluemix (http://asset-mgmt-v10.mybluemix.net/) and peers and membersrvc are running in Bluemix with v0.5 code base.
+Make sure asset management application is running in bluemix <Bluemix Link> peers and membersrvc are running in Bluemix with v0.5 code base.
 
 ### Terminal 1
 
@@ -57,7 +55,7 @@ Copy MQLITE folder into assetmanagement directory and execute below command to s
   npm install chokidar
   node sendmsg.js 
 ```
-the output of the above command will give you below *Connected to https://mqlight-lookup-prod01.messagehub.services.us-south.bluemix.net/Lookup?serviceId=4183a4b6-d535-4a5f-8848-49dbbf3245dc using client-id AUTO_038a364*
+the output of the above command will give you below *Connected to <<Log Message>> using client-id AUTO_038a364*
 
 ### Terminal 2
 Execute below command to post and update assests in *sendlocation* directory.
@@ -68,4 +66,4 @@ Execute below command to post and update assests in *sendlocation* directory.
 ```
 Above script takes 5 json files from update folder and send it to *sendlocation* directory. While executing this script, user can refresh bluemix application page to view the updated assets information.
 
-Access Bluemix Application from here: http://asset-mgmt-v10.mybluemix.net/
+Access Bluemix Application from here: <Bluemix app>>
