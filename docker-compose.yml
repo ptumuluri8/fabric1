@@ -1,0 +1,63 @@
+--- 
+cop:
+  command: "sh -c 'cop server start -ca ~/.cop/ec.pem -ca-key ~/.cop/ec-key.pem -config /config/cop.json -address \"0.0.0.0\"'"
+  container_name: cop
+  image: lhaskins/fabric-cop
+  ports: 
+    - "8888:8888"
+orderer: 
+  command: orderer
+  environment:
+    - ORDERER_GENERAL_LEDGERTYPE=ram
+    - ORDERER_GENERAL_BATCHTIMEOUT=10s
+    - ORDERER_GENERAL_MAXMESSAGECOUNT=10
+    - ORDERER_GENERAL_MAXWINDOWSIZE=1000
+    - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+    - ORDERER_RAMLEDGER_HISTORY_SIZE=100
+    - ORDERER_GENERAL_ORDERERTYPE=solo
+  image: rameshthoomu/orderer:x86_64-0.7.0-snapshot-2e73248
+  ports:
+    - "7050:7050"
+  working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
+vp0:
+  command: "peer node start"
+  environment:
+    - CORE_PEER_ADDRESSAUTODETECT=true
+    - "CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock"
+    - CORE_LOGGING_LEVEL=DEBUG
+    - "CORE_PEER_NETWORKID=${CORE_PEER_NETWORKID}"
+    - CORE_NEXT=true
+    - CORE_PEER_ENDORSER_ENABLED=true
+    - CORE_PEER_ID=vp0
+    - CORE_PEER_PROFILE_ENABLED=true
+    - "CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer:7050"
+  image: rameshthoomu/peer:x86_64-0.7.0-snapshot-2e73248
+  links:
+    - cop
+    - orderer
+  ports:
+    - "7051:7051"
+  volumes:
+    - "/var/run/:/host/var/run/"
+vp1:
+  command: "peer node start"
+  environment: 
+    - CORE_PEER_ADDRESSAUTODETECT=true
+    - "CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock"
+    - CORE_LOGGING_LEVEL=DEBUG
+    - "CORE_PEER_NETWORKID=${CORE_PEER_NETWORKID}"
+    - CORE_NEXT=true
+    - CORE_PEER_ENDORSER_ENABLED=true
+    - CORE_PEER_ID=vp1
+    - CORE_PEER_PROFILE_ENABLED=true
+    - "CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer:7050"
+    - "CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051"
+  image: rameshthoomu/peer:x86_64-0.7.0-snapshot-2e73248
+  links: 
+    - cop
+    - orderer
+    - vp0
+  ports: 
+    - "7056:7051"
+  volumes: 
+    - "/var/run/:/host/var/run/"
