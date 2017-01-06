@@ -15,7 +15,7 @@ orderer:
     - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
     - ORDERER_RAMLEDGER_HISTORY_SIZE=100
     - ORDERER_GENERAL_ORDERERTYPE=solo
-  image: rameshthoomu/orderer:x86_64-0.7.0-snapshot-2e73248
+  image: rameshthoomu/fabric-orderer
   ports:
     - "7050:7050"
   working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
@@ -31,7 +31,7 @@ vp0:
     - CORE_PEER_ID=vp0
     - CORE_PEER_PROFILE_ENABLED=true
     - "CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer:7050"
-  image: rameshthoomu/peer:x86_64-0.7.0-snapshot-2e73248
+  image: rameshthoomu/fabric-peer
   links:
     - cop
     - orderer
@@ -52,7 +52,7 @@ vp1:
     - CORE_PEER_PROFILE_ENABLED=true
     - "CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer:7050"
     - "CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051"
-  image: rameshthoomu/peer:x86_64-0.7.0-snapshot-2e73248
+  image: rameshthoomu/fabric-peer
   links: 
     - cop
     - orderer
