@@ -1,3 +1,19 @@
+# GIT Introduction
+
+Git is a version control system same as svn, cvs.. What is version Control system? 
+
+When developers are creating something (an application, for example), they are making constant changes to the code and releasing new versions, up to and after the first official (non-beta) release.
+
+Install Git client to work on local machine and publish changes to github (remote repository)
+
+    ```
+    sudo apt-get update
+    sudo apt-get install git
+    ```
+## Git Workflow
+After you install git client in your local machine, first step is to fork origin repository from github.
+
+
 ###Delete Remote Branch:
 `git push upstream :<branchName>` or `git push upstream --delete <branchName>`
 
